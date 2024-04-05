@@ -6,7 +6,7 @@ function CartItem({ item }) {
   return (
     <li className='cartItem'>
       <div className='cart__image-container'>
-        <img className='cartItem__image' src={itemphoto} />
+        <img className='cartItem__image' src={item['photo-link']} />
       </div>
       <div className='cartItem__data'>
         <h3 className='cartItem__header'>{item.name}</h3>

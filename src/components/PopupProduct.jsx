@@ -24,7 +24,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
           {selectedCard && (
             <>
               <div className='form__image-container'>
-                <img className='form__image' src={iphoneCase} />
+                <img className='form__image' src={selectedCard['photo-link']} />
               </div>
 
               <div className='form__data'>

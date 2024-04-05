@@ -16,7 +16,10 @@ function HotToday({ onAddProductClick, promoProduct }) {
         <div className='hotToday__images'>
           <div className='hotToday__image-frame'>
             <div className='hotToday__image-container'>
-              <img className='hotToday__image' src={mug} />
+              <img
+                className='hotToday__image'
+                src={promoProduct['photo-link']}
+              />
             </div>
           </div>
           <button className='button button_type_shop' onClick={handleAddToCart}>
