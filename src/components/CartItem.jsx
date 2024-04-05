@@ -1,8 +1,16 @@
-import React from 'react';
-import itemphoto from '../images/snoopy-airpods.png';
+import React, { useState } from 'react';
+
 import trashIcon from '../images/trash.png';
 
 function CartItem({ item }) {
+  const [quantifier, setQuantifier] = useState(1);
+
+  function addOneToCart() {
+    setQuantifier((prevQuantifier) => prevQuantifier + 1);
+  }
+  function removeOne() {
+    setQuantifier((prevQuantifier) => prevQuantifier - 1);
+  }
   return (
     <li className='cartItem'>
       <div className='cart__image-container'>
@@ -13,9 +21,16 @@ function CartItem({ item }) {
         <p className='cartItem__price'>{`$ ${item.price}`}</p>
         <div className='cartItem__quantityBox-container'>
           <div className='cartItem__quantityBox'>
-            <div className='cartItem__quantitybox-item'>-</div>
-            <div className='cartItem__quantitybox-item'>1</div>
-            <div className='cartItem__quantitybox-item'>+</div>
+            <button className='cartItem__quantitybox-item' onClick={removeOne}>
+              -
+            </button>
+            <div className='cartItem__quantitybox-item'>{quantifier}</div>
+            <button
+              className='cartItem__quantitybox-item'
+              onClick={addOneToCart}
+            >
+              +
+            </button>
           </div>
           <div className='cartItem__delete-box'>
             <img className='cartItem__delete-icon' src={trashIcon} />
