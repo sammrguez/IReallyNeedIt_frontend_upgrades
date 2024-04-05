@@ -7,7 +7,6 @@ function HotToday({ onAddProductClick, promoProduct }) {
   const handleAddToCart = (event) => {
     event.preventDefault();
     onAddProductClick(promoProduct);
-    console.log(promoProduct);
   };
 
   return (
