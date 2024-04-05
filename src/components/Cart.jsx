@@ -28,7 +28,7 @@ function Cart() {
             </p>
           </div>
 
-          <button className='button button_type_shop'>
+          <button className='button button_type_shop' onClick={handlecart}>
             <h3 className='button__text'>Ir al pago</h3>
           </button>
         </div>

@@ -38,14 +38,16 @@ function App() {
     fetchPromoProducts();
   }, []);
 
+  /* manejar cart */
+  function handleCartProducts(item) {
+    setCart((prevCart) => [...prevCart, item]);
+  }
+
   function handleCardClick(card) {
     setSelectedCard(card);
   }
   function closeAllPopups() {
     setSelectedCard(false);
-  }
-  function handleCartProducts(item) {
-    setCart((prevCart) => [...prevCart, item]);
   }
 
   return (
