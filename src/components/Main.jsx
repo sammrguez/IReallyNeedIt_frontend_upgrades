@@ -2,13 +2,13 @@ import React from 'react';
 import Header from './Header';
 import HotToday from './HotToday';
 
-function Main({ onAddProductClick, selectedCard }) {
+function Main({ onAddProductClick, promoProduct }) {
   return (
     <main className='main'>
       <Header />
       <HotToday
         onAddProductClick={onAddProductClick}
-        selectedCard={selectedCard}
+        promoProduct={promoProduct}
       />
     </main>
   );

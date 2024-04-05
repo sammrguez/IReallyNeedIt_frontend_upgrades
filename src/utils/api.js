@@ -29,6 +29,10 @@ class Api {
   getProducts() {
     return this._makeRequest('/productos');
   }
+
+  getPromoProduct() {
+    return this._makeRequest('/');
+  }
 }
 
 const api = new Api({

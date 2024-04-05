@@ -13,17 +13,29 @@ function App() {
   const [products, setProducts] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [cart, setCart] = useState([]);
+  const [promoProduct, setPromoProduct] = useState({});
 
   useEffect(() => {
     async function fetchProducts() {
       try {
         const products = await api.getProducts();
+
         setProducts(products);
       } catch (error) {
         console.error('error al obtener productos');
       }
     }
     fetchProducts();
+
+    async function fetchPromoProducts() {
+      try {
+        const promoProduct = await api.getPromoProduct();
+        setPromoProduct(promoProduct);
+      } catch (error) {
+        console.error('error al obtener productos');
+      }
+    }
+    fetchPromoProducts();
   }, []);
 
   function handleCardClick(card) {
@@ -46,6 +58,7 @@ function App() {
             <Main
               onAddProductClick={handleCartProducts}
               selectedCard={selectedCard}
+              promoProduct={promoProduct}
             />
           }
         />

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import texture from '../images/textura_IRNI.jpg';
 import mug from '../images/overthinker.jpg';
 
-function HotToday({ onAddProductClick, selectedCard }) {
+function HotToday({ onAddProductClick, promoProduct }) {
   const handleAddToCart = (event) => {
     event.preventDefault();
-    onAddProductClick(selectedCard);
-    console.log(selectedCard);
+    onAddProductClick(promoProduct);
+    console.log(promoProduct);
   };
 
   return (
