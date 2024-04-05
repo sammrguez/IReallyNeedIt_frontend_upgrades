@@ -1,0 +1,8 @@
+.cart__total-data {
+  max-width: 80%;
+  min-width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}

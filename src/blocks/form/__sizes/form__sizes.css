@@ -1,0 +1,9 @@
+.form__sizes {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-auto-rows: 70px;
+  gap: 10px;
+  width: 100%;
+}

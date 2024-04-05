@@ -1,0 +1,6 @@
+.hotToday__content {
+  display: flex;
+  height: 800px;
+  flex-direction: row;
+  justify-content: space-between;
+}

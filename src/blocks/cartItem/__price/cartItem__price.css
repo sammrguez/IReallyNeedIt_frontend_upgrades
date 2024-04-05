@@ -1,0 +1,8 @@
+.cartItem__price {
+  font-family: matter;
+  font-size: 36px;
+  color: #ed6a4c;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}

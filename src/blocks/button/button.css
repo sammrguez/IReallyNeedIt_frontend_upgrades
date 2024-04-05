@@ -1,0 +1,15 @@
+.button {
+  width: 295px;
+  height: 82px;
+  background-color: #b7b5e7;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
+}
+
+.button_products {
+  height: 85px;
+  background-color: #ed6a4c;
+  margin-top: 0px;
+}

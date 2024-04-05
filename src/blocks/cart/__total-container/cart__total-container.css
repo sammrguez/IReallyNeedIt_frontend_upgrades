@@ -1,0 +1,7 @@
+.cart__total-container {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  border-top: 1px solid black;
+  padding: 50px;
+}

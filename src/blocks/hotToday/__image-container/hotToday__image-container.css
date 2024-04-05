@@ -1,0 +1,17 @@
+.hotToday__image-container {
+  width: 380px;
+  height: 500px;
+  background: burlywood;
+  position: relative;
+  border-top-left-radius: 102px;
+  border-top-right-radius: 120px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.hotToday__image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+}

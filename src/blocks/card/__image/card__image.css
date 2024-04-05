@@ -1,0 +1,5 @@
+.card__image {
+  width: 365px;
+  height: 460px;
+  filter: drop-shadow(20px 10px 20px #0009);
+}

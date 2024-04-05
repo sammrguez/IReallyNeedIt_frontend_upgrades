@@ -1,0 +1,7 @@
+.hotToday__data {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 60%;
+  height: 480px;
+}

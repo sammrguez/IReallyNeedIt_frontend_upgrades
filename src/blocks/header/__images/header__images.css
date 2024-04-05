@@ -1,0 +1,7 @@
+.header__images {
+  position: relative;
+  margin-top: 185px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}

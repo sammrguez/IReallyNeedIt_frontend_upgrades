@@ -1,0 +1,7 @@
+.popup__logo {
+  width: 560px;
+  height: 560px;
+  position: absolute;
+  top: -280px;
+  justify-content: center;
+}

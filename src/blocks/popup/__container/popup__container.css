@@ -1,0 +1,22 @@
+.popup__container {
+  align-content: center;
+  z-index: 115;
+  border-radius: 40px;
+}
+.popup__container-product {
+  padding: 40px;
+  background-color: #edcde1;
+  max-width: 85%;
+  height: 900px;
+}
+.popup__container-sign {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  max-width: 90%;
+  min-width: 80%;
+  background-color: #b7b5e7;
+  height: 80%;
+  padding: 300px 0px 100px;
+  position: relative;
+}

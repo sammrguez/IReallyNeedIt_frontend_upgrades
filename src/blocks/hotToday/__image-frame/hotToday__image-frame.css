@@ -1,0 +1,6 @@
+.hotToday__image-frame {
+  display: flex;
+  width: 500px;
+  height: 600px;
+  background-color: #007a64;
+}

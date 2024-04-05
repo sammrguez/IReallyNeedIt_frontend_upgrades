@@ -1,0 +1,7 @@
+.cartItem__quantityBox {
+  display: flex;
+  height: 60px;
+  min-width: 160px;
+  max-width: 210px;
+  margin: 5px 0px 5px;
+}

@@ -1,0 +1,13 @@
+.navBar {
+  background-color: #e6d6cb;
+  width: 1100px;
+  height: 140px;
+  display: flex;
+  margin: auto;
+  border-radius: 30px;
+  position: fixed;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}

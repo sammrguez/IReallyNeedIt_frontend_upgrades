@@ -1,0 +1,7 @@
+.header__data {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 250px 0px 0px 25px;
+  align-items: center;
+}

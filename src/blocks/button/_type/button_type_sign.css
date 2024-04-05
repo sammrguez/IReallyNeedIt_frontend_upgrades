@@ -1,0 +1,7 @@
+.button_type_sign {
+  background-color: #edcde1;
+  display: flex;
+  width: 730px;
+  height: 140px;
+  align-items: center;
+}

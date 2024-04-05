@@ -1,0 +1,6 @@
+.hotToday {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6d6cb;
+  height: 1050px;
+}
