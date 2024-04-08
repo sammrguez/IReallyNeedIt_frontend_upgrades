@@ -40,7 +40,30 @@ function App() {
 
   /* manejar cart */
   function handleCartProducts(item) {
-    setCart((prevCart) => [...prevCart, item]);
+    let repeatedCard = cart.find((element) => element._id === item._id);
+    if (repeatedCard) {
+      const updatedCart = cart.map((cartItem) => {
+        if (cartItem._id === item._id) {
+          return { ...cartItem, quantity: (cartItem.quantity || 1) + 1 };
+        } else {
+          return cartItem;
+        }
+      });
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
+  }
+
+  function addOneToCart() {
+    let newQuantifier = quantifier + 1;
+    setQuantifier(newQuantifier);
+    onQuantifierChange(newQuantifier);
+  }
+  function removeOne() {
+    let newQuantifier = quantifier - 1;
+    setQuantifier(newQuantifier);
+    onQuantifierChange(newQuantifier);
   }
 
   function handleCardClick(card) {

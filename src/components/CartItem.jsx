@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 
 import trashIcon from '../images/trash.png';
 
-function CartItem({ item }) {
-  const [quantifier, setQuantifier] = useState(1);
+function CartItem({ item, onQuantifierChange, quantity }) {
+  const [quantifier, setQuantifier] = useState(quantity);
 
-  function addOneToCart() {
-    setQuantifier((prevQuantifier) => prevQuantifier + 1);
-  }
-  function removeOne() {
-    setQuantifier((prevQuantifier) => prevQuantifier - 1);
-  }
+  // function addOneToCart() {
+  //   let newQuantifier = quantifier + 1;
+  //   setQuantifier(newQuantifier);
+  //   onQuantifierChange(newQuantifier);
+  // }
+  // function removeOne() {
+  //   let newQuantifier = quantifier - 1;
+  //   setQuantifier(newQuantifier);
+  //   onQuantifierChange(newQuantifier);
+  // }
   return (
     <li className='cartItem'>
       <div className='cart__image-container'>

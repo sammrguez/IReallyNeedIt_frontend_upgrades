@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import texture from '../images/textura_IRNI.jpg';
 import CartItem from './CartItem';
 import { CartContext } from '../contexts/CartContext';
@@ -10,6 +10,9 @@ function Cart() {
     console.log(cart);
   }
 
+  function onQuantifierChange(number) {
+    console.log(`el total es: ${number}`);
+  }
   return (
     <section className='cart'>
       <img className='decoration-band' src={texture} />
@@ -17,7 +20,14 @@ function Cart() {
         <h2 className='cart__header'>Tus compras</h2>
         <ul className='cart__added-items'>
           {cart.map((item, index) => {
-            return <CartItem item={item} key={index} />;
+            return (
+              <CartItem
+                item={item}
+                key={index}
+                quantity={item.quantity}
+                onQuantifierChange={onQuantifierChange}
+              />
+            );
           })}
         </ul>
         <div className='cart__total-container'>

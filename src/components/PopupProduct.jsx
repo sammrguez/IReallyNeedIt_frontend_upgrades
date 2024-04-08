@@ -1,12 +1,16 @@
 import React from 'react';
 import iphoneCase from '../images/case.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
 function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
+  const cart = useContext(CartContext);
+
   const handleAddToCart = (event) => {
     event.preventDefault();
+
     onAddProductClick(selectedCard);
-    console.log(selectedCard);
+
     onClose();
   };
   return (
