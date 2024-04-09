@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 
 import trashIcon from '../images/trash.png';
 
-function CartItem({ item, onQuantifierChange, quantity }) {
-  const [quantifier, setQuantifier] = useState(quantity);
+function CartItem({ item, onAddClick, onRemoveClick, quantity }) {
+  function handleAdd() {
+    onAddClick(item);
+  }
+  function handleRemove() {
+    onRemoveClick(item);
+  }
 
-  // function addOneToCart() {
-  //   let newQuantifier = quantifier + 1;
-  //   setQuantifier(newQuantifier);
-  //   onQuantifierChange(newQuantifier);
-  // }
-  // function removeOne() {
-  //   let newQuantifier = quantifier - 1;
-  //   setQuantifier(newQuantifier);
-  //   onQuantifierChange(newQuantifier);
-  // }
   return (
     <li className='cartItem'>
       <div className='cart__image-container'>
@@ -25,14 +20,14 @@ function CartItem({ item, onQuantifierChange, quantity }) {
         <p className='cartItem__price'>{`$ ${item.price}`}</p>
         <div className='cartItem__quantityBox-container'>
           <div className='cartItem__quantityBox'>
-            <button className='cartItem__quantitybox-item' onClick={removeOne}>
-              -
-            </button>
-            <div className='cartItem__quantitybox-item'>{quantifier}</div>
             <button
               className='cartItem__quantitybox-item'
-              onClick={addOneToCart}
+              onClick={handleRemove}
             >
+              -
+            </button>
+            <div className='cartItem__quantitybox-item'>{quantity}</div>
+            <button className='cartItem__quantitybox-item' onClick={handleAdd}>
               +
             </button>
           </div>

@@ -3,7 +3,7 @@ import texture from '../images/textura_IRNI.jpg';
 import CartItem from './CartItem';
 import { CartContext } from '../contexts/CartContext';
 
-function Cart() {
+function Cart({ onAddClick, onRemoveClick }) {
   const cart = useContext(CartContext);
 
   function handlecart() {
@@ -26,6 +26,8 @@ function Cart() {
                 key={index}
                 quantity={item.quantity}
                 onQuantifierChange={onQuantifierChange}
+                onAddClick={onAddClick}
+                onRemoveClick={onRemoveClick}
               />
             );
           })}
@@ -34,7 +36,10 @@ function Cart() {
           <div className='cart__total-data'>
             <h3 className='cart__total-header'>Total</h3>
             <p className='cart__amount'>
-              {`$ ${cart.reduce((total, item) => total + item.price, 0)}`}
+              {`$ ${cart.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+              )}`}
             </p>
           </div>
 
