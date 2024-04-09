@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 
 import trashIcon from '../images/trash.png';
 
-function CartItem({ item, onAddClick, onRemoveClick, quantity }) {
+function CartItem({
+  item,
+  onAddClick,
+  onRemoveClick,
+  onDeleteClick,
+  quantity,
+}) {
   function handleAdd() {
     onAddClick(item);
   }
   function handleRemove() {
     onRemoveClick(item);
+  }
+  function handleDelete() {
+    onDeleteClick(item);
   }
 
   return (
@@ -21,19 +30,25 @@ function CartItem({ item, onAddClick, onRemoveClick, quantity }) {
         <div className='cartItem__quantityBox-container'>
           <div className='cartItem__quantityBox'>
             <button
-              className='cartItem__quantitybox-item'
+              className='cartItem__quantitybox-button'
               onClick={handleRemove}
             >
               -
             </button>
-            <div className='cartItem__quantitybox-item'>{quantity}</div>
-            <button className='cartItem__quantitybox-item' onClick={handleAdd}>
+            <div className='cartItem__quantitybox-button'>{quantity}</div>
+            <button
+              className='cartItem__quantitybox-button'
+              onClick={handleAdd}
+            >
               +
             </button>
           </div>
-          <div className='cartItem__delete-box'>
+          <button
+            className='cartItem__quantitybox-button cartItem__quantitybox-button_delete'
+            onClick={handleDelete}
+          >
             <img className='cartItem__delete-icon' src={trashIcon} />
-          </div>
+          </button>
         </div>
       </div>
     </li>

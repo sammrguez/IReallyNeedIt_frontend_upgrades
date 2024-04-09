@@ -3,7 +3,7 @@ import texture from '../images/textura_IRNI.jpg';
 import CartItem from './CartItem';
 import { CartContext } from '../contexts/CartContext';
 
-function Cart({ onAddClick, onRemoveClick }) {
+function Cart({ onAddClick, onRemoveClick, onDeleteClick }) {
   const cart = useContext(CartContext);
 
   function handlecart() {
@@ -28,6 +28,7 @@ function Cart({ onAddClick, onRemoveClick }) {
                 onQuantifierChange={onQuantifierChange}
                 onAddClick={onAddClick}
                 onRemoveClick={onRemoveClick}
+                onDeleteClick={onDeleteClick}
               />
             );
           })}

@@ -56,8 +56,6 @@ function App() {
   }
 
   function addOneToCart(item) {
-    console.log(item);
-    console.log('mas uno');
     const updatedCart = cart.map((cartItem) => {
       if (cartItem._id === item._id) {
         return { ...cartItem, quantity: (cartItem.quantity || 1) + 1 };
@@ -67,9 +65,8 @@ function App() {
     });
     setCart(updatedCart);
   }
+
   function removeOne(item) {
-    console.log(item.quantity);
-    console.log('mas uno');
     const updatedCart = cart.map((cartItem) => {
       if (cartItem._id === item._id) {
         return { ...cartItem, quantity: (cartItem.quantity || 1) - 1 };
@@ -77,6 +74,20 @@ function App() {
         return cartItem;
       }
     });
+
+    setCart(updatedCart);
+    checkItemQuantity(updatedCart);
+  }
+
+  function checkItemQuantity(updateCart) {
+    const newdCart = updateCart.filter((cartItem) => cartItem.quantity > 0);
+
+    setCart(newdCart);
+  }
+
+  function deleteOne(item) {
+    const updatedCart = cart.filter((cartItem) => cartItem._id !== item._id);
+
     setCart(updatedCart);
   }
 
@@ -115,7 +126,13 @@ function App() {
         />
         <Route
           path='/carrito'
-          element={<Cart onAddClick={addOneToCart} onRemoveClick={removeOne} />}
+          element={
+            <Cart
+              onAddClick={addOneToCart}
+              onRemoveClick={removeOne}
+              onDeleteClick={deleteOne}
+            />
+          }
         />
         <Route path='/registro' element={<Register />} />
       </Routes>

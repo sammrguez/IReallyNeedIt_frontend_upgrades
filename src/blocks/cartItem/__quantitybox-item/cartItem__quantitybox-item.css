@@ -1,4 +1,4 @@
-.cartItem__quantitybox-item {
+.cartItem__quantitybox-button {
   display: flex;
   margin: auto;
   min-height: 60px;
@@ -10,4 +10,8 @@
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   border: none;
+}
+.cartItem__quantitybox-button_delete {
+  width: 60px;
+  margin-right: 0;
 }
