@@ -5,6 +5,7 @@ import { CartContext } from '../contexts/CartContext';
 
 function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
   const cart = useContext(CartContext);
+  const [selectedModel, setSelectedModel] = useState('');
 
   const handleAddToCart = (event) => {
     event.preventDefault();
@@ -12,6 +13,11 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
     onAddProductClick(selectedCard);
 
     onClose();
+  };
+
+  const handleModelSelection = (model) => {
+    setSelectedModel(model);
+    console.log(`seleccionaste el modelo ${model}`);
   };
   return (
     <div
@@ -41,7 +47,11 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
                     <ul className='form__sizes'>
                       {selectedCard.models.map((model, index) => {
                         return (
-                          <li className='form__size' key={index}>
+                          <li
+                            className='form__size'
+                            key={index}
+                            onClick={() => handleModelSelection(model)}
+                          >
                             {model}
                           </li>
                         );
