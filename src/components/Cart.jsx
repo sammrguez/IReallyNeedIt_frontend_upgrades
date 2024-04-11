@@ -10,9 +10,6 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick }) {
     console.log(cart);
   }
 
-  function onQuantifierChange(number) {
-    console.log(`el total es: ${number}`);
-  }
   return (
     <section className='cart'>
       <img className='decoration-band' src={texture} />
@@ -25,10 +22,10 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick }) {
                 item={item}
                 key={index}
                 quantity={item.quantity}
-                onQuantifierChange={onQuantifierChange}
                 onAddClick={onAddClick}
                 onRemoveClick={onRemoveClick}
                 onDeleteClick={onDeleteClick}
+                selectedModel={item.selectedModel}
               />
             );
           })}

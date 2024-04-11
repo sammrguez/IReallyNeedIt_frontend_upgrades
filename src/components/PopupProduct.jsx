@@ -5,12 +5,12 @@ import { CartContext } from '../contexts/CartContext';
 
 function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
   const cart = useContext(CartContext);
-  const [selectedModel, setSelectedModel] = useState('');
+  const [selectedModel, setSelectedModel] = useState(null);
 
   const handleAddToCart = (event) => {
     event.preventDefault();
-
-    onAddProductClick(selectedCard);
+    const productToAdd = { ...selectedCard, selectedModel: selectedModel };
+    onAddProductClick(productToAdd);
 
     onClose();
   };
@@ -19,6 +19,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
     setSelectedModel(model);
     console.log(`seleccionaste el modelo ${model}`);
   };
+
   return (
     <div
       className={`popup popup_type_${name} ${

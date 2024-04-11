@@ -8,6 +8,7 @@ function CartItem({
   onRemoveClick,
   onDeleteClick,
   quantity,
+  selectedModel,
 }) {
   function handleAdd() {
     onAddClick(item);
@@ -26,7 +27,7 @@ function CartItem({
       </div>
       <div className='cartItem__data'>
         <h3 className='cartItem__header'>{item.name}</h3>
-        <h3 className='cartItem__header'>modelo:</h3>
+        <h3 className='cartItem__header'> {`modelo: ${selectedModel}`} </h3>
         <p className='cartItem__price'>{`$ ${item.price}`}</p>
         <div className='cartItem__quantityBox-container'>
           <div className='cartItem__quantityBox'>
