@@ -2,9 +2,10 @@
   align-content: center;
   z-index: 115;
   border-radius: 40px;
+  overflow: hidden;
 }
 .popup__container-product {
-  padding: 40px;
+  padding: 20px;
   background-color: #edcde1;
   max-width: 85%;
   height: 900px;

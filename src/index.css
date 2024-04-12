@@ -82,7 +82,7 @@
 
 /* forms */
 @import url('./blocks/form/form.css');
-
+@import url('./blocks/form/_type/form_type_product.css');
 @import url('./blocks/form/_type/form_type_sign.css');
 @import url('./blocks/form/__image-container/form__image-container.css');
 @import url('./blocks/form/__image/form__image.css');
