@@ -24,7 +24,9 @@ function NavBar() {
           <Link to='/carrito' className='navBar__link'>
             <img className='navBar__bag' src={bag} alt='Carrito' />
           </Link>
-          <span className='navBar__bag-quantifier'>{cart.length}</span>
+          <span className='navBar__bag-quantifier'>
+            {cart.reduce((total, item) => total + item.quantity, 0)}
+          </span>
         </li>
       </ul>
     </nav>
