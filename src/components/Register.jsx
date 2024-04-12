@@ -7,7 +7,6 @@ function Register() {
       <PopupForm
         header={'¿listo para adquirir increíbles productos?'}
       ></PopupForm>
-      ;
     </section>
   );
 }

@@ -1,8 +1,5 @@
 .form_type_sign {
   display: flex;
-  width: 90%;
-  min-width: 75%;
+  width: 80%;
   flex-direction: column;
-
-  position: relative;
 }
