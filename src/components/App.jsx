@@ -64,6 +64,19 @@ function App() {
       }
     });
     setCart(updatedCart);
+    checkStock(updatedCart, item);
+  }
+
+  function checkStock(updatedCart, item) {
+    const itemToCheck = updatedCart.find(
+      (cartItem) => cartItem._id === item._id
+    );
+
+    if (itemToCheck.quantity > itemToCheck.available) {
+      console.log(
+        ` solo hay ${itemToCheck.available} piezas disponibles de este producto`
+      );
+    }
   }
 
   function removeOne(item) {
