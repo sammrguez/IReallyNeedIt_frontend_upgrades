@@ -1,8 +1,12 @@
 .form__fieldset {
-  background-color: beige;
   width: 95%;
-  height: 250px;
+
   border: none;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+}
+.form__link {
+  align-self: center;
+  margin-top: 30px;
 }

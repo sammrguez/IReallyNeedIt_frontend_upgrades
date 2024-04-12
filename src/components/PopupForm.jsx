@@ -26,7 +26,9 @@ function PopupForm({ header }) {
               <h3 className='button__text'> registrar con </h3>
               <img src={gmail} alt='simbolo de mail' />
             </button>
-            <Link to='/login'>Inicia Sesion</Link>
+            <Link className='form__link' to='/login'>
+              Inicia Sesion
+            </Link>
           </fieldset>
         </form>
       </div>
