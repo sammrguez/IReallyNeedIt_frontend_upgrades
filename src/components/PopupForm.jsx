@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function PopupForm({ header }) {
   return (
-    <div className='popup popup_type_signin popup_opened'>
+    <div className='popup popup_type_signin popup_openedd'>
       <div className='overlay'></div>
       <div className='popup__container popup__container-sign'>
         <img className='popup__logo' src={IRNIsticker} />
