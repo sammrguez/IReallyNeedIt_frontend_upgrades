@@ -1,17 +1,14 @@
 import React from 'react';
 import IRNIsticker from '../images/stickers_IRNI_purple.png';
 import google from '../images/google.png';
-import gmail from '../images/gmail.png';
-import { Link } from 'react-router-dom';
 
 function PopupForm({
   header,
-  textButton,
+
   onClose,
   isOpen,
-  linkTo,
-  linkToText,
-  onLinkClick,
+
+  children,
 }) {
   return (
     <div className={`popup popup_type_signin ${isOpen ? 'popup_opened' : ''}`}>
@@ -20,24 +17,7 @@ function PopupForm({
         <img className='popup__logo' src={IRNIsticker} />
         <form className='form form_type_sign'>
           <h2 className='form__header form__header-sign'>{header}</h2>
-          <fieldset className='form__fieldset'>
-            <button className='button button_type_sign'>
-              <h3 className='button__text'> {textButton}</h3>
-              <img
-                className='button__icon'
-                src={google}
-                alt='simbolo de google'
-              />
-            </button>
-            <button className='button button_type_sign'>
-              <img />
-              <h3 className='button__text'> {textButton}</h3>
-              <img src={gmail} alt='simbolo de mail' />
-            </button>
-            <Link className='form__link' to={linkTo} onClick={onLinkClick}>
-              {linkToText}
-            </Link>
-          </fieldset>
+          <fieldset className='form__fieldset'>{children}</fieldset>
         </form>
       </div>
     </div>

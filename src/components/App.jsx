@@ -1,12 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
+/* contextos  */
+import { CartContext } from '../contexts/CartContext';
+
+/* modulos  */
 import Main from './Main';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import Products from './Products';
 import Cart from './Cart';
 import api from '../utils/api';
-import { CartContext } from '../contexts/CartContext';
 import Register from './Register';
 import Login from './Login';
 
@@ -17,6 +21,9 @@ function App() {
   const [promoProduct, setPromoProduct] = useState({});
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const googleClientID =
+    '652479721639-js5e822qra9t7okm6slpeghi2p43dh0a.apps.googleusercontent.com';
 
   useEffect(() => {
     async function fetchProducts() {
