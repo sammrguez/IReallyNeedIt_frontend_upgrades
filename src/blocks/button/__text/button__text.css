@@ -2,5 +2,6 @@
   text-decoration: none;
   font-size: 26px;
   color: #000;
-  margin: auto;
+  margin-right: 20px;
+  max-width: 250px;
 }

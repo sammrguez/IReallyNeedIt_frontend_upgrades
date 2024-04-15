@@ -94,6 +94,7 @@
 @import url('./blocks/form/__sizes/form__sizes.css');
 @import url('./blocks/form/__size/form__size.css');
 @import url('./blocks/form/__fieldset/form__fieldset.css');
+@import url('./blocks/form/__link/form__link.css');
 
 /*cart */
 @import url('./blocks/cart/cart.css');

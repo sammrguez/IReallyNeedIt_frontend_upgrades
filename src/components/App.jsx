@@ -8,12 +8,15 @@ import Cart from './Cart';
 import api from '../utils/api';
 import { CartContext } from '../contexts/CartContext';
 import Register from './Register';
+import Login from './Login';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
   const [cart, setCart] = useState([]);
   const [promoProduct, setPromoProduct] = useState({});
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -107,8 +110,17 @@ function App() {
   function handleCardClick(card) {
     setSelectedCard(card);
   }
+  function openRegister() {
+    setIsRegisterOpen(true);
+  }
+  function openLogin() {
+    setIsLoginOpen(true);
+    console.log('ya debe abrir');
+  }
   function closeAllPopups() {
     setSelectedCard(false);
+    setIsRegisterOpen(false);
+    setIsLoginOpen(false);
   }
 
   return (
@@ -144,10 +156,24 @@ function App() {
               onAddClick={addOneToCart}
               onRemoveClick={removeOne}
               onDeleteClick={deleteOne}
+              onOpenRegister={openRegister}
             />
           }
         />
-        <Route path='/registro' element={<Register />} />
+        <Route
+          path='/registro'
+          element={
+            <Register
+              onClose={closeAllPopups}
+              isOpen={isRegisterOpen}
+              onOpenLogin={openLogin}
+            />
+          }
+        />
+        <Route
+          path='/login'
+          element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
+        />
       </Routes>
       <Footer />
     </CartContext.Provider>

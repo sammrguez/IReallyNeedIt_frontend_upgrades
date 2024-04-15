@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import texture from '../images/textura_IRNI.jpg';
 import CartItem from './CartItem';
 import { CartContext } from '../contexts/CartContext';
 
-function Cart({ onAddClick, onRemoveClick, onDeleteClick }) {
+function Cart({ onAddClick, onRemoveClick, onDeleteClick, onOpenRegister }) {
   const cart = useContext(CartContext);
 
   function handlecart() {
     console.log(cart);
+    onOpenRegister();
   }
 
   return (
@@ -42,7 +44,9 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick }) {
           </div>
 
           <button className='button button_type_shop' onClick={handlecart}>
-            <h3 className='button__text'>Ir al pago</h3>
+            <Link className='form__link' to='/registro '>
+              <h3 className='button__text'>Ir al pago</h3>
+            </Link>
           </button>
         </div>
       </div>

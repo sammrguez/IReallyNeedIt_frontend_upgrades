@@ -4,17 +4,25 @@ import google from '../images/google.png';
 import gmail from '../images/gmail.png';
 import { Link } from 'react-router-dom';
 
-function PopupForm({ header }) {
+function PopupForm({
+  header,
+  textButton,
+  onClose,
+  isOpen,
+  linkTo,
+  linkToText,
+  onLinkClick,
+}) {
   return (
-    <div className='popup popup_type_signin popup_openedd'>
-      <div className='overlay'></div>
+    <div className={`popup popup_type_signin ${isOpen ? 'popup_opened' : ''}`}>
+      <div className='overlay' onClick={onClose}></div>
       <div className='popup__container popup__container-sign'>
         <img className='popup__logo' src={IRNIsticker} />
         <form className='form form_type_sign'>
           <h2 className='form__header form__header-sign'>{header}</h2>
           <fieldset className='form__fieldset'>
             <button className='button button_type_sign'>
-              <h3 className='button__text'> registrar con </h3>
+              <h3 className='button__text'> {textButton}</h3>
               <img
                 className='button__icon'
                 src={google}
@@ -23,11 +31,11 @@ function PopupForm({ header }) {
             </button>
             <button className='button button_type_sign'>
               <img />
-              <h3 className='button__text'> registrar con </h3>
+              <h3 className='button__text'> {textButton}</h3>
               <img src={gmail} alt='simbolo de mail' />
             </button>
-            <Link className='form__link' to='/login'>
-              Inicia Sesion
+            <Link className='form__link' to={linkTo} onClick={onLinkClick}>
+              {linkToText}
             </Link>
           </fieldset>
         </form>

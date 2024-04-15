@@ -1,5 +1,4 @@
 import { React, useState } from 'react';
-import foto from '../images/snoopy-airpods.png';
 
 function Card({ onClick, card }) {
   const handleClick = () => {
