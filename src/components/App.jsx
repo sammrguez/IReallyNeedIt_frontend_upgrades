@@ -14,6 +14,7 @@ import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
 import Login from './Login';
+import * as auth from '../utils/auth';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -25,7 +26,7 @@ function App() {
 
   /* inicios de sesion  */
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     async function fetchProducts() {
@@ -51,14 +52,7 @@ function App() {
   }, []);
 
   /* inicios de sesion  */
-  function handleLoginSuccess(res) {
-    console.log(res);
-  }
 
-  function handleLoginFailure(res) {
-    console.log(res);
-    console.log('algo salio mal');
-  }
   /* manejar cart */
   function handleCartProducts(item) {
     let repeatedCard = cart.find((element) => element._id === item._id);
@@ -183,8 +177,6 @@ function App() {
             path='/registro'
             element={
               <Register
-                onSuccess={handleLoginSuccess}
-                onFailure={handleLoginFailure}
                 onClose={closeAllPopups}
                 isOpen={isRegisterOpen}
                 onOpenLogin={openLogin}
