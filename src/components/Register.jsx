@@ -3,9 +3,9 @@ import PopupForm from './PopupForm';
 
 import gmail from '../images/gmail.png';
 import { Link } from 'react-router-dom';
-import GoogleLoginCoomponent from './GoogleLogin';
+import GoogleLoginComponent from './GoogleLogin';
 
-function Register({ onClose, isOpen, onOpenLogin }) {
+function Register({ onClose, isOpen, onOpenLogin, onSuccess, onFailure }) {
   function openLogin() {
     onOpenLogin();
   }
@@ -16,11 +16,7 @@ function Register({ onClose, isOpen, onOpenLogin }) {
         isOpen={isOpen}
         header={'¿listo para adquirir increíbles productos?'}
       >
-        {/* <button className='button button_type_sign'>
-          <h3 className='button__text'> registrarte con</h3>
-          <img className='button__icon' src={google} alt='simbolo de google' />
-        </button> */}
-        <GoogleLoginCoomponent />
+        <GoogleLoginComponent onSuccess={onSuccess} onFailure={onFailure} />
         <button className='button button_type_sign'>
           <h3 className='button__text'> registrarte con</h3>
           <img src={gmail} alt='simbolo de mail' />

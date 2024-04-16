@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 /* contextos  */
 import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 
 /* modulos  */
 import Main from './Main';
@@ -22,8 +23,9 @@ function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
-  const googleClientID =
-    '652479721639-js5e822qra9t7okm6slpeghi2p43dh0a.apps.googleusercontent.com';
+  /* inicios de sesion  */
+
+  const [user, setUser] = useState();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -48,6 +50,15 @@ function App() {
     fetchPromoProducts();
   }, []);
 
+  /* inicios de sesion  */
+  function handleLoginSuccess(res) {
+    console.log(res);
+  }
+
+  function handleLoginFailure(res) {
+    console.log(res);
+    console.log('algo salio mal');
+  }
   /* manejar cart */
   function handleCartProducts(item) {
     let repeatedCard = cart.find((element) => element._id === item._id);
@@ -131,59 +142,63 @@ function App() {
   }
 
   return (
-    <CartContext.Provider value={cart}>
-      <NavBar />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <Main
-              onAddProductClick={handleCartProducts}
-              selectedCard={selectedCard}
-              promoProduct={promoProduct}
-            />
-          }
-        />
-        <Route
-          path='/productos'
-          element={
-            <Products
-              products={products}
-              onClose={closeAllPopups}
-              selectedCard={selectedCard}
-              onCardClick={handleCardClick}
-              onAddProductClick={handleCartProducts}
-            />
-          }
-        />
-        <Route
-          path='/carrito'
-          element={
-            <Cart
-              onAddClick={addOneToCart}
-              onRemoveClick={removeOne}
-              onDeleteClick={deleteOne}
-              onOpenRegister={openRegister}
-            />
-          }
-        />
-        <Route
-          path='/registro'
-          element={
-            <Register
-              onClose={closeAllPopups}
-              isOpen={isRegisterOpen}
-              onOpenLogin={openLogin}
-            />
-          }
-        />
-        <Route
-          path='/login'
-          element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
-        />
-      </Routes>
-      <Footer />
-    </CartContext.Provider>
+    <UserContext.Provider value={user}>
+      <CartContext.Provider value={cart}>
+        <NavBar />
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <Main
+                onAddProductClick={handleCartProducts}
+                selectedCard={selectedCard}
+                promoProduct={promoProduct}
+              />
+            }
+          />
+          <Route
+            path='/productos'
+            element={
+              <Products
+                products={products}
+                onClose={closeAllPopups}
+                selectedCard={selectedCard}
+                onCardClick={handleCardClick}
+                onAddProductClick={handleCartProducts}
+              />
+            }
+          />
+          <Route
+            path='/carrito'
+            element={
+              <Cart
+                onAddClick={addOneToCart}
+                onRemoveClick={removeOne}
+                onDeleteClick={deleteOne}
+                onOpenRegister={openRegister}
+              />
+            }
+          />
+          <Route
+            path='/registro'
+            element={
+              <Register
+                onSuccess={handleLoginSuccess}
+                onFailure={handleLoginFailure}
+                onClose={closeAllPopups}
+                isOpen={isRegisterOpen}
+                onOpenLogin={openLogin}
+              />
+            }
+          />
+          <Route
+            path='/login'
+            element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
+          />
+        </Routes>
+        <Footer />
+      </CartContext.Provider>
+    </UserContext.Provider>
   );
 }
 

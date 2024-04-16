@@ -4,15 +4,15 @@ import google from '../images/google.png';
 import GoogleLogin from 'react-google-login';
 import { gapi } from 'gapi-script';
 
-function GoogleLoginCoomponent() {
-  function onSucces(res) {
-    console.log(res);
-  }
+function GoogleLoginComponent({ onSuccess, onFailure }) {
+  //   function onSucces(res) {
+  //     console.log(res);
+  //   }
 
-  function onFailure(res) {
-    console.log(res);
-    console.log('algo salio mal');
-  }
+  //   function onFailure(res) {
+  //     console.log(res);
+  //     console.log('algo salio mal');
+  //   }
   const googleClientID =
     '652479721639-js5e822qra9t7okm6slpeghi2p43dh0a.apps.googleusercontent.com';
   return (
@@ -29,11 +29,11 @@ function GoogleLoginCoomponent() {
         </button>
       )}
       buttonText='Inicia sesion'
-      onSuccess={onSucces}
+      onSuccess={onSuccess}
       onFailure={onFailure}
       cookiePolicy={'single_host_origin'}
     />
   );
 }
 
-export default GoogleLoginCoomponent;
+export default GoogleLoginComponent;
