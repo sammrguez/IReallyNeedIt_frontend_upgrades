@@ -14,15 +14,25 @@ import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
 import Login from './Login';
+import ProtectedRoute from './ProtectedRoute';
 import * as auth from '../utils/auth';
 
 function App() {
   const [products, setProducts] = useState([]);
+
   const [selectedCard, setSelectedCard] = useState(null);
+
   const [cart, setCart] = useState([]);
+
   const [promoProduct, setPromoProduct] = useState({});
+
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const [token, setToken] = useState(null);
 
   /* inicios de sesion  */
 
@@ -52,6 +62,30 @@ function App() {
   }, []);
 
   /* inicios de sesion  */
+
+  // useEffect(() => {
+  //   async function checkUser() {
+  //     const storedToken = localStorage.getItem('jwt');
+  //     if (storedToken) {
+  //       console.log('si hay un token guardado');
+  //       console.log(localStorage.getItem('jwt'));
+  //     }
+  //     {
+  //       console.log('no hay token guardado');
+  //     }
+  //     // try {
+  //     //   api.getUserData(token);
+  //     // } catch (error) {
+  //     //   console.error('error al obtener user');
+  //     // }
+  //   }
+  //   checkUser();
+  // });
+
+  function handleLogin() {
+    setLoggedIn(true);
+    setIsLoginOpen(true);
+  }
 
   /* manejar cart */
   function handleCartProducts(item) {
@@ -125,10 +159,7 @@ function App() {
   function openRegister() {
     setIsRegisterOpen(true);
   }
-  function openLogin() {
-    setIsLoginOpen(true);
-    console.log('ya debe abrir');
-  }
+
   function closeAllPopups() {
     setSelectedCard(false);
     setIsRegisterOpen(false);
@@ -179,14 +210,16 @@ function App() {
               <Register
                 onClose={closeAllPopups}
                 isOpen={isRegisterOpen}
-                onOpenLogin={openLogin}
+                handleLogin={handleLogin}
               />
             }
           />
-          <Route
-            path='/login'
-            element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
-          />
+          <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
+            <Route
+              path='/login'
+              element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
+            />
+          </Route>
         </Routes>
         <Footer />
       </CartContext.Provider>

@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost:3000';
 
-export const register = (user) => {
+export const registerAndLogin = (user) => {
   console.log(user);
   return fetch(`${BASE_URL}/registro`, {
     method: 'POST',
@@ -21,8 +21,18 @@ export const register = (user) => {
       }
       return Promise.reject(res.status);
     })
-
+    .then((data) => {
+      if (data && data.token) {
+        localStorage.setItem('jwt', data.token);
+        console.log(data.token);
+        return data;
+      }
+    })
     .catch((error) => {
       console.log(error);
     });
+};
+
+export const checkToken = () => {
+  fetch;
 };

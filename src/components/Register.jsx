@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import PopupForm from './PopupForm';
 import gmail from '../images/gmail.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleLoginComponent from './GoogleLogin';
 import * as auth from '../utils/auth';
 
-function Register({ onClose, isOpen, onOpenLogin }) {
+function Register({ onClose, isOpen, handleLogin }) {
   const [userCredentials, setUserCredentials] = useState({});
-
+  const navigate = useNavigate();
   async function handleSuccess(res) {
     try {
       const user = await res.profileObj;
-      auth.register(user).then((data) => {
-        console.log(data);
-        setUserCredentials(data);
+      auth.registerAndLogin(user).then((data) => {
+        if (data && data.token) {
+          console.log(data);
+          setUserCredentials(data);
+          handleLogin();
+          navigate('/login');
+        }
       });
     } catch (error) {
       console.error('error al iniciar sesion');
@@ -23,10 +27,6 @@ function Register({ onClose, isOpen, onOpenLogin }) {
   function handleFailure(res) {
     console.log(res);
     console.log('algo salio mal');
-  }
-
-  function openLogin() {
-    onOpenLogin();
   }
 
   return (
@@ -44,9 +44,9 @@ function Register({ onClose, isOpen, onOpenLogin }) {
           <h3 className='button__text'> registrarte con</h3>
           <img src={gmail} alt='simbolo de mail' />
         </button>
-        <Link className='form__link' to='/login' onClick={openLogin}>
+        {/* <Link className='form__link' to='/login'>
           Inicia Sesión
-        </Link>
+        </Link> */}
       </PopupForm>
     </section>
   );

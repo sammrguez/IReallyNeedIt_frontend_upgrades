@@ -33,6 +33,10 @@ class Api {
   getPromoProduct() {
     return this._makeRequest('/');
   }
+
+  getUserData(token) {
+    return this._makeRequest('/users/me', token);
+  }
 }
 
 const api = new Api({

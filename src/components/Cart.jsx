@@ -8,8 +8,12 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick, onOpenRegister }) {
   const cart = useContext(CartContext);
 
   function handlecart() {
-    console.log(cart);
-    onOpenRegister();
+    if (cart.length === 0) {
+      console.log('no hay nada en el carrito');
+    } else {
+      console.log(cart);
+      onOpenRegister();
+    }
   }
 
   return (
