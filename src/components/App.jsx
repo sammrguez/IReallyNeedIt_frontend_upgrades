@@ -22,8 +22,10 @@ function App() {
 
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const [cart, setCart] = useState([]);
-
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
   const [promoProduct, setPromoProduct] = useState({});
 
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -61,6 +63,17 @@ function App() {
     fetchPromoProducts();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  // useEffect(() => {
+  //   const storedCard = localStorage.getItem('cart');
+  //   if (storedCard) {
+  //     const parsedCart = JSON.parse(storedCard);
+  //     setCart(parsedCart);
+  //   }
+  // }, [cart]);
   /* inicios de sesion  */
 
   // useEffect(() => {
