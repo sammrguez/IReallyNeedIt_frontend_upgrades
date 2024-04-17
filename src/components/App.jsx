@@ -67,34 +67,6 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  // useEffect(() => {
-  //   const storedCard = localStorage.getItem('cart');
-  //   if (storedCard) {
-  //     const parsedCart = JSON.parse(storedCard);
-  //     setCart(parsedCart);
-  //   }
-  // }, [cart]);
-  /* inicios de sesion  */
-
-  // useEffect(() => {
-  //   async function checkUser() {
-  //     const storedToken = localStorage.getItem('jwt');
-  //     if (storedToken) {
-  //       console.log('si hay un token guardado');
-  //       console.log(localStorage.getItem('jwt'));
-  //     }
-  //     {
-  //       console.log('no hay token guardado');
-  //     }
-  //     // try {
-  //     //   api.getUserData(token);
-  //     // } catch (error) {
-  //     //   console.error('error al obtener user');
-  //     // }
-  //   }
-  //   checkUser();
-  // });
-
   function handleLogin() {
     setLoggedIn(true);
     setIsLoginOpen(true);
