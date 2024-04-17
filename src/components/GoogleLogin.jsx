@@ -2,6 +2,7 @@ import React from 'react';
 import google from '../images/google.png';
 /* servicios de google */
 import GoogleLogin from 'react-google-login';
+import { gapi } from 'gapi-script';
 
 function GoogleLoginComponent({ onSuccess, onFailure }) {
   const googleClientID =

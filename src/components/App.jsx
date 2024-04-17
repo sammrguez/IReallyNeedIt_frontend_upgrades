@@ -14,6 +14,7 @@ import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
 import Login from './Login';
+import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
 import * as auth from '../utils/auth';
 
