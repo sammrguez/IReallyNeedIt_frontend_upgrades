@@ -1,4 +1,6 @@
 .card__image {
   width: 360px;
   height: 400px;
+  object-fit: contain;
+  align-self: center;
 }

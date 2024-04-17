@@ -7,7 +7,8 @@
   padding: 20px;
   background-color: #edcde1;
   max-width: 85%;
-  height: 900px;
+  min-height: 650px;
+  max-height: 90%;
 }
 .popup__container-sign {
   width: 65%;
