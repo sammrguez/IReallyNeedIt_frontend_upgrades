@@ -17,7 +17,7 @@ function Register({ onClose, isOpen, handleLogin }) {
           console.log(data);
           setUserCredentials(data);
           handleLogin();
-          navigate('/login');
+          navigate('/pago');
         }
       });
     } catch (error) {
@@ -45,9 +45,6 @@ function Register({ onClose, isOpen, handleLogin }) {
           <h3 className='button__text'> registrarte con</h3>
           <img src={gmail} alt='simbolo de mail' />
         </button>
-        {/* <Link className='form__link' to='/login'>
-          Inicia Sesión
-        </Link> */}
       </PopupForm>
     </section>
   );

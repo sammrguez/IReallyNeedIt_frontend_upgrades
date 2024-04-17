@@ -3,7 +3,7 @@ import PopupForm from './PopupForm';
 
 function Payment({ onClose, isOpen }) {
   return (
-    <section className='login'>
+    <section className='payment'>
       <PopupForm
         onClose={onClose}
         isOpen={isOpen}

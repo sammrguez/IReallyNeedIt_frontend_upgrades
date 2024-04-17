@@ -13,7 +13,7 @@ import Products from './Products';
 import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
-import Login from './Login';
+
 import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
 import * as auth from '../utils/auth';
@@ -202,8 +202,10 @@ function App() {
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
             <Route
-              path='/login'
-              element={<Login onClose={closeAllPopups} isOpen={isLoginOpen} />}
+              path='/pago'
+              element={
+                <Payment onClose={closeAllPopups} isOpen={isLoginOpen} />
+              }
             />
           </Route>
         </Routes>
