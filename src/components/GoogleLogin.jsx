@@ -5,14 +5,6 @@ import GoogleLogin from 'react-google-login';
 import { gapi } from 'gapi-script';
 
 function GoogleLoginComponent({ onSuccess, onFailure }) {
-  //   function onSucces(res) {
-  //     console.log(res);
-  //   }
-
-  //   function onFailure(res) {
-  //     console.log(res);
-  //     console.log('algo salio mal');
-  //   }
   const googleClientID =
     '652479721639-js5e822qra9t7okm6slpeghi2p43dh0a.apps.googleusercontent.com';
   return (

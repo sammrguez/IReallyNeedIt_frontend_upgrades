@@ -16,13 +16,12 @@ export const register = (user) => {
   })
     .then((res) => {
       if (res.ok) {
+        console.log('info llego ok');
         return res.json();
       }
       return Promise.reject(res.status);
     })
-    .then((data) => {
-      console.log(data);
-    })
+
     .catch((error) => {
       console.log(error);
     });

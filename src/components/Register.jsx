@@ -6,10 +6,15 @@ import GoogleLoginComponent from './GoogleLogin';
 import * as auth from '../utils/auth';
 
 function Register({ onClose, isOpen, onOpenLogin }) {
+  const [userCredentials, setUserCredentials] = useState({});
+
   async function handleSuccess(res) {
     try {
       const user = await res.profileObj;
-      auth.register(user);
+      auth.register(user).then((data) => {
+        console.log(data);
+        setUserCredentials(data);
+      });
     } catch (error) {
       console.error('error al iniciar sesion');
     }
