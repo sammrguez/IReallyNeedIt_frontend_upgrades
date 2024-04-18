@@ -119,3 +119,6 @@
 @import url('./blocks/cartItem/__delete-box/cartItem__delete-box.css');
 @import url('./blocks/cartItem/__delete-icon/cartItem__delete-icon.css');
 @import url('./blocks/cartItem/__quantitybox-item/cartItem__quantitybox-item.css');
+
+/* payment*/
+@import url('./blocks/payment/payment.css');

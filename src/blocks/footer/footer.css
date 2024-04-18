@@ -3,8 +3,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  height: 145px;
+  height: 300px;
   width: 100%;
-  background-color: #ed6a4c;
-  margin-top: 40px;
+  /* background-color: #ed6a4c; */
 }

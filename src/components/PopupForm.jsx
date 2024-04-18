@@ -1,6 +1,5 @@
 import React from 'react';
 import IRNIsticker from '../images/stickers_IRNI_purple.png';
-import google from '../images/google.png';
 
 function PopupForm({
   header,
