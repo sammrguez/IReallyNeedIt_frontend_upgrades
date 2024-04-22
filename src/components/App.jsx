@@ -35,11 +35,29 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('jwt'));
 
   /* inicios de sesion  */
 
   const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('jwt');
+    if (storedToken) {
+      setToken(storedToken);
+      async function getUser() {
+        try {
+          const currentUser = await api.getUserData(token).then((res) => {
+            console.log(res);
+          });
+          setUser(currentUser);
+        } catch (error) {
+          console.error('error');
+        }
+      }
+      getUser();
+    }
+  }, [token]);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -201,12 +219,7 @@ function App() {
             }
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
-            <Route
-              path='/pago'
-              element={
-                <Payment onClose={closeAllPopups} isOpen={isLoginOpen} />
-              }
-            />
+            <Route path='/pago' element={<Payment />} />
           </Route>
         </Routes>
         <Footer />

@@ -35,7 +35,12 @@ class Api {
   }
 
   getUserData(token) {
+    console.log(token);
     return this._makeRequest('/users/me', token);
+  }
+  setDirection(token, direction) {
+    console.log(direction);
+    return this._makeRequest('/users/direction', token, 'PUT', direction);
   }
 }
 

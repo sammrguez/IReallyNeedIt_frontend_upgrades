@@ -11,9 +11,7 @@ function NavBar() {
     <nav className='navBar'>
       <ul className='navBar__nav'>
         <li className='navBar__item '>
-          <Link to='/productos' className='navBar__link'>
-            Productos
-          </Link>
+          <Link to='/productos' className='navBar__link'></Link>
         </li>
         <li className='navBar__item '>
           <Link to='/' className='navBar__link'>

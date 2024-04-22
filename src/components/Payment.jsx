@@ -1,7 +1,24 @@
-import React from 'react';
-import PopupForm from './PopupForm';
+import React, { useState, useEffect } from 'react';
 
-function Payment({ onClose, isOpen }) {
+function Payment() {
+  const [address, setAddress] = useState({
+    street: '',
+    exteriorNumber: '',
+    interiorNumber: '',
+    postalCode: '',
+    municipality: '',
+    neighborhood: '',
+    state: '',
+    specialInstructions: '',
+  });
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+    setAddress((prevAddress) => ({
+      ...prevAddress,
+      [name]: value,
+    }));
+    console.log(address);
+  }
   return (
     <section className='payment'>
       <div className='payment__container'>
@@ -12,80 +29,88 @@ function Payment({ onClose, isOpen }) {
               className='form__input form__input_type_text'
               type='text'
               placeholder='calle'
-              id='street-input'
-              name='street-input'
+              id='street'
+              name='street'
               minLength='5'
               maxLength='50'
               required
+              onChange={handleChange}
             ></input>
             <input
               className='form__input form__input_type_text short'
               type='text'
               placeholder='No. exterior'
-              id='no-exterior-input'
-              name='no-exterior'
+              id='exteriorNumber'
+              name='exteriorNumber'
               minLength='1'
               maxLength='50'
               required
+              onChange={handleChange}
             ></input>
             <input
               className='form__input form__input_type_text short'
               type='text'
               placeholder='No. interior'
-              id='no-interior-input'
-              name='no-interior'
+              id='interiorNumber'
+              name='interiorNumber'
               minLength='1'
               maxLength='50'
+              onChange={handleChange}
             ></input>
             <input
               className='form__input form__input_type_text'
               type='text'
               placeholder='Código postal'
-              id='postal-code-input'
-              name='postal-code'
+              id='postalCode'
+              name='postalCode'
               minLength='4'
               maxLength='10'
               required
+              onChange={handleChange}
+            ></input>
+            <input
+              className='form__input form__input_type_text'
+              type='text'
+              placeholder='Colonia'
+              id='neighborhood'
+              name='neighborhood'
+              minLength='5'
+              maxLength='50'
+              required
+              onChange={handleChange}
             ></input>
             <input
               className='form__input form__input_type_text'
               type='text'
               placeholder='Alcaldía o municipio'
-              id='municipio-input'
-              name='municipio'
+              id='municipality'
+              name='municipality'
               minLength='5'
               maxLength='50'
               required
+              onChange={handleChange}
             ></input>{' '}
             <input
               className='form__input form__input_type_text'
               type='text'
-              placeholder='Colonia'
-              id='colonia-input'
-              name='colonia'
-              minLength='5'
-              maxLength='50'
-              required
-            ></input>
-            <input
-              className='form__input form__input_type_text'
-              type='text'
               placeholder='Estado'
-              id='street-input'
-              name='street-input'
+              id='state'
+              name='state'
               minLength='5'
               maxLength='50'
               required
+              onChange={handleChange}
             ></input>
             <textarea
               className='form__textarea'
               placeholder='Indicaciones especiales'
-              name='extra-info'
-              id='extra-info-input'
+              name='specialInstructions'
+              id='specialInstructions'
               cols='30'
               rows='10'
               minLength='5'
               maxLength='70'
+              onChange={handleChange}
             ></textarea>
           </fieldset>
         </form>

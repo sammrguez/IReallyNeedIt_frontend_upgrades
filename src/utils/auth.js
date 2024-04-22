@@ -16,7 +16,6 @@ export const registerAndLogin = (user) => {
   })
     .then((res) => {
       if (res.ok) {
-        console.log('info llego ok');
         return res.json();
       }
       return Promise.reject(res.status);
@@ -33,6 +32,13 @@ export const registerAndLogin = (user) => {
     });
 };
 
-export const checkToken = () => {
-  fetch;
+export const checkToken = (token) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then((res) => {
+    res.json();
+  });
 };
