@@ -4,6 +4,7 @@ import gmail from '../images/gmail.png';
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleLoginComponent from './GoogleLogin';
 import * as auth from '../utils/auth';
+import IRNIstickerPurple from '../images/stickers_IRNI_purple.png';
 
 function Register({ onClose, isOpen }) {
   const [userCredentials, setUserCredentials] = useState({});
@@ -36,6 +37,7 @@ function Register({ onClose, isOpen }) {
         onClose={onClose}
         isOpen={isOpen}
         header={'¿listo para adquirir increíbles productos?'}
+        logo={IRNIstickerPurple}
       >
         <GoogleLoginComponent
           onSuccess={handleSuccess}
@@ -43,7 +45,7 @@ function Register({ onClose, isOpen }) {
         />
         <button className='button button_type_sign'>
           <h3 className='button__text'> registrarte con</h3>
-          <img src={gmail} alt='simbolo de mail' />
+          <img className='button__icon' src={gmail} alt='simbolo de mail' />
         </button>
       </PopupForm>
     </section>

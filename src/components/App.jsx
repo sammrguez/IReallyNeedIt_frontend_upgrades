@@ -50,13 +50,12 @@ function App() {
     const storedToken = localStorage.getItem('jwt');
     if (storedToken) {
       setToken(storedToken);
+      console.log(token);
       async function getUser() {
         try {
-          const currentUser = await auth.checkToken(token).then((res) => {
-            console.log(res);
-            setLoggedIn(true);
-          });
-          setUser(currentUser);
+          const userData = await auth.checkToken(token);
+          setLoggedIn(true);
+          setUser(userData);
         } catch (error) {
           console.error('error');
         }

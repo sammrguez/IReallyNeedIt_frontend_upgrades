@@ -75,6 +75,9 @@
 /* register*/
 @import url('./blocks/register/register.css');
 
+/* profile*/
+@import url('./blocks/profile/profile.css');
+
 /* popup */
 @import url('./blocks/popup/popup.css');
 @import url('./blocks/popup/__container/popup__container.css');
