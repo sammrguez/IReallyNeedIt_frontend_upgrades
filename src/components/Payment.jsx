@@ -113,7 +113,7 @@ function Payment() {
               onChange={handleChange}
             ></textarea>
             <button className='button button_type_shop'>
-              <h3 className='button__text'> Siguiente </h3>
+              <h3 className='button__text'> Guardar</h3>
             </button>
           </fieldset>
         </form>

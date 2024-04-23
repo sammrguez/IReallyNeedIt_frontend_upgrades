@@ -16,7 +16,7 @@ function Register({ onClose, isOpen, handleLogin }) {
         if (data && data.token) {
           console.log(data);
           setUserCredentials(data);
-          handleLogin();
+
           navigate('/pago');
         }
       });

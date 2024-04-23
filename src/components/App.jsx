@@ -13,6 +13,7 @@ import Products from './Products';
 import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
+import Profile from './Profile';
 
 import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
@@ -31,7 +32,7 @@ function App() {
 
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(true);
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -88,10 +89,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
-
-  function handleLogin() {
-    setIsLoginOpen(true);
-  }
 
   /* manejar cart */
   function handleCartProducts(item) {
@@ -165,11 +162,14 @@ function App() {
   function openRegister() {
     setIsRegisterOpen(true);
   }
+  function openProfile() {
+    setIsProfileOpen(true);
+  }
 
   function closeAllPopups() {
     setSelectedCard(false);
     setIsRegisterOpen(false);
-    setIsLoginOpen(false);
+    setIsProfileOpen(false);
   }
 
   return (
@@ -213,15 +213,21 @@ function App() {
           <Route
             path='/registro'
             element={
-              <Register
-                onClose={closeAllPopups}
-                isOpen={isRegisterOpen}
-                handleLogin={handleLogin}
-              />
+              <Register onClose={closeAllPopups} isOpen={isRegisterOpen} />
             }
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
             <Route path='/pago' element={<Payment />} />
+            <Route
+              path='/perfil'
+              element={
+                <Profile
+                  onClose={closeAllPopups}
+                  isOpen={isProfileOpen}
+                  handleProfile={openProfile}
+                />
+              }
+            />
           </Route>
         </Routes>
         <Footer />
