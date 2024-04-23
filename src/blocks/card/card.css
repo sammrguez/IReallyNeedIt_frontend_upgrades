@@ -9,3 +9,7 @@
   border: 2px solid black;
   overflow: hidden;
 }
+
+.card:hover {
+  animation: zoom 1s ease;
+}
