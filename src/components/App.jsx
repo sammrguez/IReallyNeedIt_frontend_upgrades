@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 /* contextos  */
 import { CartContext } from '../contexts/CartContext';
@@ -20,6 +21,7 @@ import ProtectedRoute from './ProtectedRoute';
 import * as auth from '../utils/auth';
 
 function App() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   const [selectedCard, setSelectedCard] = useState(null);
@@ -32,7 +34,7 @@ function App() {
 
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-  const [isProfileOpen, setIsProfileOpen] = useState(true);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -156,9 +158,13 @@ function App() {
     setCart(updatedCart);
   }
 
+  /* terminan funciones cart */
+
   function handleCardClick(card) {
     setSelectedCard(card);
   }
+  /* funciones para abrir y cerrar popups */
+
   function openRegister() {
     setIsRegisterOpen(true);
   }
@@ -170,12 +176,13 @@ function App() {
     setSelectedCard(false);
     setIsRegisterOpen(false);
     setIsProfileOpen(false);
+    navigate('/');
   }
 
   return (
     <UserContext.Provider value={user}>
       <CartContext.Provider value={cart}>
-        <NavBar />
+        <NavBar onOpenProfile={openProfile} loggedIn={loggedIn} />
         <Routes>
           <Route
             path='/'
@@ -221,11 +228,7 @@ function App() {
             <Route
               path='/perfil'
               element={
-                <Profile
-                  onClose={closeAllPopups}
-                  isOpen={isProfileOpen}
-                  handleProfile={openProfile}
-                />
+                <Profile onClose={closeAllPopups} isOpen={isProfileOpen} />
               }
             />
           </Route>

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import GoogleLoginComponent from './GoogleLogin';
 import * as auth from '../utils/auth';
 
-function Register({ onClose, isOpen, handleLogin }) {
+function Register({ onClose, isOpen }) {
   const [userCredentials, setUserCredentials] = useState({});
   const navigate = useNavigate();
 

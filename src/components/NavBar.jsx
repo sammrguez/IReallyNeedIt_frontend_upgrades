@@ -5,21 +5,29 @@ import bag from '../images/bag.png';
 import userIcon from '../images/usuario.png';
 import { CartContext } from '../contexts/CartContext';
 
-function NavBar() {
+function NavBar({ onOpenProfile, loggedIn }) {
   const cart = useContext(CartContext);
+
+  function handleProfile() {
+    console.log(loggedIn);
+    onOpenProfile();
+  }
 
   return (
     <nav className='navBar'>
       <ul className='navBar__nav'>
-        <li className='navBar__item '>
-          <Link to='/perfil' className='navBar__link'>
-            <img
-              className='navBar__icon'
-              src={userIcon}
-              alt='icono tu perfil'
-            />
-          </Link>
-        </li>
+        {loggedIn && (
+          <li className='navBar__item' onClick={handleProfile}>
+            <Link to='/perfil' className='navBar__link'>
+              <img
+                className='navBar__icon'
+                src={userIcon}
+                alt='icono tu perfil'
+              />
+            </Link>
+          </li>
+        )}
+
         <li className='navBar__item '>
           <Link to='/productos' className='navBar__link'>
             {' '}
