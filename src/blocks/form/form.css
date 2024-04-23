@@ -1,9 +1,6 @@
 .form {
   display: flex;
   align-items: center;
-  background-color: #edcde1;
   max-width: 100%;
-
   z-index: 115;
-  border-radius: 40px;
 }

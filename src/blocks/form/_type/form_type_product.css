@@ -3,6 +3,6 @@
   width: 100%;
   min-width: 75%;
   flex-direction: row;
-
   position: relative;
+  background-color: #edcde1;
 }

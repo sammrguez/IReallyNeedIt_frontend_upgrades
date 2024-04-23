@@ -4,8 +4,15 @@
   font-size: 64px;
   text-align: center;
 }
-.form__header-sign {
+.form__header_type_sign {
   font-family: bugisnia;
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 500;
+}
+
+.form__header_type_profile {
+  font-family: bugisnia;
+  font-size: 52px;
+  font-weight: 500;
+  color: #e6d6cb;
 }

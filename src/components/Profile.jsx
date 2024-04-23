@@ -29,21 +29,25 @@ function Profile({ isOpen, onClose }) {
         logo={IRNIstickerGreen}
         type={'profile'}
       >
-        <button className='button button_type_sign' onClick={handleAddress}>
+        <button className='button button_type_profile' onClick={handleAddress}>
           <img
             className='button__icon'
             src={addressIcon}
             alt='simbolo de mail'
           />
-          <h3 className='button__text'>Direccion del usuario</h3>
+          <h3 className='button__text button__text_type_profile'>
+            Direccion del usuario
+          </h3>
         </button>
-        <button className='button button_type_sign' onClick={handleLogOut}>
+        <button className='button button_type_profile' onClick={handleLogOut}>
           <img
             className='button__icon'
             src={logOutIcon}
             alt='simbolo de mail'
           />
-          <h3 className='button__text'>Cerrar sesión</h3>
+          <h3 className='button__text button__text_type_profile'>
+            Cerrar sesión
+          </h3>
         </button>
       </PopupForm>
     </section>

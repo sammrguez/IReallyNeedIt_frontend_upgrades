@@ -39,7 +39,9 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
               </div>
 
               <div className='form__data'>
-                <h2 className='form__header'>{selectedCard.name}</h2>
+                <h2 className='form__header form__header_type_product'>
+                  {selectedCard.name}
+                </h2>
                 <p className='form__paragraph'>{selectedCard.description}</p>
                 {selectedCard.models.length > 0 && (
                   <>

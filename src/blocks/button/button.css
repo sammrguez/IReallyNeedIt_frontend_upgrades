@@ -1,16 +1,44 @@
 .button {
   width: 295px;
   height: 82px;
+  display: flex;
   background-color: #b7b5e7;
   cursor: pointer;
   border: none;
+  padding: 20px;
   border-radius: 20px;
   align-self: center;
   box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
 }
 
 .button_products {
-  height: 85px;
   background-color: #ed6a4c;
+}
+
+.button_type_shop {
+  background-color: #b7b5e7;
   margin-top: 0px;
+}
+
+.button_type_hotToday {
+  background-color: #ed6a4c;
+  text-decoration: none;
+}
+.button_type_profile {
+  background-color: #2f7e70;
+  width: 80%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
+  margin-top: 50px;
+}
+.button_type_sign {
+  background-color: #c4c2ee;
+  width: 80%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
+  margin-top: 50px;
 }

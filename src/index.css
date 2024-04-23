@@ -3,6 +3,10 @@
 
 /* main */
 @import url('./blocks/main/main.css');
+
+/* animation */
+@import url('./blocks/animation/animation.css');
+
 /* header */
 @import url('./blocks/navBar/navBar.css');
 @import url('./blocks/header/header.css');
@@ -90,6 +94,7 @@
 @import url('./blocks/form/form.css');
 @import url('./blocks/form/_type/form_type_product.css');
 @import url('./blocks/form/_type/form_type_sign.css');
+@import url('./blocks/form/_type/form_type_profile.css');
 @import url('./blocks/form/__image-container/form__image-container.css');
 @import url('./blocks/form/__image/form__image.css');
 @import url('./blocks/form/__data/form__data.css');

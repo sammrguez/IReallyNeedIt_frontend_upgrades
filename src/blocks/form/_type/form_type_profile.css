@@ -1,0 +1,6 @@
+.form_type_profile {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  background-color: #007a64;
+}
