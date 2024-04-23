@@ -41,14 +41,17 @@ function App() {
 
   const [user, setUser] = useState({});
 
+  /*funcion check token*/
+
   useEffect(() => {
     const storedToken = localStorage.getItem('jwt');
     if (storedToken) {
       setToken(storedToken);
       async function getUser() {
         try {
-          const currentUser = await api.getUserData(token).then((res) => {
+          const currentUser = await auth.checkToken(token).then((res) => {
             console.log(res);
+            setLoggedIn(true);
           });
           setUser(currentUser);
         } catch (error) {
@@ -87,7 +90,6 @@ function App() {
   }, [cart]);
 
   function handleLogin() {
-    setLoggedIn(true);
     setIsLoginOpen(true);
   }
 
