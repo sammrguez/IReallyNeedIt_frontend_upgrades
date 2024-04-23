@@ -2,22 +2,11 @@
   align-content: center;
   z-index: 115;
   border-radius: 40px;
-}
-.popup__container-product {
   padding: 20px;
-  background-color: #edcde1;
   max-width: 85%;
   min-height: 650px;
   max-height: 90%;
-}
-.popup__container-sign {
-  width: 65%;
-  height: 75%;
-  background-color: #b7b5e7;
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: center;
-  margin-top: 100px;
-  padding-top: 150px;
-  padding-bottom: 40px;
 }

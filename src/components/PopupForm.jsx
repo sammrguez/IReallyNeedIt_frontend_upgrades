@@ -9,11 +9,12 @@ function PopupForm({
   children,
 
   logo,
+  type,
 }) {
   return (
     <div className={`popup popup_type_signin ${isOpen ? 'popup_opened' : ''}`}>
-      <div className='overlay' onClick={onClose}></div>
-      <div className='popup__container popup__container-sign'>
+      <div className='overlay' onClick={onClose}></div>-
+      <div className={`popup__container popup__container_type_${type}`}>
         <img className='popup__logo' src={logo} />
         <form className='form form_type_sign'>
           <h2 className='form__header form__header-sign'>{header}</h2>

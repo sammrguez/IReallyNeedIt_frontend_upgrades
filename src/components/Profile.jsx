@@ -27,6 +27,7 @@ function Profile({ isOpen, onClose }) {
         isOpen={isOpen}
         onClose={onClose}
         logo={IRNIstickerGreen}
+        type={'profile'}
       >
         <button className='button button_type_sign' onClick={handleAddress}>
           <img

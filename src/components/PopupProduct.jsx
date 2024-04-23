@@ -28,7 +28,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
     >
       <div className='overlay' onClick={onClose}></div>
       <div
-        className='popup__container popup__container-product
+        className='popup__container popup__container_type_product
       '
       >
         <form className=' form form_type_product'>

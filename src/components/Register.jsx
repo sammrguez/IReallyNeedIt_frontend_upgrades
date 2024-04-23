@@ -38,6 +38,7 @@ function Register({ onClose, isOpen }) {
         isOpen={isOpen}
         header={'¿listo para adquirir increíbles productos?'}
         logo={IRNIstickerPurple}
+        type={'sign'}
       >
         <GoogleLoginComponent
           onSuccess={handleSuccess}
