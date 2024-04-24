@@ -9,7 +9,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
 
   const handleAddToCart = (event) => {
     event.preventDefault();
-    if (selectedModel) {
+    if (selectedCard.models.length < 1 || selectedModel) {
       const productToAdd = { ...selectedCard, selectedModel: selectedModel };
       onAddProductClick(productToAdd);
       onClose();
@@ -36,9 +36,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
               <img className='popup__image' src={selectedCard['photo-link']} />
             </div>
             <div className='popup__data'>
-              <h2 className='popup__header_type_product'>
-                {selectedCard.name}
-              </h2>
+              <h2 className='popup__header'>{selectedCard.name}</h2>
               <p className='popup__paragraph'>{selectedCard.description}</p>
 
               {selectedCard.models.length > 0 && (

@@ -90,21 +90,21 @@
 @import url('./blocks/popup/__container/_type/popup__container_type_product.css');
 @import url('./blocks/popup/__container/_type/popup__container_type_profile.css');
 @import url('./blocks/popup/__container/_type/popup__container_type_sign.css');
+@import url('./blocks/popup/__image-container/popup__image-container.css');
+@import url('./blocks/popup/__image/popup__image.css');
+@import url('./blocks/popup/__data/popup__data.css');
+@import url('./blocks/popup/__header/popup__header.css');
+@import url('./blocks/popup/__sub-header/popup__sub-header.css');
+@import url('./blocks/popup/__paragraph/popup__paragraph.css');
+@import url('./blocks/popup/__sizes/popup__sizes.css');
+@import url('./blocks/popup/__size/popup__size.css');
+@import url('./blocks/popup/__price/popup__price.css');
 
 /* forms */
 @import url('./blocks/form/form.css');
-@import url('./blocks/form/_type/form_type_product.css');
 @import url('./blocks/form/_type/form_type_sign.css');
 @import url('./blocks/form/_type/form_type_profile.css');
-@import url('./blocks/form/__image-container/form__image-container.css');
-@import url('./blocks/form/__image/form__image.css');
-@import url('./blocks/form/__data/form__data.css');
 @import url('./blocks/form/__header/form__header.css');
-@import url('./blocks/form/__paragraph/form__pharagraph.css');
-@import url('./blocks/form/__sub-header/form__sub-header.css');
-@import url('./blocks/form/__price/form__price.css');
-@import url('./blocks/form/__sizes/form__sizes.css');
-@import url('./blocks/form/__size/form__size.css');
 @import url('./blocks/form/__fieldset/form__fieldset.css');
 @import url('./blocks/form/__link/form__link.css');
 
