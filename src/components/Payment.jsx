@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
+import api from '../utils/api';
 
-function Payment() {
+function Payment({ handleForm }) {
+  const user = useContext(UserContext);
   const [address, setAddress] = useState({
     street: '',
     exteriorNumber: '',
@@ -18,6 +21,11 @@ function Payment() {
       [name]: value,
     }));
     console.log(address);
+  }
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    console.log(user);
+    handleForm(address);
   }
   return (
     <section className='payment'>
@@ -115,7 +123,10 @@ function Payment() {
               maxLength='70'
               onChange={handleChange}
             ></textarea>
-            <button className='button button_type_submit'>
+            <button
+              className='button button_type_submit'
+              onClick={handleSubmit}
+            >
               <h3 className='button__text'> Guardar</h3>
             </button>
           </fieldset>

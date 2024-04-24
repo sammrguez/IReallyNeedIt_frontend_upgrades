@@ -1,5 +1,6 @@
 .popup__container_type_product {
-  width: 65%;
+  max-width: 50%;
+  width: 1000px;
   height: 96%;
   flex-direction: column;
   background-color: white;

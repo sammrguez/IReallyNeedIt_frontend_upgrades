@@ -179,6 +179,16 @@ function App() {
     setIsProfileOpen(false);
     navigate('/productos');
   }
+  /* funciones para editar usuario */
+  async function handleAddressForm(address) {
+    console.log(address);
+    try {
+      const userWithAdress = await api.setDirection(token, address);
+      console.log(userWithAdress);
+    } catch (error) {
+      console.log('no se pudo obtener');
+    }
+  }
 
   return (
     <UserContext.Provider value={user}>
@@ -226,7 +236,10 @@ function App() {
             }
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
-            <Route path='/pago' element={<Payment />} />
+            <Route
+              path='/pago'
+              element={<Payment handleForm={handleAddressForm} />}
+            />
             <Route
               path='/perfil'
               element={
