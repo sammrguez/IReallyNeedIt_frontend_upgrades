@@ -9,10 +9,13 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
 
   const handleAddToCart = (event) => {
     event.preventDefault();
-    const productToAdd = { ...selectedCard, selectedModel: selectedModel };
-    onAddProductClick(productToAdd);
-
-    onClose();
+    if (selectedModel) {
+      const productToAdd = { ...selectedCard, selectedModel: selectedModel };
+      onAddProductClick(productToAdd);
+      onClose();
+    } else {
+      console.log('no has seleccionado ningun modelo');
+    }
   };
 
   const handleModelSelection = (model) => {
@@ -45,7 +48,9 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
                     {selectedCard.models.map((model, index) => {
                       return (
                         <li
-                          className='popup__size'
+                          className={`popup__size ${
+                            selectedModel === model ? 'size-selected' : ''
+                          }`}
                           key={index}
                           onClick={() => handleModelSelection(model)}
                         >
