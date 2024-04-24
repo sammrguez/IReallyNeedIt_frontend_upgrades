@@ -6,14 +6,14 @@ import IRNIstickerGreen from '../images/stickers_IRNI_green.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
-function Profile({ isOpen, onClose }) {
+function Profile({ isOpen, onClose, onLogOut }) {
   const navigate = useNavigate();
   const user = useContext(UserContext);
 
   function handleLogOut(evt) {
     evt.preventDefault();
-    console.log('aqui cierra sesion');
-    console.log(user);
+    onLogOut();
+    navigate('/');
   }
   function handleAddress(evt) {
     evt.preventDefault();

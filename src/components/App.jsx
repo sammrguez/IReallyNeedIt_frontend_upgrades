@@ -40,8 +40,6 @@ function App() {
 
   const [token, setToken] = useState(localStorage.getItem('jwt'));
 
-  /* inicios de sesion  */
-
   const [user, setUser] = useState({});
 
   /*funcion check token*/
@@ -62,8 +60,13 @@ function App() {
       }
       getUser();
     }
-  }, [token]);
+  }, [token, loggedIn, navigate]);
 
+  function logOut() {
+    console.log('cerro sesion');
+    localStorage.removeItem('jwt');
+    setLoggedIn(false);
+  }
   useEffect(() => {
     async function fetchProducts() {
       try {
@@ -227,7 +230,11 @@ function App() {
             <Route
               path='/perfil'
               element={
-                <Profile onClose={closeAllPopups} isOpen={isProfileOpen} />
+                <Profile
+                  onClose={closeAllPopups}
+                  isOpen={isProfileOpen}
+                  onLogOut={logOut}
+                />
               }
             />
           </Route>
