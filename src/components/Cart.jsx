@@ -1,18 +1,29 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import texture from '../images/textura_IRNI.jpg';
 import CartItem from './CartItem';
 import { CartContext } from '../contexts/CartContext';
 
-function Cart({ onAddClick, onRemoveClick, onDeleteClick, onOpenRegister }) {
+function Cart({
+  onAddClick,
+  onRemoveClick,
+  loggedIn,
+  onDeleteClick,
+  onOpenRegister,
+}) {
   const cart = useContext(CartContext);
+  const navigate = useNavigate();
 
-  function handlecart() {
-    if (cart.length === 0) {
+  function handlecart(evt) {
+    evt.preventDefault();
+    if (loggedIn) {
+      navigate('/pago');
+    } else if (cart.length === 0) {
       console.log('no hay nada en el carrito');
     } else {
       console.log(cart);
       onOpenRegister();
+      navigate('/registro');
     }
   }
 
@@ -46,11 +57,10 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick, onOpenRegister }) {
               )}`}
             </p>
           </div>
-          <Link className='form__link' to='/registro '>
-            <button className='button button_type_pay' onClick={handlecart}>
-              <h3 className='button__text'>Ir al pago</h3>
-            </button>
-          </Link>
+
+          <button className='button button_type_pay' onClick={handlecart}>
+            <h3 className='button__text'>Ir al pago</h3>
+          </button>
         </div>
       </div>
     </section>

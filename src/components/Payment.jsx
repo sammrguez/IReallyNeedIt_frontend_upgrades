@@ -23,7 +23,10 @@ function Payment() {
     <section className='payment'>
       <div className='payment__container'>
         <form className='form form_type_payment'>
-          <h3 className='form__header'> Dirección de envio</h3>
+          <h3 className='form__header form__header_type_address'>
+            {' '}
+            Dirección de envio
+          </h3>
           <fieldset className='form__fieldset'>
             <input
               className='form__input form__input_type_text'
@@ -112,7 +115,7 @@ function Payment() {
               maxLength='70'
               onChange={handleChange}
             ></textarea>
-            <button className='button button_type_shop'>
+            <button className='button button_type_submit'>
               <h3 className='button__text'> Guardar</h3>
             </button>
           </fieldset>

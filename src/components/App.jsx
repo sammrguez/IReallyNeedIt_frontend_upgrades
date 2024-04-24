@@ -63,7 +63,6 @@ function App() {
   }, [token, loggedIn, navigate]);
 
   function logOut() {
-    console.log('cerro sesion');
     localStorage.removeItem('jwt');
     setLoggedIn(false);
   }
@@ -216,6 +215,7 @@ function App() {
                 onRemoveClick={removeOne}
                 onDeleteClick={deleteOne}
                 onOpenRegister={openRegister}
+                loggedIn={loggedIn}
               />
             }
           />
