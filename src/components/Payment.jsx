@@ -126,6 +126,7 @@ function Payment({ handleForm }) {
             <button
               className='button button_type_submit'
               onClick={handleSubmit}
+              type='submit'
             >
               <h3 className='button__text'> Guardar</h3>
             </button>
