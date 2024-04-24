@@ -1,23 +1,26 @@
 .form__header {
   color: #007a64;
-  font-family: marquisette;
+  font-family: bugisnia;
   font-size: 64px;
   text-align: center;
 }
 .form__header_type_sign {
-  font-family: bugisnia;
   font-size: 52px;
   font-weight: 500;
 }
 
 .form__header_type_profile {
-  font-family: bugisnia;
   font-size: 52px;
   font-weight: 500;
   color: #edcde1;
 }
 
-.form__header_type_product {
-  font-size: 50px;
+.popup__header_type_product {
+  color: #007a64;
+  font-family: marquisette;
+  font-size: 58px;
+  text-align: center;
+  font-size: 45px;
   margin-top: 20px;
+  height: auto;
 }

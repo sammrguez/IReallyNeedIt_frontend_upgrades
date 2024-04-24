@@ -175,7 +175,7 @@ function App() {
     setSelectedCard(false);
     setIsRegisterOpen(false);
     setIsProfileOpen(false);
-    navigate('/');
+    navigate('/productos');
   }
 
   return (

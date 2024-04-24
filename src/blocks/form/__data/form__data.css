@@ -1,5 +1,9 @@
-.form__data {
+.popup__data {
   display: flex;
+  max-width: 95%;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 30px;
+
+  gap: 12px;
 }

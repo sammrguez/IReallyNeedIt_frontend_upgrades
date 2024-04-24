@@ -1,9 +1,9 @@
-.form__sizes {
+.popup__sizes {
   margin-top: 20px;
-  width: 100%;
+  justify-content: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 100px);
-  grid-auto-rows: 70px;
+  grid-template-columns: repeat(auto-fit, 90px);
+  grid-auto-rows: 60px;
   gap: 10px;
   width: 100%;
 }

@@ -1,10 +1,11 @@
-.form__size {
+.popup__size {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  color: #ed6a4c;
+  color: #595b56;
+  font-size: 17px;
   background-color: #edcde1;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }

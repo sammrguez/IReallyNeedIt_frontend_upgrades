@@ -1,7 +1,7 @@
-.form__price {
-  margin-top: 40px;
+.popup__price {
   color: #ed6a4c;
   font-weight: bold;
-  font-size: 44px;
+  font-size: 36px;
   align-self: center;
+  height: auto;
 }

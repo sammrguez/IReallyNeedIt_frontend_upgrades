@@ -1,7 +1,7 @@
-.form__sub-header {
-  margin-top: 50px;
+.popup__sub-header {
   color: #595b56;
-  font-size: 40px;
-  text-align: left;
+  font-size: 30px;
   font-weight: bold;
+  max-width: 90%;
+  height: auto;
 }

@@ -47,7 +47,7 @@ function Cart({ onAddClick, onRemoveClick, onDeleteClick, onOpenRegister }) {
             </p>
           </div>
           <Link className='form__link' to='/registro '>
-            <button className='button button_type_shop' onClick={handlecart}>
+            <button className='button button_type_pay' onClick={handlecart}>
               <h3 className='button__text'>Ir al pago</h3>
             </button>
           </Link>
