@@ -14,5 +14,10 @@
   font-family: bugisnia;
   font-size: 52px;
   font-weight: 500;
-  color: #e6d6cb;
+  color: #edcde1;
+}
+
+.form__header_type_product {
+  font-size: 50px;
+  margin-top: 20px;
 }

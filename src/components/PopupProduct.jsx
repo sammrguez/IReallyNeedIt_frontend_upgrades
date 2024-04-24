@@ -1,5 +1,5 @@
 import React from 'react';
-import iphoneCase from '../images/case.png';
+
 import { useState, useEffect, useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 
@@ -27,11 +27,20 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
       } `}
     >
       <div className='overlay' onClick={onClose}></div>
-      <div
-        className='popup__container popup__container_type_product
-      '
-      >
-        <form className=' form form_type_product'>
+      <div className='popup__container popup__container_type_product'>
+        {selectedCard && (
+          <>
+            <div className='popup__image-container'>
+              <img className='popup__image' src={selectedCard['photo-link']} />
+            </div>
+            <div className='form__data'>
+              <h2 className='form__header form__header_type_product'>
+                {selectedCard.name}
+              </h2>
+            </div>
+          </>
+        )}
+        {/* <form className=' form form_type_product'>
           {selectedCard && (
             <>
               <div className='form__image-container'>
@@ -41,9 +50,6 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
               <div className='form__data'>
                 <h2 className='form__header form__header_type_product'>
                   {selectedCard.name}
-                </h2>
-                <p className='form__paragraph'>{selectedCard.description}</p>
-                {selectedCard.models.length > 0 && (
                   <>
                     <h3 className='form__sub-header'>Modelo</h3>
 
@@ -75,8 +81,11 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
                 </button>
               </div>
             </>
-          )}
-        </form>
+          )}    </h2>
+                <p className='form__paragraph'>{selectedCard.description}</p>
+                {selectedCard.models.length > 0 && (
+            
+        </form> */}
       </div>
     </div>
   );

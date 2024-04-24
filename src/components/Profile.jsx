@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PopupForm from './PopupForm';
 import addressIcon from '../images/address.png';
-import logOutIcon from '../images/salir.png';
+import logOutIcon from '../images/cerrar-sesion.png';
 import IRNIstickerGreen from '../images/stickers_IRNI_green.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';

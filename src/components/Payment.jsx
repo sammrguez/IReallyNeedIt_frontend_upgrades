@@ -118,14 +118,6 @@ function Payment() {
           </fieldset>
         </form>
       </div>
-      {/* <PopupForm
-        onClose={onClose}
-        isOpen={isOpen}
-        header={'pagina de pagos'}
-        textButton={'iniciar sesión con'}
-        linkTo={'/registro'}
-        linkToText={'regístrate'}
-      ></PopupForm> */}
     </section>
   );
 }
