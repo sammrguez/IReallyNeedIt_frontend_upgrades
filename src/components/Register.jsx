@@ -16,8 +16,8 @@ function Register({ onClose, isOpen }) {
       auth.registerAndLogin(user).then((data) => {
         if (data && data.token) {
           console.log(data);
-          setUserCredentials(data);
           navigate('/pago');
+          setUserCredentials(data);
         }
       });
     } catch (error) {

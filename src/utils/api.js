@@ -39,7 +39,6 @@ class Api {
     return this._makeRequest('/users/me', token);
   }
   setDirection(token, address) {
-    console.log(address);
     return this._makeRequest('/users/me/address', token, 'PATCH', address);
   }
 }

@@ -181,10 +181,9 @@ function App() {
   }
   /* funciones para editar usuario */
   async function handleAddressForm(address) {
-    console.log(address);
     try {
       const userWithAdress = await api.setDirection(token, address);
-      console.log(userWithAdress);
+      setUser(userWithAdress);
     } catch (error) {
       console.log('no se pudo obtener');
     }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import api from '../utils/api';
 
 function Payment({ handleForm }) {
   const user = useContext(UserContext);
@@ -14,13 +13,19 @@ function Payment({ handleForm }) {
     state: '',
     specialInstructions: '',
   });
+
+  useEffect(() => {
+    if (user.address) {
+      setAddress(user.address);
+    }
+  }, [user]);
+
   function handleChange(evt) {
     const { name, value } = evt.target;
     setAddress((prevAddress) => ({
       ...prevAddress,
       [name]: value,
     }));
-    console.log(address);
   }
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -30,13 +35,15 @@ function Payment({ handleForm }) {
   return (
     <section className='payment'>
       <div className='payment__container'>
-        <form className='form form_type_payment'>
+        <form className='form form_type_payment' onSubmit={handleSubmit}>
           <h3 className='form__header form__header_type_address'>
             {' '}
             Dirección de envio
           </h3>
           <fieldset className='form__fieldset'>
             <input
+              required
+              value={address.street}
               className='form__input form__input_type_text'
               type='text'
               placeholder='calle'
@@ -44,10 +51,10 @@ function Payment({ handleForm }) {
               name='street'
               minLength='5'
               maxLength='50'
-              required
               onChange={handleChange}
             ></input>
             <input
+              value={address.exteriorNumber}
               className='form__input form__input_type_text short'
               type='text'
               placeholder='No. exterior'
@@ -59,6 +66,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>
             <input
+              value={address.interiorNumber}
               className='form__input form__input_type_text short'
               type='text'
               placeholder='No. interior'
@@ -69,6 +77,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>
             <input
+              value={address.postalCode}
               className='form__input form__input_type_text'
               type='text'
               placeholder='Código postal'
@@ -80,6 +89,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>
             <input
+              value={address.neighborhood}
               className='form__input form__input_type_text'
               type='text'
               placeholder='Colonia'
@@ -91,6 +101,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>
             <input
+              value={address.municipality}
               className='form__input form__input_type_text'
               type='text'
               placeholder='Alcaldía o municipio'
@@ -102,6 +113,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>{' '}
             <input
+              value={address.state}
               className='form__input form__input_type_text'
               type='text'
               placeholder='Estado'
@@ -113,6 +125,7 @@ function Payment({ handleForm }) {
               onChange={handleChange}
             ></input>
             <textarea
+              value={address.specialInstructions}
               className='form__textarea'
               placeholder='Indicaciones especiales'
               name='specialInstructions'
@@ -123,11 +136,7 @@ function Payment({ handleForm }) {
               maxLength='70'
               onChange={handleChange}
             ></textarea>
-            <button
-              className='button button_type_submit'
-              onClick={handleSubmit}
-              type='submit'
-            >
+            <button className='button button_type_submit' type='submit'>
               <h3 className='button__text'> Guardar</h3>
             </button>
           </fieldset>
