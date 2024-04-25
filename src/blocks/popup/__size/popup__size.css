@@ -13,3 +13,9 @@
   font-weight: bold;
   background-color: #b7b5e7;
 }
+
+@media screen and (max-width: 480px) {
+  .popup__size {
+    font-size: 14px;
+  }
+}

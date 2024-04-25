@@ -1,4 +1,6 @@
 .popup__image {
   max-width: 400px;
-  object-fit: fill;
+  height: 95%;
+  object-fit: contain;
+  align-self: center;
 }

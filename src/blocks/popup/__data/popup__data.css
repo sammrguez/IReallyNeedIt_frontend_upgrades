@@ -4,5 +4,11 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
-  gap: 12px;
+  gap: 8px;
+}
+
+@media screen and (max-width: 1085px) {
+  .popup__data {
+    margin-bottom: 15px;
+  }
 }

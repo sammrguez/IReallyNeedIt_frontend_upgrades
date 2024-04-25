@@ -1,9 +1,15 @@
 .popup__header {
   color: #007a64;
   font-family: marquisette;
-  font-size: 58px;
+  font-size: 54px;
   text-align: center;
-  font-size: 45px;
+  font-size: 42px;
   margin-top: 20px;
   height: auto;
+}
+
+@media screen and (max-width: 480px) {
+  .popup__header {
+    font-size: 38px;
+  }
 }
