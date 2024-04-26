@@ -5,3 +5,9 @@
   flex-direction: column;
   width: 70%;
 }
+
+@media screen and (max-width: 1100px) {
+  .header__images {
+    margin-top: 50px;
+  }
+}

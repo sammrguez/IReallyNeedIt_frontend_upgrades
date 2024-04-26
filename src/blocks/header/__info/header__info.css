@@ -1,5 +1,6 @@
 .header__info {
-  width: 90%;
+  max-width: 500px;
+
   font-size: 36px;
   color: #595b56;
   text-align: center;

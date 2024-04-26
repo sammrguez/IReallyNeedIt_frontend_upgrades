@@ -1,6 +1,11 @@
 .header {
-  background-color: #b7b5e7;
   width: 100%;
-  height: 790px;
+  background-color: #b7b5e7;
+}
+
+.header__container {
   display: flex;
+  background-color: #b7b5e7;
+  flex-direction: row;
+  min-height: 750px;
 }
