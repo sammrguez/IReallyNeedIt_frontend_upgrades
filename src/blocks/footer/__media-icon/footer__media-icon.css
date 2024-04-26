@@ -1,4 +1,19 @@
 .footer__media-icon {
   width: 64px;
   height: 64px;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 490px) and (max-width: 700px) {
+  .footer__media-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 490px) {
+  .footer__media-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
