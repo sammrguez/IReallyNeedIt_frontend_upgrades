@@ -5,3 +5,8 @@
   font-size: 32px;
   text-align: center;
 }
+.cartItem__sub-header {
+  color: #595b56;
+  font-size: 25px;
+  font-family: marquisette;
+}

@@ -30,7 +30,6 @@ function NavBar({ onOpenProfile, loggedIn }) {
 
         <li className='navBar__item '>
           <Link to='/productos' className='navBar__link'>
-            {' '}
             Productos
           </Link>
         </li>
