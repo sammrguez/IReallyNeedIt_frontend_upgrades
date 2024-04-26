@@ -10,12 +10,22 @@
   grid-auto-rows: 590px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 860px) {
   .products__container {
-    grid-template-columns: repeat(auto-fit, 140px);
-    grid-auto-rows: 300px;
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, 330px);
+    grid-auto-rows: 500px;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+  }
+}
 
-    padding: 0px;
+@media screen and (max-width: 650px) {
+  .products__container {
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-auto-rows: 330px;
+    gap: 25px;
+    margin-bottom: 50px;
+    padding: 10px;
   }
 }

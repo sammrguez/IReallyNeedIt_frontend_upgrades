@@ -4,3 +4,9 @@
   width: 100%;
   object-fit: fill;
 }
+
+@media screen and (max-width: 650px) {
+  .decoration-band {
+    height: 60px;
+  }
+}
