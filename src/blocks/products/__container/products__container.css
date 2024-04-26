@@ -9,3 +9,13 @@
   gap: 40px;
   grid-auto-rows: 590px;
 }
+
+@media screen and (max-width: 400px) {
+  .products__container {
+    grid-template-columns: repeat(auto-fit, 140px);
+    grid-auto-rows: 300px;
+    gap: 10px;
+
+    padding: 0px;
+  }
+}
