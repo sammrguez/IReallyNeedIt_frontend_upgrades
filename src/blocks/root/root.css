@@ -47,7 +47,10 @@ span {
   background-color: #e6d6cb;
   font-family: matter;
   overflow: hidden;
-  /* min-width: 300px;
-  max-width: 1280px;
-  margin: auto; */
+}
+root.popup_opened {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  /* Evitar el scroll del cuerpo cuando el popup está abierto */
 }
