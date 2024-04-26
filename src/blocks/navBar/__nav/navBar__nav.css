@@ -1,12 +1,16 @@
 .navBar__nav {
-  max-width: 90%;
   width: 1000px;
   margin: 0;
   display: flex;
   flex-direction: row;
   list-style: none;
   align-self: center;
-
   align-items: center;
-  justify-content: space-between;
+}
+
+@media only screen and (max-width: 320px) {
+  .navBar__nav {
+    max-width: 100%;
+    height: 50px;
+  }
 }

@@ -7,8 +7,10 @@ import logoBlack from '../images/LOGO_IRNI_short.png';
 function Footer() {
   return (
     <section className='footer'>
-      <img src={logoBlack} className='footer__logo' />
       <ul className='footer__social-media'>
+        <li className='footer__item'>
+          <img src={logoBlack} className='footer__logo' />
+        </li>
         <li className='footer__item'>
           <Link
             className='footer__link'

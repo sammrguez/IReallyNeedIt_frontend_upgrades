@@ -14,3 +14,34 @@
   z-index: 100;
   box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
 }
+
+@media only screen and (max-width: 650px) {
+  .navBar {
+    max-width: 95%;
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .navBar {
+    max-width: 95%;
+    height: 65px;
+    box-shadow: 3px 5px 1px rgba(0, 0, 0, 1);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 450px) {
+  .navBar {
+    max-width: 95%;
+    height: 50px;
+    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navBar {
+    max-width: 95%;
+    height: 50px;
+    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
+  }
+}

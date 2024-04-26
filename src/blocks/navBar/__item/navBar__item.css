@@ -1,9 +1,9 @@
 .navBar__item {
-  width: 250px;
-  height: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .navBar__item:hover {

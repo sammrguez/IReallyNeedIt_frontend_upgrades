@@ -24,7 +24,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
 
   const handleMouseMove = (e) => {
     if (isScrolling) {
-      window.scrollBy(0, e.movementY * 2); // Ajusta la velocidad de desplazamiento según desees
+      window.scrollBy(0, e.movementY * 2);
     }
   };
 
