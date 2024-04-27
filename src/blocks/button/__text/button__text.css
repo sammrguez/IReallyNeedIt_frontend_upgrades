@@ -3,10 +3,34 @@
   font-size: 26px;
   color: #000;
   margin-right: 20px;
-  max-width: 250px;
+
   margin: auto;
 }
 
 .button__text_type_profile {
   color: #edcde1;
+}
+
+@media screen and (max-width: 1000px) {
+  .button__text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .button__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button__text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button__text {
+    font-size: 12px;
+  }
 }

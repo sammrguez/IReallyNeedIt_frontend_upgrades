@@ -5,9 +5,10 @@
   align-self: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .popup__image {
-    max-width: 90%;
-    height: 250px;
+    width: 100%;
+    object-fit: contain;
+    height: 95%;
   }
 }

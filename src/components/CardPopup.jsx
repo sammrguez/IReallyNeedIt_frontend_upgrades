@@ -54,10 +54,10 @@ function CardPopup({ selectedCard, onAddProductClick, onClose }) {
             Los gastos de envío se calculan en la pantalla de pago
           </p>
         </div>
+        <button className='button button_type_shop' onClick={handleAddToCart}>
+          <h3 className='button__text'> agregar a carrito </h3>
+        </button>
       </div>
-      <button className='button button_type_shop' onClick={handleAddToCart}>
-        <h3 className='button__text'> agregar a carrito </h3>
-      </button>
     </>
   );
 }

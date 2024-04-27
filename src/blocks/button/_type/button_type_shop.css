@@ -8,3 +8,9 @@
 .button_type_submit {
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 320px) {
+  .button_type_shop {
+    margin-bottom: 20px;
+  }
+}

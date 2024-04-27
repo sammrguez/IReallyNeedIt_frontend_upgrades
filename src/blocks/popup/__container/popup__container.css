@@ -4,7 +4,8 @@
   border-radius: 40px;
   padding: 20px;
   max-width: 85%;
-  min-height: 650px;
+  height: auto;
+  min-height: 80%;
   position: relative;
   display: flex;
 }
