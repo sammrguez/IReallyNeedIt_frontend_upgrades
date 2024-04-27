@@ -14,6 +14,7 @@ function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto');
   }, [selectedCard]);
+
   const handleMouseEnter = () => {
     setIsScrolling(true);
   };

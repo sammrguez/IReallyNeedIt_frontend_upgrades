@@ -8,8 +8,8 @@
   height: auto;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
   .popup__header {
-    font-size: 38px;
+    font-size: 30px;
   }
 }
