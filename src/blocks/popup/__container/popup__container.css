@@ -3,9 +3,7 @@
   z-index: 115;
   border-radius: 40px;
   padding: 20px;
-  max-width: 85%;
-  height: auto;
-  min-height: 80%;
+
   position: relative;
   display: flex;
 }

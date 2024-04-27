@@ -13,14 +13,12 @@
 @media screen and (max-width: 700px) {
   .popup__container_type_product {
     width: 60%;
-    max-height: 80%;
   }
 }
 
 @media screen and (max-width: 450px) {
   .popup__container_type_product {
     width: 65%;
-    height: 90%;
   }
 }
 
@@ -38,24 +36,3 @@
   height: 100%;
   align-items: center;
 }
-/* 
-@media screen and (max-width: 900px) {
-  .popup__container_type_product {
-    max-width: 70%;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .popup__container_type_product {
-    max-width: 85%;
-    max-height: 450px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .popup__container_type_product {
-    max-width: 90%;
-    height: 500px;
-    max-height: 80%;
-  }
-} */

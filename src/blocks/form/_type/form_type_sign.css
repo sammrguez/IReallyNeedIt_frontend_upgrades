@@ -1,6 +1,12 @@
 .form_type_sign {
   display: flex;
-  width: 80%;
+  width: 90%;
   flex-direction: column;
   background-color: #b7b5e7;
+}
+
+@media screen and (max-width: 400px) {
+  .form_type_sign {
+    width: 98%;
+  }
 }

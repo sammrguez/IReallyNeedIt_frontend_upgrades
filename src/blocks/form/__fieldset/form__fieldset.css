@@ -1,11 +1,11 @@
 .form__fieldset {
-  width: 95%;
+  width: 100%;
   border: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 10px;
+
   justify-content: center;
 }
 .form__link {
