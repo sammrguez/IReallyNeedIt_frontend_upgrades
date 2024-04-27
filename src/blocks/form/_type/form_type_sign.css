@@ -1,8 +1,11 @@
 .form_type_sign {
   display: flex;
   width: 90%;
+  height: 100%;
+  min-height: 200px;
   flex-direction: column;
   background-color: #b7b5e7;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 400px) {
