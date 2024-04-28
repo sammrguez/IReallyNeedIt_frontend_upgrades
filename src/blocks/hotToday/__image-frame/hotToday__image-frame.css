@@ -4,3 +4,11 @@
   height: 600px;
   background-color: #007a64;
 }
+
+@media screen and (max-width: 400px) {
+  .hotToday__image-frame {
+    width: 70%;
+    display: flex;
+    height: auto;
+  }
+}

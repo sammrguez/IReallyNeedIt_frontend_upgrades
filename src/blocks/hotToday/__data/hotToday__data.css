@@ -1,7 +1,17 @@
 .hotToday__data {
   display: flex;
+  margin: auto;
   flex-direction: column;
   margin-top: 80px;
   width: 60%;
   height: 480px;
+}
+
+@media screen and (max-width: 400px) {
+  .hotToday__data {
+    width: 100%;
+    display: flex;
+    height: auto;
+    margin-top: 0px;
+  }
 }

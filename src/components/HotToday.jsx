@@ -12,22 +12,18 @@ function HotToday({ onAddProductClick, promoProduct }) {
   return (
     <section className='hotToday'>
       <img className='decoration-band' src={texture} />
+      <h2 className='hotToday__header'>Presentando el Producto del Mes</h2>
       <div className='hotToday__content'>
         <div className='hotToday__images'>
-          <div className='hotToday__image-frame'>
-            <div className='hotToday__image-container'>
-              <img
-                className='hotToday__image'
-                src={promoProduct['photo-link']}
-              />
-            </div>
+          <div className='hotToday__image-container'>
+            <img className='hotToday__image' src={promoProduct['photo-link']} />
           </div>
+
           <button className='button button_type_shop' onClick={handleAddToCart}>
             <h3 className='button__text'> agregar a carrito </h3>
           </button>
         </div>
         <div className='hotToday__data'>
-          <h2 className='hotToday__header'>Presentando el Producto del Mes</h2>
           <h3 className='hotToday__text'>
             ¡Los imprescindibles de la temporada están aquí! Explora lo más
             destacado de hoy en

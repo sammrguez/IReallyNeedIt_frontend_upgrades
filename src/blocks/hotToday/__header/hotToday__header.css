@@ -1,9 +1,17 @@
 .hotToday__header {
-  width: 500px;
-  height: 220px;
+  max-width: 70%;
+
   color: #007a64;
   font-family: marquisette;
   text-align: center;
-  font-size: 64px;
+  font-size: 80px;
   margin: auto;
+}
+
+@media screen and (max-width: 400px) {
+  .hotToday__header {
+    max-width: 90%;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 }

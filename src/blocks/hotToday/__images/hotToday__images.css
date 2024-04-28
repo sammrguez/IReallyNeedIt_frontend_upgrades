@@ -1,5 +1,16 @@
 .hotToday__images {
+  width: 50%;
   display: flex;
   flex-direction: column;
   display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .hotToday__images {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    margin: 0px auto 10px;
+  }
 }
