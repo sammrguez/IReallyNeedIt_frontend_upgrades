@@ -4,9 +4,22 @@
   font-size: 64px;
   text-align: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .form__header {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .form__header {
+    font-size: 36px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .form__header {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 

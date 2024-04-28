@@ -4,6 +4,14 @@
   margin-left: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .button__icon {
+    height: 26px;
+    width: 26px;
+    margin-left: 5px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .button__icon {
     height: 20px;
