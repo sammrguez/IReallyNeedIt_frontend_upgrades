@@ -7,14 +7,7 @@
   box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
   margin-top: 50px;
 }
-/* 
-@media screen and (max-width: 1000px) {
-  .button_type_sign {
-    height: 65px;
-    padding: 10px;
-    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
-  }
-} */
+
 @media screen and (max-width: 800px) {
   .button_type_sign {
     height: 55px;
