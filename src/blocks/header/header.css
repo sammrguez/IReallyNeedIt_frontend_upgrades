@@ -1,11 +1,17 @@
 .header {
   width: 100%;
+
   background-color: #b7b5e7;
 }
 
 .header__container {
   display: flex;
+  max-height: 800px;
+
   background-color: #b7b5e7;
-  flex-direction: row;
-  min-height: 750px;
+}
+
+.header__image-background {
+  width: 100%;
+  height: auto;
 }
