@@ -5,14 +5,16 @@
   align-items: center;
   max-width: 85%;
   background-color: #eee3db;
-
   margin: auto;
 }
-.cart__added-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: center;
-  padding: 30px;
+@media screen and (max-width: 800px) {
+  .cart__container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cart__container {
+    max-width: 95%;
+  }
 }

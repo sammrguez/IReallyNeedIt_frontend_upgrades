@@ -1,8 +1,13 @@
 .cart__header {
   font-family: bugisnia;
-  max-width: 350px;
 
   font-size: 74px;
   color: #007a64;
   padding-top: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .cart__header {
+    font-size: 28px;
+  }
 }

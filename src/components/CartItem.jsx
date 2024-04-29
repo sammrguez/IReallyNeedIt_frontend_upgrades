@@ -52,7 +52,7 @@ function CartItem({
             </button>
           </div>
           <button
-            className='cartItem__quantitybox-button cartItem__quantitybox-button_delete'
+            className='cartItem__quantitybox-button'
             onClick={handleDelete}
           >
             <img className='cartItem__delete-icon' src={trashIcon} />

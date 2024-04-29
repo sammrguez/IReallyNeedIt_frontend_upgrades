@@ -1,0 +1,8 @@
+.cart__added-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  align-self: center;
+  padding: 20px;
+}

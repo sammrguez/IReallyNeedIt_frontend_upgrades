@@ -118,6 +118,7 @@
 @import url('./blocks/cart/__total-data/cart__total-data.css');
 @import url('./blocks/cart/__total-header/cart__total-header.css');
 @import url('./blocks/cart/__amount/cart__amount.css');
+@import url('./blocks/cart/__added-items/cart__added-items.css');
 
 /* cart item*/
 @import url('./blocks/cartItem/cartItem.css');
@@ -125,6 +126,7 @@
 @import url('./blocks/cartItem/__image/cartItem__image.css');
 @import url('./blocks/cartItem/__data/cartItem__data.css');
 @import url('./blocks/cartItem/__header/cartItem__header.css');
+@import url('./blocks/cartItem/__sub-header/cartItem__sub-header.css');
 @import url('./blocks/cartItem/__price/cartItem__price.css');
 
 /* cart item quantifier*/

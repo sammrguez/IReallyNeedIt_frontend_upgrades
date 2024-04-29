@@ -1,0 +1,11 @@
+.cartItem__sub-header {
+  color: #595b56;
+  font-size: 25px;
+  font-family: marquisette;
+}
+
+@media screen and (max-width: 400px) {
+  .cartItem__sub-header {
+    font-size: 12px;
+  }
+}
