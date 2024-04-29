@@ -1,4 +1,5 @@
 .button_type_hotToday {
+  max-width: 70%;
   background-color: #ed6a4c;
   text-decoration: none;
 }

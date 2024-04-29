@@ -6,7 +6,7 @@
 
 .header__container {
   display: flex;
-  max-height: 800px;
+  max-height: 600px;
 
   background-color: #b7b5e7;
 }
