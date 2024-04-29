@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 function Payment({ handleForm }) {
   const user = useContext(UserContext);
@@ -13,6 +14,7 @@ function Payment({ handleForm }) {
     state: '',
     specialInstructions: '',
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user.address) {
@@ -31,6 +33,7 @@ function Payment({ handleForm }) {
     evt.preventDefault();
     console.log(user);
     handleForm(address);
+    navigate('/resumen');
   }
   return (
     <section className='payment'>

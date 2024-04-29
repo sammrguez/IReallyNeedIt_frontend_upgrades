@@ -41,6 +41,11 @@ class Api {
   setDirection(token, address) {
     return this._makeRequest('/users/me/address', token, 'PATCH', address);
   }
+
+  makeOrder(token, order) {
+    console.log(order);
+    return this._makeRequest('pago/confirm', token, 'POST', order);
+  }
 }
 
 const api = new Api({

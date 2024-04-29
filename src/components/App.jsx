@@ -15,6 +15,7 @@ import Cart from './Cart';
 import api from '../utils/api';
 import Register from './Register';
 import Profile from './Profile';
+import OrderSummary from './OrderSummary';
 
 import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
@@ -48,7 +49,7 @@ function App() {
     const storedToken = localStorage.getItem('jwt');
     if (storedToken) {
       setToken(storedToken);
-      console.log(token);
+
       async function getUser() {
         try {
           const userData = await auth.checkToken(token);
@@ -61,6 +62,10 @@ function App() {
       getUser();
     }
   }, [token, loggedIn, navigate]);
+
+  function handleLogin() {
+    setLoggedIn(true);
+  }
 
   function logOut() {
     localStorage.removeItem('jwt');
@@ -180,12 +185,23 @@ function App() {
     navigate('/productos');
   }
   /* funciones para editar usuario */
+
   async function handleAddressForm(address) {
     try {
       const userWithAdress = await api.setDirection(token, address);
       setUser(userWithAdress);
     } catch (error) {
       console.log('no se pudo obtener');
+    }
+  }
+
+  /* funciones para confirmar el pedido*/
+  async function handleConfirmOrder(order) {
+    try {
+      console.log(order);
+      const confirmation = await api.makeOrder(token, order);
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -231,7 +247,11 @@ function App() {
           <Route
             path='/registro'
             element={
-              <Register onClose={closeAllPopups} isOpen={isRegisterOpen} />
+              <Register
+                onClose={closeAllPopups}
+                isOpen={isRegisterOpen}
+                handleLogin={handleLogin}
+              />
             }
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
@@ -249,6 +269,7 @@ function App() {
                 />
               }
             />
+            <Route path='/resumen' element={<OrderSummary />} />
           </Route>
         </Routes>
         <Footer />

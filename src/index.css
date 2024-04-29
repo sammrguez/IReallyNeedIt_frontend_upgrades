@@ -23,14 +23,8 @@
 /*header*/
 
 @import url('./blocks/header/header.css');
-@import url('./blocks/header/__data/header__data.css');
-@import url('./blocks/header/__data/header__data.css');
-@import url('./blocks/header/__info/header__info.css');
-@import url('./blocks/header/__phrase/header__phrase.css');
-@import url('./blocks/header/__images/header__images.css');
-@import url('./blocks/header/__hexagon/header__hexagon.css');
-@import url('./blocks/header/__image-exagon/header__image-hexagon.css');
-@import url('./blocks/header/__image-png/header__image-png.css');
+@import url('./blocks/header/__container/header__container.css');
+@import url('./blocks/header/__image-background/header__image-background.css');
 
 /*decoration */
 @import url('./blocks/decoration-band/decoration-band.css');

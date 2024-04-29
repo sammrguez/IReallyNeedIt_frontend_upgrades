@@ -6,7 +6,7 @@ import GoogleLoginComponent from './GoogleLogin';
 import * as auth from '../utils/auth';
 import IRNIstickerPurple from '../images/stickers_IRNI_purple.png';
 
-function Register({ onClose, isOpen }) {
+function Register({ onClose, isOpen, handleLogin }) {
   const [userCredentials, setUserCredentials] = useState({});
   const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ function Register({ onClose, isOpen }) {
       auth.registerAndLogin(user).then((data) => {
         if (data && data.token) {
           console.log(data);
+          handleLogin();
           navigate('/pago');
           setUserCredentials(data);
         }
@@ -43,10 +44,6 @@ function Register({ onClose, isOpen }) {
           onSuccess={handleSuccess}
           onFailure={handleFailure}
         />
-        <button className='button button_type_sign'>
-          <h3 className='button__text'> registrarte con</h3>
-          <img className='button__icon' src={gmail} alt='simbolo de mail' />
-        </button>
       </PopupForm>
     </section>
   );
