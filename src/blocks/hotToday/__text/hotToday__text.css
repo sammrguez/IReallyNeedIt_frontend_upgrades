@@ -1,6 +1,5 @@
 .hotToday__text {
   width: 80%;
-
   color: #595b56;
   font-family: matter;
   font-size: 36px;
@@ -8,13 +7,32 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1000px) {
+  .hotToday__text {
+    width: 90%;
+    font-size: 32px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hotToday__text {
+    width: 90%;
+    font-size: 28px;
+    margin: 0px auto 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hotToday__text {
+    width: 90%;
+    font-size: 22px;
+    margin: 0px auto 20px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .hotToday__text {
     width: 90%;
-    color: #595b56;
-    font-family: matter;
     font-size: 18px;
     margin: 0px auto 20px;
-    text-align: center;
   }
 }

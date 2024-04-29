@@ -3,7 +3,12 @@
   height: 64px;
   margin-right: 5px;
 }
-
+@media screen and (min-width: 490px) and (max-width: 9000px) {
+  .footer__media-icon {
+    width: 46px;
+    height: 46px;
+  }
+}
 @media screen and (min-width: 490px) and (max-width: 700px) {
   .footer__media-icon {
     width: 40px;

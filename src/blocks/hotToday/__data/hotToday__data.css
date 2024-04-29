@@ -7,6 +7,24 @@
   height: 480px;
 }
 
+@media screen and (max-width: 800px) {
+  .hotToday__data {
+    width: 100%;
+    display: flex;
+    height: auto;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hotToday__data {
+    width: 100%;
+    display: flex;
+    height: auto;
+    margin-top: 0px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .hotToday__data {
     width: 100%;
