@@ -1,8 +1,9 @@
 .cartItem__quantityBox-container {
-  width: 60%;
-  min-height: 60px;
+  width: 100%;
+
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: 20px;
 }
@@ -11,5 +12,6 @@
   .cartItem__quantityBox-container {
     width: 60%;
     height: auto;
+    margin-top: 10px;
   }
 }
