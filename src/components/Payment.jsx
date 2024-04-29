@@ -35,7 +35,7 @@ function Payment({ handleForm }) {
   return (
     <section className='payment'>
       <div className='payment__container'>
-        <form className='form form_type_payment' onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
           <h3 className='form__header form__header_type_address'>
             {' '}
             Dirección de envio

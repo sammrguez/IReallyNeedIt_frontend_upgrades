@@ -1,38 +1,4 @@
 .payment {
-  background-color: #b7b5e7;
   width: 100%;
   display: flex;
-}
-.payment__container {
-  max-width: 65%;
-  width: 60%;
-
-  margin: 140px auto 20px;
-}
-.form__input {
-  border: 0;
-  border-radius: 10px;
-  width: 100%;
-  height: 40px;
-  border-bottom: 1px solid #000;
-  font-size: 18px;
-  margin-bottom: 10px;
-  background-color: #edcde1;
-}
-.form__input_type_text.short {
-  width: 40%;
-}
-.form_type_payment {
-  display: flex;
-  background-color: #e6bdd6;
-  flex-direction: column;
-  box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
-}
-.form__textarea {
-  border: 0;
-  border-radius: 10px;
-  height: 150px;
-  width: 100%;
-  background-color: #edcde1;
-  margin-bottom: 25px;
 }

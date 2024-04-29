@@ -1,0 +1,23 @@
+.payment__container {
+  width: 60%;
+  margin: 150px auto 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .payment__container {
+    width: 80%;
+    margin: 160px auto 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .payment__container {
+    margin: 140px auto 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .payment__container {
+    width: 80%;
+    margin: 100px auto 20px;
+  }
+}

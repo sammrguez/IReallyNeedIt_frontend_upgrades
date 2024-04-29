@@ -107,6 +107,8 @@
 @import url('./blocks/form/__header/form__header.css');
 @import url('./blocks/form/__fieldset/form__fieldset.css');
 @import url('./blocks/form/__link/form__link.css');
+@import url('./blocks/form/__textarea/form__textarea.css');
+@import url('./blocks/form/__input/form__input.css');
 
 /*cart */
 @import url('./blocks/cart/cart.css');
@@ -134,3 +136,4 @@
 
 /* payment*/
 @import url('./blocks/payment/payment.css');
+@import url('./blocks/payment/__container/payment__container.css');
