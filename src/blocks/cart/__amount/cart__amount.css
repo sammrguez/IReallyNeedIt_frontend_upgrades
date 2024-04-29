@@ -1,4 +1,17 @@
 .cart__amount {
   color: #ed6a4c;
   font-size: 44px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .cart__amount {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cart__amount {
+    font-size: 18px;
+  }
 }

@@ -1,8 +1,27 @@
 .cart__total-data {
-  max-width: 80%;
-  min-width: 70%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .cart__total-data {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cart__total-data {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cart__total-data {
+    margin-bottom: 30px;
+  }
 }

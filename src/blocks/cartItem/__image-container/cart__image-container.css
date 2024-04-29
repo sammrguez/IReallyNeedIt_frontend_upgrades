@@ -1,6 +1,6 @@
 .cart__image-container {
   width: 165px;
-  min-width: 100px;
+  min-width: 65px;
   height: 100%;
   border-radius: 30px;
   border: 1.2px solid black;
@@ -9,10 +9,18 @@
   align-self: center;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 700px) {
   .cart__image-container {
     width: 100px;
     height: auto;
+    border-radius: 16px;
     margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cart__image-container {
+    width: 65px;
+    height: auto;
   }
 }

@@ -4,6 +4,11 @@
   flex-direction: row;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 700px) {
+  .cartItem {
+    margin-bottom: 20px;
+  }
+}
 
 @media screen and (max-width: 400px) {
   .cartItem {

@@ -1,23 +1,50 @@
 .cartItem__quantitybox-button {
-  width: 50px;
   display: flex;
-  margin: auto;
+  width: 50px;
   height: 60px;
+  margin: 5px;
   text-align: center;
   justify-content: center;
   align-items: center;
-
   background-color: #b7b5e7;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   border: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .cartItem__quantitybox-button {
+    width: 45px;
+    height: 54px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 3px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cartItem__quantitybox-button {
+    width: 40px;
+    height: 48px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cartItem__quantitybox-button {
+    width: 30px;
+    height: 36px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .cartItem__quantitybox-button {
-    width: 25px;
+    width: 20px;
     height: 30px;
-
-    border-radius: 4px;
+    font-size: 10px;
   }
 }

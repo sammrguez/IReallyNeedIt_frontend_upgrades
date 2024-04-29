@@ -1,5 +1,26 @@
 .cartItem__delete-icon {
-  height: 30px;
-  max-width: 30px;
+  height: 28px;
+  width: 28px;
   margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .cartItem__delete-icon {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cartItem__delete-icon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cartItem__delete-icon {
+    height: 14px;
+    width: 14px;
+  }
 }

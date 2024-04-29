@@ -1,7 +1,25 @@
 .cartItem__quantityBox {
   display: flex;
-  height: 60px;
-  min-width: 160px;
-  max-width: 210px;
+  flex-direction: row;
+  width: 40%;
   margin: 5px 0px 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .cartItem__quantityBox {
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cartItem__quantityBox {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cartItem__quantityBox {
+    height: auto;
+  }
 }
