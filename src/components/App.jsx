@@ -257,7 +257,9 @@ function App() {
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
             <Route
               path='/pago'
-              element={<Payment handleForm={handleAddressForm} />}
+              element={
+                <Payment handleForm={handleAddressForm} loggedIn={loggedIn} />
+              }
             />
             <Route
               path='/perfil'

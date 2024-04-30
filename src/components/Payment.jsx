@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-function Payment({ handleForm }) {
+function Payment({ handleForm, loggedIn }) {
   const user = useContext(UserContext);
   const [address, setAddress] = useState({
     street: '',
@@ -15,7 +15,7 @@ function Payment({ handleForm }) {
     specialInstructions: '',
   });
   const navigate = useNavigate();
-
+  console.log(loggedIn);
   useEffect(() => {
     if (user.address) {
       setAddress(user.address);
@@ -31,7 +31,6 @@ function Payment({ handleForm }) {
   }
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log(user);
     handleForm(address);
     navigate('/resumen');
   }

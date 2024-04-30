@@ -7,7 +7,6 @@ import * as auth from '../utils/auth';
 import IRNIstickerPurple from '../images/stickers_IRNI_purple.png';
 
 function Register({ onClose, isOpen, handleLogin }) {
-  const [userCredentials, setUserCredentials] = useState({});
   const navigate = useNavigate();
 
   async function handleSuccess(res) {
@@ -18,7 +17,6 @@ function Register({ onClose, isOpen, handleLogin }) {
           console.log(data);
           handleLogin();
           navigate('/pago');
-          setUserCredentials(data);
         }
       });
     } catch (error) {
