@@ -188,6 +188,7 @@ function App() {
     setIsRegisterOpen(false);
     setIsProfileOpen(false);
     navigate('/productos');
+    setShouldBeInfoOpen(false);
   }
   /* funciones para editar usuario */
 
@@ -249,6 +250,7 @@ function App() {
                 onDeleteClick={deleteOne}
                 onOpenRegister={openRegister}
                 loggedIn={loggedIn}
+                onClose={closeAllPopups}
               />
             }
           />
