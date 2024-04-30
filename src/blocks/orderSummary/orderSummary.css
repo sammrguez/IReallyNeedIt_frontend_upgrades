@@ -9,6 +9,7 @@
   max-width: 60%;
   background-color: #eee3db;
   margin: auto;
+  padding: 40px;
 }
 .orderSummary__header {
   font-size: 50px;
@@ -47,13 +48,14 @@
   font-weight: bold;
 }
 .orderSummary__address-container {
-  width: 80%;
-  height: 100px;
+  width: 70%;
+  height: 140px;
   display: flex;
-  margin: auto;
+  margin: 0px auto 20px;
   align-items: center;
 }
 .orderSummary__address {
   font-size: 26px;
   margin: auto;
+  text-align: center;
 }

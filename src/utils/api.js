@@ -44,7 +44,7 @@ class Api {
 
   makeOrder(token, order) {
     console.log(order);
-    return this._makeRequest('pago/confirm', token, 'POST', order);
+    return this._makeRequest('/orders/confirm', token, 'POST', order);
   }
 }
 

@@ -139,7 +139,7 @@ function Payment({ handleForm, loggedIn }) {
               onChange={handleChange}
             ></textarea>
             <button className='button button_type_submit' type='submit'>
-              <h3 className='button__text'> Guardar</h3>
+              <h3 className='button__text'>Guardar</h3>
             </button>
           </fieldset>
         </form>

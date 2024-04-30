@@ -1,20 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import texture from '../images/textura_IRNI.jpg';
 import { UserContext } from '../contexts/UserContext';
 import { CartContext } from '../contexts/CartContext';
 
 import CartItem from './CartItem';
 
-function OrderSummary() {
+function OrderSummary({ onConfirmOrder }) {
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
 
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onConfirmOrder();
+  }
   return (
     <section className='orderSummary'>
       <img className='decoration-band' src={texture} />
       <div className='orderSummary__container'>
-        <h2 className='orderSummary__header'>Gracias por tu compra!</h2>
-        <h3 className='orderSummary__orderNumber'> orden #123456 </h3>
+        <h2 className='orderSummary__header'>Confirma tu compra!</h2>
         <ul className='orderSummary__items'>
           {cart.map((item, index) => {
             return (
@@ -45,6 +48,13 @@ function OrderSummary() {
               : ''}
           </p>
         </div>
+        <button
+          className='button button_type_submit'
+          onClick={handleSubmit}
+          type='button'
+        >
+          <h3 className='button__text'>Confirmar Compra</h3>
+        </button>
       </div>
     </section>
   );

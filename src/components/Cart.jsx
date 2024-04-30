@@ -12,10 +12,12 @@ function Cart({
   onOpenRegister,
 }) {
   const cart = useContext(CartContext);
+
   const navigate = useNavigate();
 
   function handlecart(evt) {
     evt.preventDefault();
+
     if (loggedIn) {
       navigate('/pago');
     } else if (cart.length === 0) {
@@ -60,7 +62,7 @@ function Cart({
           </div>
 
           <button className='button button_type_pay' onClick={handlecart}>
-            <h3 className='button__text'>Ir al pago</h3>
+            <h3 className='button__text'>Continuar</h3>
           </button>
         </div>
       </div>

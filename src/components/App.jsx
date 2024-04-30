@@ -271,7 +271,10 @@ function App() {
                 />
               }
             />
-            <Route path='/resumen' element={<OrderSummary />} />
+            <Route
+              path='/resumen'
+              element={<OrderSummary onConfirmOrder={handleConfirmOrder} />}
+            />
           </Route>
         </Routes>
         <Footer />
