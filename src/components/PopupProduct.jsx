@@ -5,10 +5,6 @@ import { CartContext } from '../contexts/CartContext';
 import CardPopup from './CardPopup';
 
 function PopupProduct({ selectedCard, name, onClose, onAddProductClick }) {
-  const cart = useContext(CartContext);
-  const [selectedModel, setSelectedModel] = useState(null);
-  const [scrolling, setScrolling] = useState(true);
-
   useEffect(() => {
     selectedCard
       ? (document.body.style.overflow = 'hidden')

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
+import InfoTooltip from './InfoTooltip';
 
 function CardPopup({ selectedCard, onAddProductClick, onClose }) {
   const [selectedModel, setSelectedModel] = useState(null);
+  const [shouldBeInfoOpen, setShouldBeInfoOpen] = useState(false);
 
   const handleModelSelection = (model) => {
     setSelectedModel(model);
@@ -15,7 +17,7 @@ function CardPopup({ selectedCard, onAddProductClick, onClose }) {
       onAddProductClick(productToAdd);
       onClose();
     } else {
-      console.log('no has seleccionado ningun modelo');
+      setShouldBeInfoOpen(true);
     }
   };
 
@@ -58,6 +60,12 @@ function CardPopup({ selectedCard, onAddProductClick, onClose }) {
           <h3 className='button__text'> agregar a carrito </h3>
         </button>
       </div>
+      <InfoTooltip
+        shouldBeInfoOpen={shouldBeInfoOpen}
+        header={'Parece que no has seleccionado un modelo'}
+        messagge={'selecciona un modelo para agregar al carrito'}
+        onClose={onClose}
+      />
     </>
   );
 }

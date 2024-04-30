@@ -9,7 +9,6 @@ function NavBar({ onOpenProfile, loggedIn }) {
   const cart = useContext(CartContext);
 
   function handleProfile() {
-    console.log(loggedIn);
     onOpenProfile();
   }
 

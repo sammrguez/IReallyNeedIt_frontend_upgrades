@@ -35,7 +35,6 @@ class Api {
   }
 
   getUserData(token) {
-    console.log(token);
     return this._makeRequest('/users/me', token);
   }
   setDirection(token, address) {
@@ -43,7 +42,6 @@ class Api {
   }
 
   makeOrder(token, order) {
-    console.log(order);
     return this._makeRequest('/orders/confirm', token, 'POST', order);
   }
 }

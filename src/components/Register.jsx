@@ -14,7 +14,6 @@ function Register({ onClose, isOpen, handleLogin }) {
       const user = await res.profileObj;
       auth.registerAndLogin(user).then((data) => {
         if (data && data.token) {
-          console.log(data);
           handleLogin();
           navigate('/pago');
         }
@@ -25,7 +24,6 @@ function Register({ onClose, isOpen, handleLogin }) {
   }
 
   function handleFailure(res) {
-    console.log(res);
     console.log('algo salio mal');
   }
 

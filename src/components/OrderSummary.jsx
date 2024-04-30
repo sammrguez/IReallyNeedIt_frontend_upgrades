@@ -10,10 +10,10 @@ function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose, trackId }) {
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
 
-  console.log(trackId);
   function handleSubmit(evt) {
     evt.preventDefault();
     onConfirmOrder(cart);
+    console.log(shouldBeInfoOpen);
   }
   return (
     <>

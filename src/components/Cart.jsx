@@ -32,7 +32,6 @@ function Cart({
       if (cart.length === 0) {
         setShouldBeInfoOpen(true);
       } else {
-        console.log(cart);
         onOpenRegister();
         navigate('/registro');
       }

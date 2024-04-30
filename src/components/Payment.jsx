@@ -15,7 +15,7 @@ function Payment({ handleForm, loggedIn }) {
     specialInstructions: '',
   });
   const navigate = useNavigate();
-  console.log(loggedIn);
+
   useEffect(() => {
     if (user.address) {
       setAddress(user.address);

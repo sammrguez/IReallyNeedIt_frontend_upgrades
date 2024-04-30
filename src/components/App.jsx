@@ -202,9 +202,7 @@ function App() {
 
   /* funciones para confirmar el pedido*/
   async function handleConfirmOrder(order) {
-    console.log(order);
     try {
-      console.log(order);
       const confirmation = await api.makeOrder(token, order);
       if (confirmation) {
         setTrackId(confirmation.trackId);
@@ -251,7 +249,6 @@ function App() {
                 onDeleteClick={deleteOne}
                 onOpenRegister={openRegister}
                 loggedIn={loggedIn}
-                onClose={closeAllPopups}
               />
             }
           />
