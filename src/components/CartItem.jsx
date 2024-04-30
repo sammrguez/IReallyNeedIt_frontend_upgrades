@@ -9,6 +9,7 @@ function CartItem({
   onDeleteClick,
   quantity,
   selectedModel,
+  extended,
 }) {
   function handleAdd() {
     onAddClick(item);
@@ -35,29 +36,31 @@ function CartItem({
         )}
 
         <p className='cartItem__price'>{`$ ${item.price}`}</p>
-        <div className='cartItem__quantityBox-container'>
-          <div className='cartItem__quantityBox'>
+        {extended && (
+          <div className='cartItem__quantityBox-container'>
+            <div className='cartItem__quantityBox'>
+              <button
+                className='cartItem__quantitybox-button'
+                onClick={handleRemove}
+              >
+                -
+              </button>
+              <div className='cartItem__quantitybox-button'>{quantity}</div>
+              <button
+                className='cartItem__quantitybox-button'
+                onClick={handleAdd}
+              >
+                +
+              </button>
+            </div>
             <button
               className='cartItem__quantitybox-button'
-              onClick={handleRemove}
+              onClick={handleDelete}
             >
-              -
-            </button>
-            <div className='cartItem__quantitybox-button'>{quantity}</div>
-            <button
-              className='cartItem__quantitybox-button'
-              onClick={handleAdd}
-            >
-              +
+              <img className='cartItem__delete-icon' src={trashIcon} />
             </button>
           </div>
-          <button
-            className='cartItem__quantitybox-button'
-            onClick={handleDelete}
-          >
-            <img className='cartItem__delete-icon' src={trashIcon} />
-          </button>
-        </div>
+        )}
       </div>
     </li>
   );

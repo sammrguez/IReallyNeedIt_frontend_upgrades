@@ -1,3 +1,25 @@
 .orderSummary {
-  background-color: beige;
+  max-width: 1280px;
+}
+.orderSummary__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+
+  background-color: #eee3db;
+  margin: auto;
+}
+.orderSummary__header {
+  font-size: 50px;
+}
+.orderSummary__orderNumber {
+  font-size: 35px;
+}
+.orderSummary__items {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-bottom: 1px solid #595b56;
 }

@@ -43,6 +43,7 @@ function Cart({
                 onRemoveClick={onRemoveClick}
                 onDeleteClick={onDeleteClick}
                 selectedModel={item.selectedModel}
+                extended={true}
               />
             );
           })}
