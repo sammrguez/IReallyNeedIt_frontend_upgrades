@@ -43,7 +43,7 @@ function Cart({
       <section className='cart'>
         <img className='decoration-band' src={texture} />
         <div className='cart__container'>
-          <h2 className='cart__header'>Tus compras</h2>
+          <h2 className='cart__header'>Carrito de compras</h2>
           <ul className='cart__added-items'>
             {cart.map((item, index) => {
               return (

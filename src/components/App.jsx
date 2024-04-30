@@ -75,6 +75,7 @@ function App() {
   function logOut() {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
+    setTrackId(null);
   }
   useEffect(() => {
     async function fetchProducts() {
@@ -104,7 +105,7 @@ function App() {
   }, [cart]);
 
   /* manejar cart */
-  function handleCartProducts(item) {
+  function handleAddProductToCart(item) {
     let repeatedCard = cart.find((element) => element._id === item._id);
     if (repeatedCard) {
       const updatedCart = cart.map((cartItem) => {
@@ -204,10 +205,13 @@ function App() {
   /* funciones para confirmar el pedido*/
   async function handleConfirmOrder(order) {
     try {
+      console.log(cart);
       const confirmation = await api.makeOrder(token, order);
       if (confirmation) {
         setTrackId(confirmation.trackId);
         setShouldBeInfoOpen(true);
+        setCart([]);
+        console.log(cart);
       }
     } catch (error) {
       console.log(error);
@@ -223,7 +227,7 @@ function App() {
             path='/'
             element={
               <Main
-                onAddProductClick={handleCartProducts}
+                onAddProductClick={handleAddProductToCart}
                 selectedCard={selectedCard}
                 promoProduct={promoProduct}
               />
@@ -237,7 +241,7 @@ function App() {
                 onClose={closeAllPopups}
                 selectedCard={selectedCard}
                 onCardClick={handleCardClick}
-                onAddProductClick={handleCartProducts}
+                onAddProductClick={handleAddProductToCart}
               />
             }
           />
@@ -278,6 +282,7 @@ function App() {
                   onClose={closeAllPopups}
                   isOpen={isProfileOpen}
                   onLogOut={logOut}
+                  trackId={trackId}
                 />
               }
             />

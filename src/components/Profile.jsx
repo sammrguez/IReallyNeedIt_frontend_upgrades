@@ -6,7 +6,7 @@ import IRNIstickerGreen from '../images/stickers_IRNI_green.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
-function Profile({ isOpen, onClose, onLogOut }) {
+function Profile({ isOpen, onClose, onLogOut, trackId }) {
   const navigate = useNavigate();
   const user = useContext(UserContext);
 
@@ -29,6 +29,9 @@ function Profile({ isOpen, onClose, onLogOut }) {
         logo={IRNIstickerGreen}
         type={'profile'}
       >
+        {trackId && (
+          <h3 className='form__header_type_profile'>{`Compra en proceso con orden de compra: ${trackId}`}</h3>
+        )}
         <button className='button button_type_profile' onClick={handleAddress}>
           <img
             className='button__icon'
