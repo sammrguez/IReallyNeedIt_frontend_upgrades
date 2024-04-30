@@ -11,7 +11,7 @@ function OrderSummary({ onConfirmOrder }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onConfirmOrder();
+    onConfirmOrder(cart);
   }
   return (
     <section className='orderSummary'>
