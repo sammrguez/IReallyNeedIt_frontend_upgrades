@@ -16,6 +16,7 @@ import api from '../utils/api';
 import Register from './Register';
 import Profile from './Profile';
 import OrderSummary from './OrderSummary';
+import InfoTooltip from './InfoTooltip';
 
 import Payment from './Payment';
 import ProtectedRoute from './ProtectedRoute';
@@ -36,6 +37,10 @@ function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const [shouldBeInfoOpen, setShouldBeInfoOpen] = useState(false);
+
+  const [trackId, setTrackId] = useState(null);
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -201,6 +206,10 @@ function App() {
     try {
       console.log(order);
       const confirmation = await api.makeOrder(token, order);
+      if (confirmation) {
+        setTrackId(confirmation.trackId);
+        setShouldBeInfoOpen(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -242,6 +251,7 @@ function App() {
                 onDeleteClick={deleteOne}
                 onOpenRegister={openRegister}
                 loggedIn={loggedIn}
+                onClose={closeAllPopups}
               />
             }
           />
@@ -274,7 +284,14 @@ function App() {
             />
             <Route
               path='/resumen'
-              element={<OrderSummary onConfirmOrder={handleConfirmOrder} />}
+              element={
+                <OrderSummary
+                  onConfirmOrder={handleConfirmOrder}
+                  shouldBeInfoOpen={shouldBeInfoOpen}
+                  trackId={trackId}
+                  onClose={closeAllPopups}
+                />
+              }
             />
           </Route>
         </Routes>
