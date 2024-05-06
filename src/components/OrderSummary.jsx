@@ -13,7 +13,6 @@ function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose, trackId }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     onConfirmOrder(cart);
-    console.log(shouldBeInfoOpen);
   }
   return (
     <>

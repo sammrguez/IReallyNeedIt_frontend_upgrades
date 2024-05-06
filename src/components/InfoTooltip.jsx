@@ -1,7 +1,6 @@
 import React from 'react';
 
 function InfoTooltip({ header, messagge, shouldBeInfoOpen, onClose }) {
-  console.log(shouldBeInfoOpen);
   return (
     <div className={`popup ${shouldBeInfoOpen ? 'popup_opened' : ''}`}>
       <div className='overlay' onClick={onClose}></div>

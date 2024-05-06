@@ -197,25 +197,19 @@ function App() {
     try {
       const userWithAdress = await api.setDirection(token, address);
       setUser(userWithAdress);
-    } catch (error) {
-      console.log('no se pudo obtener');
-    }
+    } catch (error) {}
   }
 
   /* funciones para confirmar el pedido*/
   async function handleConfirmOrder(order) {
     try {
-      console.log(cart);
       const confirmation = await api.makeOrder(token, order);
       if (confirmation) {
         setTrackId(confirmation.trackId);
         setShouldBeInfoOpen(true);
         setCart([]);
-        console.log(cart);
       }
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 
   return (
