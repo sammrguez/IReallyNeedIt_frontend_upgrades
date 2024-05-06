@@ -1,6 +1,6 @@
 .popup__container_type_product {
   width: 50vw;
-  height: 90vh;
+  height: 98vh;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -13,19 +13,27 @@
 @media screen and (max-width: 700px) {
   .popup__container_type_product {
     width: 60%;
+    height: 98%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .popup__container_type_product {
+    width: 60%;
+    height: 98%;
   }
 }
 
 @media screen and (max-width: 450px) {
   .popup__container_type_product {
     width: 65%;
+    height: 98%;
   }
 }
 
 @media screen and (max-width: 320px) {
   .popup__container_type_product {
     width: 70%;
-    height: 90%;
+    height: 98%;
   }
 }
 
