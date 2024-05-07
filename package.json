@@ -15,12 +15,12 @@
     ]
   },
   "dependencies": {
+    "@leecheuk/react-google-login": "^5.4.1",
     "@react-oauth/google": "^0.12.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-google-login": "^5.2.2",
     "react-router-dom": "^6.23.0",
     "sort-by": "^0.0.2"
   },

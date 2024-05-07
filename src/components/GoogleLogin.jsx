@@ -1,7 +1,7 @@
 import React from 'react';
 import google from '../images/google.png';
 /* servicios de google */
-import GoogleLogin from 'react-google-login';
+import GoogleLogin from '@leecheuk/react-google-login';
 
 function GoogleLoginComponent({ onSuccess, onFailure }) {
   const googleClientID =
