@@ -47,7 +47,7 @@ class Api {
 }
 
 const api = new Api({
-  BASE_URL: 'http://localhost:3000',
+  BASE_URL: 'https://i-really-need-it-shop-backend.vercel.app',
 });
 
 export default api;
