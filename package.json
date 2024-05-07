@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "vite --port 3001",
     "build": "vite build",
-    "lint": "npx eslint .",
-    "lint-fix": "eslint src --fix",
     "preview": "vite preview"
   },
   "eslintConfig": {
