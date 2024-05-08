@@ -1,11 +1,19 @@
 import React from 'react';
 import google from '../images/google.png';
 /* servicios de google */
-import GoogleLogin from '@leecheuk/react-google-login';
+import { GoogleLogin } from '@leecheuk/react-google-login';
 
+import { gapi } from 'gapi-script';
+const googleClientID =
+  '652479721639-tg8gkt4avnr87qh751c4qst08h908gkj.apps.googleusercontent.com';
+function start() {
+  gapi.client.init({
+    clientId: googleClientID,
+    scope: 'profile',
+  });
+}
+gapi.load('client:auth2', start);
 function GoogleLoginComponent({ onSuccess, onFailure }) {
-  const googleClientID =
-    '652479721639-js5e822qra9t7okm6slpeghi2p43dh0a.apps.googleusercontent.com';
   return (
     <GoogleLogin
       clientId={googleClientID}
