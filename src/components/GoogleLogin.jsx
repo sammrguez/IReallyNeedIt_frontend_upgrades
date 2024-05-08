@@ -23,7 +23,7 @@ function GoogleLoginComponent({ onSuccess, onFailure }) {
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
         >
-          <h3 className='button__text'> Inicio rapido con </h3>
+          <h3 className='button__text'> Inicio rápido con </h3>
           <img className='button__icon' src={google} alt='simbolo de google' />
         </button>
       )}
