@@ -137,3 +137,5 @@
 
 /* infoTol*/
 @import url('./blocks/infoTooltip/infoTooltip.css');
+@import url('./blocks/infoTooltip/__header/infoTool__header.css');
+@import url('./blocks/infoTooltip/__text/infoTool__text.css');
