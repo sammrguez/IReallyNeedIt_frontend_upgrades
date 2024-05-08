@@ -9,13 +9,13 @@
 @media screen and (max-width: 900px) {
   .orderSummary__total {
     width: 70%;
-    height: 110px;
+    height: 100px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .orderSummary__total {
     width: 80%;
-    height: 100px;
+    height: 80px;
   }
 }

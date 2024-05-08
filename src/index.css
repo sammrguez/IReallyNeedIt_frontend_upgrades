@@ -140,6 +140,8 @@
 @import url('./blocks/orderSummary/__total/orderSummary__total.css');
 @import url('./blocks/orderSummary/__total-header/orderSummary__total-header.css');
 @import url('./blocks/orderSummary/__amount/orderSummary__amount.css');
+@import url('./blocks/orderSummary/__address-container/orderSummary__address-container.css');
+@import url('./blocks/orderSummary/__address/orderSummary__address.css');
 
 /* infoTol*/
 @import url('./blocks/infoTooltip/infoTooltip.css');

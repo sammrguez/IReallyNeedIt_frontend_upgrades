@@ -1,0 +1,20 @@
+.orderSummary__address-container {
+  width: 70%;
+  height: 140px;
+  display: flex;
+  margin: 0px auto 20px;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .orderSummary__address-container {
+    width: 80%;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__address-container {
+    height: 60px;
+  }
+}

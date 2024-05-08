@@ -1,0 +1,23 @@
+.orderSummary__address {
+  font-size: 24px;
+  margin: auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .orderSummary__address {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .orderSummary__address {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__address {
+    font-size: 12px;
+  }
+}
