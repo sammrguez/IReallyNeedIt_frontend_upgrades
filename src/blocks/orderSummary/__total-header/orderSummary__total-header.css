@@ -1,0 +1,25 @@
+.orderSummary__total-header {
+  width: 50%;
+  font-family: bugisnia;
+  text-align: left;
+  margin: auto;
+  font-size: 50px;
+  color: #007a64;
+}
+
+@media screen and (max-width: 900px) {
+  .orderSummary__total-header {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .orderSummary__total-header {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__total-header {
+    font-size: 26px;
+  }
+}

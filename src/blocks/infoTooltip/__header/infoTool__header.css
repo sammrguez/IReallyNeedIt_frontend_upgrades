@@ -3,3 +3,11 @@
   color: #595b56;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 400px) {
+  .infoTool__header {
+    font-size: 22px;
+    color: #595b56;
+    margin-bottom: 5px;
+  }
+}

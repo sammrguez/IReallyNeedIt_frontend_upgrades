@@ -1,0 +1,21 @@
+.orderSummary__total {
+  width: 50%;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .orderSummary__total {
+    width: 70%;
+    height: 110px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__total {
+    width: 80%;
+    height: 100px;
+  }
+}

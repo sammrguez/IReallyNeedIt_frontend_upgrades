@@ -1,0 +1,27 @@
+.orderSummary__header {
+  font-size: 50px;
+  text-align: center;
+}
+@media screen and (max-width: 1000px) {
+  .orderSummary__header {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .orderSummary__header {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .orderSummary__header {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__header {
+    font-size: 22px;
+  }
+}

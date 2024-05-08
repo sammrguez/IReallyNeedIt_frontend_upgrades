@@ -1,0 +1,22 @@
+.orderSummary__amount {
+  color: #ed6a4c;
+  font-size: 36px;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  .orderSummary__amount {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .orderSummary__amount {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__amount {
+    font-size: 20px;
+  }
+}

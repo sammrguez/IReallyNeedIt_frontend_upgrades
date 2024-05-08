@@ -1,0 +1,31 @@
+.orderSummary__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  background-color: #eee3db;
+  margin: auto;
+  padding: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .orderSummary__container {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .orderSummary__container {
+    max-width: 80%;
+    margin: auto;
+    padding: 26px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderSummary__container {
+    max-width: 80%;
+    margin: auto;
+    padding: 16px;
+  }
+}

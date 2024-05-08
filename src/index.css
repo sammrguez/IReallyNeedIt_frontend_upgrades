@@ -134,6 +134,12 @@
 @import url('./blocks/payment/payment.css');
 @import url('./blocks/payment/__container/payment__container.css');
 @import url('./blocks/orderSummary/orderSummary.css');
+@import url('./blocks/orderSummary/__container/orderSummary__container.css');
+@import url('./blocks/orderSummary/__header/orderSummary__header.css');
+@import url('./blocks/orderSummary/__items/orderSummary__items.css');
+@import url('./blocks/orderSummary/__total/orderSummary__total.css');
+@import url('./blocks/orderSummary/__total-header/orderSummary__total-header.css');
+@import url('./blocks/orderSummary/__amount/orderSummary__amount.css');
 
 /* infoTol*/
 @import url('./blocks/infoTooltip/infoTooltip.css');

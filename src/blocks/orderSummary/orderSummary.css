@@ -1,52 +1,7 @@
 .orderSummary {
   max-width: 1280px;
 }
-.orderSummary__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 60%;
-  background-color: #eee3db;
-  margin: auto;
-  padding: 40px;
-}
-.orderSummary__header {
-  font-size: 50px;
-}
-.orderSummary__orderNumber {
-  font-size: 35px;
-}
-.orderSummary__items {
-  display: flex;
 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  border-bottom: 1px solid #595b56;
-}
-.orderSummary__total {
-  width: 50%;
-  height: 140px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.orderSummary__total-header {
-  width: 50%;
-  font-family: bugisnia;
-  text-align: left;
-  margin: auto;
-  font-size: 50px;
-  color: #007a64;
-}
-.orderSummary__amount {
-  color: #ed6a4c;
-  font-size: 36px;
-  font-weight: bold;
-}
 .orderSummary__address-container {
   width: 70%;
   height: 140px;
