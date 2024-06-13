@@ -1,6 +1,5 @@
 import React from 'react';
-import cover from '../images/caseBack.jpeg';
-import back from '../images/Happy Days Clear Sticker.jpeg';
+import cover from '../images/portada2.jpg';
 
 function Header() {
   return (
