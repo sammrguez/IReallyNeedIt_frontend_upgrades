@@ -1,5 +1,5 @@
 import React from 'react';
-import cover from '../images/portada2.jpg';
+import cover from '../images/3.jpg';
 
 function Header() {
   return (
