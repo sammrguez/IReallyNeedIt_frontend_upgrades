@@ -16,6 +16,7 @@ import api from '../utils/api';
 import Register from './Register';
 import Profile from './Profile';
 import OrderSummary from './OrderSummary';
+import ConfirmationDialog from './ConfirmationDialog';
 import InfoTooltip from './InfoTooltip';
 
 import Payment from './Payment';
@@ -47,6 +48,8 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem('jwt'));
 
   const [user, setUser] = useState({});
+
+  const [openConfirmationDialog, setOpenConfirmationDialog] = useState(false);
 
   /*funcion check token*/
 
@@ -145,6 +148,23 @@ function App() {
     }
   }
 
+  // function removeOne(item) {
+  //   const updatedCart = cart.map((cartItem) => {
+  //     if (cartItem._id === item._id) {
+  //       const updatedQuantity = (cartItem.quantity || 1) - 1;
+  //       if (updatedQuantity === 0) {
+  //         console.log('seguro que quieres borrar?');
+  //       } else {
+  //         console.log(updatedQuantity);
+  //         return { ...cartItem, quantity: updatedQuantity };
+  //       }
+  //     } else {
+  //       return cartItem;
+  //     }
+  //   });
+  //   setCart(updatedCart);
+  //   checkItemQuantity(updatedCart);
+  // }
   function removeOne(item) {
     const updatedCart = cart.map((cartItem) => {
       if (cartItem._id === item._id) {
@@ -155,13 +175,31 @@ function App() {
     });
 
     setCart(updatedCart);
-    checkItemQuantity(updatedCart);
+    checkItemQuantity(updatedCart, item);
   }
 
-  function checkItemQuantity(updateCart) {
-    const newdCart = updateCart.filter((cartItem) => cartItem.quantity > 0);
+  // function checkItemQuantity(updateCart) {
 
-    setCart(newdCart);
+  //   const newdCart = updateCart.filter((cartItem) => cartItem.quantity > 0);
+
+  //   setCart(newdCart);
+  // }
+  function checkItemQuantity(updatedCart, item) {
+    const cartWithItemToDelete = updatedCart.map((cartItem) => {
+      if (cartItem._id === item._id && cartItem.quantity === 0) {
+        console.log('deseas eliminar?');
+        setOpenConfirmationDialog(true);
+      } else {
+        setOpenConfirmationDialog(false);
+        return cartItem;
+      }
+    });
+
+    // const newdCart = updateCart.map((cartItem) => {
+    //   if (cartItem.quantity === 0) {
+    //     console.log('deseas eliminar este');
+    //   }
+    // });
   }
 
   function deleteOne(item) {
@@ -293,6 +331,7 @@ function App() {
             />
           </Route>
         </Routes>
+        {openConfirmationDialog && <ConfirmationDialog />}
         <Footer />
       </CartContext.Provider>
     </UserContext.Provider>
