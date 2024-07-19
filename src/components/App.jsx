@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+ /* adicionales */
+ import {motion} from "framer-motion";
 /* contextos  */
 import { CartContext } from '../contexts/CartContext';
 import { UserContext } from '../contexts/UserContext';

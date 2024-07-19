@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import texture from '../images/textura_IRNI.jpg';
 import mug from '../images/overthinker.jpg';
+import {motion} from "framer-motion";
 
 function HotToday({ onAddProductClick, promoProduct }) {
   const handleAddToCart = (event) => {
@@ -12,7 +13,12 @@ function HotToday({ onAddProductClick, promoProduct }) {
   return (
     <section className='hotToday'>
       <img className='decoration-band' src={texture} />
+      <motion.div
+      initial={{ opacity: 0}}
+      whileInview={{opacity: 1 }}>
       <h2 className='hotToday__header'>Presentando el Producto del Mes</h2>
+      </motion.div>
+     
       <div className='hotToday__content'>
         <div className='hotToday__images'>
           <div className='hotToday__image-container'>
