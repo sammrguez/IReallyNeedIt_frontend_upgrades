@@ -1,12 +1,12 @@
 .button {
-  width: 295px;
-  height: 70px;
+  width: 300px;
+  height: 75px;
   display: flex;
-  background-color: #b7b5e7;
+  
   cursor: pointer;
   border: none;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 22px 44 ;
+  border-radius: 30px;
   align-self: center;
   box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
 }
