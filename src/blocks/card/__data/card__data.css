@@ -4,3 +4,12 @@
   height: 135px;
   width: 100%;
 }
+
+@media screen and (max-width: 400px) {
+  .card__data {
+  margin-top: 10px;
+  align-self: center;
+  height: 80px;
+  width: 100%;
+}
+}

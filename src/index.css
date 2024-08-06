@@ -10,6 +10,7 @@
 /* header */
 @import url('./blocks/navBar/navBar.css');
 @import url('./blocks/header/header.css');
+@import url('./blocks/header/__title/header__title.css');
 
 /* navBar*/
 @import url('./blocks/navBar/navBar.css');
@@ -50,6 +51,7 @@
 @import url('./blocks/button/_type/button_type_profile.css');
 @import url('./blocks/button/__text/button__text.css');
 @import url('./blocks/button/__icon/button__icon.css');
+@import url('./blocks/button/_place/button_place_header.css');
 
 /* footer*/
 @import url('./blocks/footer/footer.css');
@@ -70,6 +72,7 @@
 @import url('./blocks/card/__data/card__data.css');
 @import url('./blocks/card/__header/card__header.css');
 @import url('./blocks/card/__price/card__price.css');
+@import url('./blocks/card/__footer/card__footer.css');
 
 /* register*/
 @import url('./blocks/register/register.css');

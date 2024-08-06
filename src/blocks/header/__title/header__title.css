@@ -1,0 +1,13 @@
+.header__title{
+    font-family: marquisette;
+ position: absolute;
+ top: 30%;
+ left: 32%;
+font-size: 120px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 100px;
+    letter-spacing: 14px;
+word-spacing: 8px;
+
+}

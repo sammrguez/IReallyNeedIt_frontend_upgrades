@@ -1,13 +1,19 @@
 .card__price {
   font-family: matter;
-  font-size: 40px;
-  color: #ed6a4c;
+  font-size: 22px;
+  color: #000;
   text-align: center;
   font-weight: bold;
 }
 
 @media screen and (max-width: 650px) {
   .card__price {
-    font-size: 24px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card__price {
+    font-size: 12px;
   }
 }

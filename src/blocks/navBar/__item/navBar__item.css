@@ -6,7 +6,3 @@
   align-content: center;
 }
 
-.navBar__item:hover {
-  animation: zoom 1s ease;
-  color: #ed6a4c;
-}

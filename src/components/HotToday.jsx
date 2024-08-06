@@ -1,25 +1,43 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
 import texture from '../images/textura_IRNI.jpg';
 import mug from '../images/overthinker.jpg';
-import {motion} from "framer-motion";
+import { motion, useInView, useAnimation} from "framer-motion";
 
 function HotToday({ onAddProductClick, promoProduct }) {
+
+  const scrollRef = useRef(null);
+  const isInView = useInView(scrollRef);
+  const mainControls= useAnimation();
+
   const handleAddToCart = (event) => {
     event.preventDefault();
     onAddProductClick(promoProduct);
   };
+  
+  useEffect(()=>{
+if(isInView){
+mainControls.start("visible");
+}
+  }, [isInView, mainControls])
 
   return (
-    <section className='hotToday'>
+    <section  className='hotToday'>
       <img className='decoration-band' src={texture} />
-      <motion.div
-      initial={{ opacity: 0}}
-      whileInview={{opacity: 1 }}>
+
+      <motion.div ref={scrollRef}
+      variants={{
+        hidden: {opacity:0, y:75}, 
+        visible:{opacity:1, y:0},
+        
+    }}
+      initial="hidden"
+      animate={mainControls}
+      transition= {{duration:.5, delay:0.25}}>
       <h2 className='hotToday__header'>Presentando el Producto del Mes</h2>
-      </motion.div>
+   
      
-      <div className='hotToday__content'>
+      <div ref={scrollRef} className='hotToday__content'>
         <div className='hotToday__images'>
           <div className='hotToday__image-container'>
             <img className='hotToday__image' src={promoProduct['photo-link']} />
@@ -40,6 +58,7 @@ function HotToday({ onAddProductClick, promoProduct }) {
           </Link>
         </div>
       </div>
+      </motion.div>
     </section>
   );
 }

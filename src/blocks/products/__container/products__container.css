@@ -1,20 +1,26 @@
 .products__container {
   padding: 30px;
   justify-content: center;
-
   max-width: 1280px;
   margin: 10px auto 0px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 380px);
-  gap: 40px;
-  grid-auto-rows: 590px;
+  grid-template-columns: repeat(auto-fit, 280px);
+  gap: 20px;
+  grid-auto-rows: 400px;
 }
-
+@media screen and (max-width: 1000px) {
+  .products__container {
+    grid-template-columns: repeat(auto-fit, 260px);
+    grid-auto-rows: 400px;
+    gap: 18px;
+    padding: 10px;
+  }
+}
 @media screen and (max-width: 860px) {
   .products__container {
-    grid-template-columns: repeat(auto-fit, 330px);
-    grid-auto-rows: 500px;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, 254px);
+    grid-auto-rows: 365px;
+    gap: 15px;
     margin-bottom: 50px;
     padding: 10px;
   }
@@ -22,9 +28,20 @@
 
 @media screen and (max-width: 650px) {
   .products__container {
-    grid-template-columns: repeat(auto-fit, 220px);
-    grid-auto-rows: 330px;
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, 160px);
+    grid-auto-rows: 240px;
+    gap: 10px;
+    margin-bottom: 50px;
+    padding: 10px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .products__container {
+    grid-template-columns: repeat(auto-fit, 135px);
+    grid-auto-rows: 190px;
+    gap: 8px;
     margin-bottom: 50px;
     padding: 10px;
   }

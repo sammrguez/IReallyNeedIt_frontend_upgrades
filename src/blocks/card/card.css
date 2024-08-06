@@ -1,21 +1,35 @@
 .card {
   max-width: 100%;
-  height: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  background-color: #e6d6cb;
-  box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
-  border-radius: 40px;
-  border: 2px solid black;
+  background-color: #dad1cb;
+  
   overflow: hidden;
+  padding: 10px;
 }
 
-.card:hover {
+.card:hover  .card__image {
   animation: zoom 1s ease;
+}
+@media screen and (max-width: 860px) {
+  .card {
+    height: 365px;
+  
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    height: 240px;
+  
+  }
 }
 
 @media screen and (max-width: 400px) {
   .card {
-    box-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
+   
+    height: 190px;
+    padding: 3px;
   }
 }
