@@ -52,6 +52,8 @@ function App() {
 
   const [openConfirmationDialog, setOpenConfirmationDialog] = useState(false);
 
+  const [itemToDelete, setItemToDelete] = useState(null);
+
   /*funcion check token*/
 
   useEffect(() => {
@@ -202,11 +204,21 @@ function App() {
     //   }
     // });
   }
+  function handleDeleteDialogResponse(answer){
+    if(answer && itemToDelete){
+    console.log('se va a eliminar');
+    const updatedCart = cart.filter((cartItem) => cartItem._id !== itemToDelete._id);
+      setCart(updatedCart);
+    } else {
+      console.log('se cancela la operacion');
+    }
+  }
 
-  function deleteOne(item) {
-    const updatedCart = cart.filter((cartItem) => cartItem._id !== item._id);
-
-    setCart(updatedCart);
+  function deleteOne(item) { 
+    setOpenConfirmationDialog(true);
+    setItemToDelete(item);
+      
+    
   }
 
   /* terminan funciones cart */
@@ -230,6 +242,11 @@ function App() {
     navigate('/productos');
     setShouldBeInfoOpen(false);
   }
+  function closeConfirmationDialog(){
+    setOpenConfirmationDialog(false);
+   
+  }
+ 
   /* funciones para editar usuario */
 
   async function handleAddressForm(address) {
@@ -332,7 +349,7 @@ function App() {
             />
           </Route>
         </Routes>
-        {openConfirmationDialog && <ConfirmationDialog />}
+        {openConfirmationDialog && <ConfirmationDialog onClose={closeConfirmationDialog} onResponse={handleDeleteDialogResponse}/>}
         <Footer />
       </CartContext.Provider>
     </UserContext.Provider>
