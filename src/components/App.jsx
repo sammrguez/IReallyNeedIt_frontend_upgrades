@@ -1,28 +1,28 @@
-import { Route, Routes } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
- /* adicionales */
- import {motion} from "framer-motion";
+import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+/* adicionales */
+import { motion } from "framer-motion";
 /* contextos  */
-import { CartContext } from '../contexts/CartContext';
-import { UserContext } from '../contexts/UserContext';
+import { CartContext } from "../contexts/CartContext";
+import { UserContext } from "../contexts/UserContext";
 
 /* modulos  */
-import Main from './Main';
-import NavBar from './NavBar';
-import Footer from './Footer';
-import Products from './Products';
-import Cart from './Cart';
-import api from '../utils/api';
-import Register from './Register';
-import Profile from './Profile';
-import OrderSummary from './OrderSummary';
-import ConfirmationDialog from './ConfirmationDialog';
-import InfoTooltip from './InfoTooltip';
+import Main from "./Main";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import Products from "./Products";
+import Cart from "./Cart";
+import api from "../utils/api";
+import Register from "./Register";
+import Profile from "./Profile";
+import OrderSummary from "./OrderSummary";
+import ConfirmationDialog from "./ConfirmationDialog";
+import InfoTooltip from "./InfoTooltip";
 
-import Payment from './Payment';
-import ProtectedRoute from './ProtectedRoute';
-import * as auth from '../utils/auth';
+import Payment from "./Payment";
+import ProtectedRoute from "./ProtectedRoute";
+import * as auth from "../utils/auth";
 
 function App() {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const [cart, setCart] = useState(() => {
-    const storedCart = localStorage.getItem('cart');
+    const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
   const [promoProduct, setPromoProduct] = useState({});
@@ -46,7 +46,7 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const [token, setToken] = useState(localStorage.getItem('jwt'));
+  const [token, setToken] = useState(localStorage.getItem("jwt"));
 
   const [user, setUser] = useState({});
 
@@ -57,7 +57,7 @@ function App() {
   /*funcion check token*/
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('jwt');
+    const storedToken = localStorage.getItem("jwt");
     if (storedToken) {
       setToken(storedToken);
 
@@ -67,7 +67,7 @@ function App() {
           setLoggedIn(true);
           setUser(userData);
         } catch (error) {
-          console.error('error');
+          console.error("error");
         }
       }
       getUser();
@@ -79,7 +79,7 @@ function App() {
   }
 
   function logOut() {
-    localStorage.removeItem('jwt');
+    localStorage.removeItem("jwt");
     setLoggedIn(false);
     setTrackId(null);
   }
@@ -90,7 +90,7 @@ function App() {
 
         setProducts(products);
       } catch (error) {
-        console.error('error al obtener productos');
+        console.error("error al obtener productos");
       }
     }
     fetchProducts();
@@ -100,17 +100,18 @@ function App() {
         const promoProduct = await api.getPromoProduct();
         setPromoProduct(promoProduct);
       } catch (error) {
-        console.error('error al obtener productos');
+        console.error("error al obtener productos");
       }
     }
     fetchPromoProducts();
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   /* manejar cart */
+  //agrega un producto al cart//
   function handleAddProductToCart(item) {
     let repeatedCard = cart.find((element) => element._id === item._id);
     if (repeatedCard) {
@@ -127,10 +128,11 @@ function App() {
     }
   }
 
+  //incrementa en +1 un producto ya disponible en el cart//
   function addOneToCart(item) {
     const updatedCart = cart.map((cartItem) => {
       if (cartItem._id === item._id) {
-        return { ...cartItem, quantity: (cartItem.quantity || 1) + 1 };
+        return { ...cartItem, quantity: (cartItem.quantity || 0) + 1 };
       } else {
         return cartItem;
       }
@@ -139,6 +141,7 @@ function App() {
     checkStock(updatedCart, item);
   }
 
+  // revisa con el inventario, cuantas unidades de ese producto hay disponibles//
   function checkStock(updatedCart, item) {
     const itemToCheck = updatedCart.find(
       (cartItem) => cartItem._id === item._id
@@ -151,27 +154,12 @@ function App() {
     }
   }
 
-  // function removeOne(item) {
-  //   const updatedCart = cart.map((cartItem) => {
-  //     if (cartItem._id === item._id) {
-  //       const updatedQuantity = (cartItem.quantity || 1) - 1;
-  //       if (updatedQuantity === 0) {
-  //         console.log('seguro que quieres borrar?');
-  //       } else {
-  //         console.log(updatedQuantity);
-  //         return { ...cartItem, quantity: updatedQuantity };
-  //       }
-  //     } else {
-  //       return cartItem;
-  //     }
-  //   });
-  //   setCart(updatedCart);
-  //   checkItemQuantity(updatedCart);
-  // }
-  function removeOne(item) {
+  //disminuye en -1 un producto ya disponible en el cart//
+  function decreaseOne(item) {
     const updatedCart = cart.map((cartItem) => {
       if (cartItem._id === item._id) {
-        return { ...cartItem, quantity: (cartItem.quantity || 1) - 1 };
+        const newQuantity = (cartItem.quantity || 1) - 1;
+        return { ...cartItem, quantity: newQuantity };
       } else {
         return cartItem;
       }
@@ -181,44 +169,43 @@ function App() {
     checkItemQuantity(updatedCart, item);
   }
 
-  // function checkItemQuantity(updateCart) {
-
-  //   const newdCart = updateCart.filter((cartItem) => cartItem.quantity > 0);
-
-  //   setCart(newdCart);
-  // }
+  // va revisando la disminución de items de un producto para saber cuando abrir el popup al llegar a 0//
   function checkItemQuantity(updatedCart, item) {
     const cartWithItemToDelete = updatedCart.map((cartItem) => {
-      if (cartItem._id === item._id && cartItem.quantity === 0) {
-        console.log('deseas eliminar?');
+      if (cartItem._id === item._id && cartItem.quantity < 1) {
         setOpenConfirmationDialog(true);
+        setItemToDelete(item);
       } else {
-        setOpenConfirmationDialog(false);
         return cartItem;
       }
     });
-
-    // const newdCart = updateCart.map((cartItem) => {
-    //   if (cartItem.quantity === 0) {
-    //     console.log('deseas eliminar este');
-    //   }
-    // });
-  }
-  function handleDeleteDialogResponse(answer){
-    if(answer && itemToDelete){
-    console.log('se va a eliminar');
-    const updatedCart = cart.filter((cartItem) => cartItem._id !== itemToDelete._id);
-      setCart(updatedCart);
-    } else {
-      console.log('se cancela la operacion');
-    }
   }
 
-  function deleteOne(item) { 
+  function deleteOne(item) {
     setOpenConfirmationDialog(true);
     setItemToDelete(item);
-      
-    
+  }
+
+  function handleDeleteDialogResponse(answer) {
+    if (answer && itemToDelete) {
+      console.log("se va a eliminar");
+      const updatedCart = cart.filter(
+        (cartItem) => cartItem._id !== itemToDelete._id
+      );
+      setCart(updatedCart); //el cart ahora es el array inicial menos la cart seleccionado
+    } else if (!answer && itemToDelete) {
+      console.log("se cancela la operación");
+      const stillTheSameCart = cart.map((cartItem) => {
+        if (cartItem._id === itemToDelete._id) {
+          return { ...cartItem, quantity: cartItem.quantity || 1 };
+        } else {
+          return cartItem;
+        }
+      });
+      setCart(stillTheSameCart);
+    }
+    setItemToDelete(null);
+    closeConfirmationDialog();
   }
 
   /* terminan funciones cart */
@@ -239,14 +226,13 @@ function App() {
     setSelectedCard(false);
     setIsRegisterOpen(false);
     setIsProfileOpen(false);
-    navigate('/productos');
+    navigate("/productos");
     setShouldBeInfoOpen(false);
   }
-  function closeConfirmationDialog(){
+  function closeConfirmationDialog() {
     setOpenConfirmationDialog(false);
-   
   }
- 
+
   /* funciones para editar usuario */
 
   async function handleAddressForm(address) {
@@ -274,7 +260,7 @@ function App() {
         <NavBar onOpenProfile={openProfile} loggedIn={loggedIn} />
         <Routes>
           <Route
-            path='/'
+            path="/"
             element={
               <Main
                 onAddProductClick={handleAddProductToCart}
@@ -284,7 +270,7 @@ function App() {
             }
           />
           <Route
-            path='/productos'
+            path="/productos"
             element={
               <Products
                 products={products}
@@ -296,11 +282,11 @@ function App() {
             }
           />
           <Route
-            path='/carrito'
+            path="/carrito"
             element={
               <Cart
                 onAddClick={addOneToCart}
-                onRemoveClick={removeOne}
+                onRemoveClick={decreaseOne}
                 onDeleteClick={deleteOne}
                 onOpenRegister={openRegister}
                 loggedIn={loggedIn}
@@ -309,7 +295,7 @@ function App() {
             }
           />
           <Route
-            path='/registro'
+            path="/registro"
             element={
               <Register
                 onClose={closeAllPopups}
@@ -320,13 +306,13 @@ function App() {
           />
           <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
             <Route
-              path='/pago'
+              path="/pago"
               element={
                 <Payment handleForm={handleAddressForm} loggedIn={loggedIn} />
               }
             />
             <Route
-              path='/perfil'
+              path="/perfil"
               element={
                 <Profile
                   onClose={closeAllPopups}
@@ -337,7 +323,7 @@ function App() {
               }
             />
             <Route
-              path='/resumen'
+              path="/resumen"
               element={
                 <OrderSummary
                   onConfirmOrder={handleConfirmOrder}
@@ -349,7 +335,12 @@ function App() {
             />
           </Route>
         </Routes>
-        {openConfirmationDialog && <ConfirmationDialog onClose={closeConfirmationDialog} onResponse={handleDeleteDialogResponse}/>}
+        {openConfirmationDialog && (
+          <ConfirmationDialog
+            onClose={closeConfirmationDialog}
+            onResponse={handleDeleteDialogResponse}
+          />
+        )}
         <Footer />
       </CartContext.Provider>
     </UserContext.Provider>
