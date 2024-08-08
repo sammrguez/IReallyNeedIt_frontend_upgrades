@@ -19,6 +19,7 @@ import Profile from "./Profile";
 import OrderSummary from "./OrderSummary";
 import ConfirmationDialog from "./ConfirmationDialog";
 import InfoTooltip from "./InfoTooltip";
+import Categories from "./Categories";
 
 import Payment from "./Payment";
 import ProtectedRoute from "./ProtectedRoute";

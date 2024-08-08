@@ -1,11 +1,13 @@
-import React from 'react';
-import Header from './Header';
-import HotToday from './HotToday';
+import React from "react";
+import Header from "./Header";
+import HotToday from "./HotToday";
+import Categories from "./Categories";
 
 function Main({ onAddProductClick, promoProduct }) {
   return (
-    <main className='main'>
+    <main className="main">
       <Header />
+      <Categories />
       <HotToday
         onAddProductClick={onAddProductClick}
         promoProduct={promoProduct}

@@ -1,34 +1,31 @@
 .card {
   max-width: 100%;
-  height: 400px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   background-color: #dad1cb;
-  
+
   overflow: hidden;
   padding: 10px;
 }
 
-.card:hover  .card__image {
+.card:hover .card__image {
   animation: zoom 1s ease;
 }
 @media screen and (max-width: 860px) {
   .card {
     height: 365px;
-  
   }
 }
 
 @media screen and (max-width: 650px) {
   .card {
     height: 240px;
-  
   }
 }
 
 @media screen and (max-width: 400px) {
   .card {
-   
     height: 190px;
     padding: 3px;
   }
