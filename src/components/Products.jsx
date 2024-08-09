@@ -1,7 +1,7 @@
-import React from 'react';
-import Card from './Card';
-import texture from '../images/textura_IRNI.jpg';
-import PopupProduct from './PopupProduct';
+import React from "react";
+import Card from "./Card";
+import texture from "../images/textura_IRNI.jpg";
+import PopupProduct from "./PopupProduct";
 
 function Products({
   products,
@@ -9,19 +9,31 @@ function Products({
   onClose,
   onCardClick,
   onAddProductClick,
+  productsFiltered,
 }) {
   return (
-    <section className='products'>
-      <img className='decoration-band' src={texture} />
-      <div className='products__container'>
-        {products.map((product) => {
+    <section className="products">
+      <img className="decoration-band" src={texture} />
+      <div className="products__container">
+        {productsFiltered
+          ? productsFiltered.map((product) => {
+              return (
+                <Card onClick={onCardClick} card={product} key={product._id} />
+              );
+            })
+          : products.map((product) => {
+              return (
+                <Card onClick={onCardClick} card={product} key={product._id} />
+              );
+            })}
+        {/* {products.map((product) => {
           return (
             <Card onClick={onCardClick} card={product} key={product._id} />
           );
-        })}
+        })} */}
       </div>
       <PopupProduct
-        name={'product'}
+        name={"product"}
         selectedCard={selectedCard}
         onClose={onClose}
         onAddProductClick={onAddProductClick}

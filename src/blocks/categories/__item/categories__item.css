@@ -1,0 +1,31 @@
+.categories__item {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+}
+
+.categories__item:hover .categories__image {
+  animation: zoom 1s ease;
+}
+
+.item1 {
+  grid-area: item1;
+}
+.item2 {
+  grid-area: item2;
+}
+.item3 {
+  grid-area: item3;
+}
+.item4 {
+  grid-area: item4;
+}
+.item5 {
+  grid-area: item5;
+}
+.item6 {
+  grid-area: item6;
+}

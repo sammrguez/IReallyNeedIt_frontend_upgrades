@@ -28,6 +28,8 @@ function App() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
+  const [productsFiltered, setProductsFiltered] = useState(false);
+
   const [selectedCard, setSelectedCard] = useState(null);
 
   const [cart, setCart] = useState(() => {
@@ -83,6 +85,8 @@ function App() {
     setLoggedIn(false);
     setTrackId(null);
   }
+
+  /* Products section */
   useEffect(() => {
     async function fetchProducts() {
       try {
@@ -109,6 +113,13 @@ function App() {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  function handleFilteredProducts(array) {
+    console.log(array);
+    setProductsFiltered(array);
+  }
+
+  /* Products section */
 
   /* manejar cart */
   //agrega un producto al cart//
@@ -266,6 +277,7 @@ function App() {
                 onAddProductClick={handleAddProductToCart}
                 selectedCard={selectedCard}
                 promoProduct={promoProduct}
+                onFilterActive={handleFilteredProducts}
               />
             }
           />
@@ -278,6 +290,7 @@ function App() {
                 selectedCard={selectedCard}
                 onCardClick={handleCardClick}
                 onAddProductClick={handleAddProductToCart}
+                productsFiltered={productsFiltered}
               />
             }
           />
