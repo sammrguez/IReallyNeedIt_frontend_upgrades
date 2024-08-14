@@ -53,7 +53,6 @@
 /* buttons*/
 
 @import url("./blocks/button/button.css");
-@import url("./blocks/button/_type/button_type_hotToday.css");
 @import url("./blocks/button/_type/button_type_shop.css");
 @import url("./blocks/button/_type/button_type_sign.css");
 @import url("./blocks/button/_type/button_type_profile.css");

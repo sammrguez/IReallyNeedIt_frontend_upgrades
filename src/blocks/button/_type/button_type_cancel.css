@@ -1,5 +1,5 @@
-.button_type_cancel{
-    background-color:#e6d6cb;
-    border: 2px, solid,rgb(237, 106, 76);
-    box-shadow: 4px 8px 1px rgb(237, 106, 76);
-    }
+.button_type_cancel {
+  background-color: #e6d6cb;
+  border: 2px, solid, rgb(237, 106, 76);
+  box-shadow: 4px 8px 6px rgb(237, 106, 76);
+}
