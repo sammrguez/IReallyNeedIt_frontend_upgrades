@@ -3,11 +3,16 @@ import Header from "./Header";
 import HotToday from "./HotToday";
 import Categories from "./Categories";
 
-function Main({ onAddProductClick, promoProduct, onFilterActive }) {
+function Main({
+  onAddProductClick,
+  promoProduct,
+  handleFilter,
+  onCleanFilter,
+}) {
   return (
     <main className="main">
-      <Header />
-      <Categories onFilterActive={onFilterActive} />
+      <Header onCleanFilter={onCleanFilter} />
+      <Categories handleFilter={handleFilter} />
       <HotToday
         onAddProductClick={onAddProductClick}
         promoProduct={promoProduct}

@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 /* adicionales */
 import { motion } from "framer-motion";
+
 /* contextos  */
 import { CartContext } from "../contexts/CartContext";
 import { UserContext } from "../contexts/UserContext";
+import { ProductCategoryContext } from "../contexts/ProductCategoryContext";
 
 /* modulos  */
 import Main from "./Main";
@@ -29,6 +31,8 @@ function App() {
   const [products, setProducts] = useState([]);
 
   const [productsFiltered, setProductsFiltered] = useState(false);
+
+  const [category, setCategory] = useState(null);
 
   const [selectedCard, setSelectedCard] = useState(null);
 
@@ -86,40 +90,48 @@ function App() {
     setTrackId(null);
   }
 
-  /* Products section */
+  // /* Products section */
   useEffect(() => {
-    async function fetchProducts() {
+    const fetchProduct = async () => {
       try {
-        const products = await api.getProducts();
+        if (category) {
+          // Obtener todos los productos
+          const allProducts = await api.getProducts();
 
-        setProducts(products);
-      } catch (error) {
-        console.error("error al obtener productos");
-      }
-    }
-    fetchProducts();
+          // Filtrar productos por categoría
+          const filteredProducts = allProducts.filter(
+            (product) => product.category === category
+          );
 
-    async function fetchPromoProducts() {
-      try {
+          setProducts(filteredProducts);
+        } else {
+          // Obtener todos los productos si no hay categoría
+          const allProducts = await api.getProducts();
+          setProducts(allProducts);
+        }
+
+        // Obtener productos promocionales
         const promoProduct = await api.getPromoProduct();
         setPromoProduct(promoProduct);
       } catch (error) {
-        console.error("error al obtener productos");
+        console.error("Error al obtener productos:", error);
       }
-    }
-    fetchPromoProducts();
-  }, []);
+    };
+
+    fetchProduct();
+  }, [category]);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  function handleFilteredProducts(array) {
-    console.log(array);
-    setProductsFiltered(array);
+  function cleanFilter() {
+    setCategory(null);
   }
-
   /* Products section */
+  async function filterByCategory(category) {
+    setCategory(category);
+  }
 
   /* manejar cart */
   //agrega un producto al cart//
@@ -268,93 +280,100 @@ function App() {
   return (
     <UserContext.Provider value={user}>
       <CartContext.Provider value={cart}>
-        <NavBar onOpenProfile={openProfile} loggedIn={loggedIn} />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Main
-                onAddProductClick={handleAddProductToCart}
-                selectedCard={selectedCard}
-                promoProduct={promoProduct}
-                onFilterActive={handleFilteredProducts}
-              />
-            }
+        <ProductCategoryContext.Provider value={category}>
+          <NavBar
+            onOpenProfile={openProfile}
+            loggedIn={loggedIn}
+            onCleanFilter={cleanFilter}
           />
-          <Route
-            path="/productos"
-            element={
-              <Products
-                products={products}
-                onClose={closeAllPopups}
-                selectedCard={selectedCard}
-                onCardClick={handleCardClick}
-                onAddProductClick={handleAddProductToCart}
-                productsFiltered={productsFiltered}
-              />
-            }
-          />
-          <Route
-            path="/carrito"
-            element={
-              <Cart
-                onAddClick={addOneToCart}
-                onRemoveClick={decreaseOne}
-                onDeleteClick={deleteOne}
-                onOpenRegister={openRegister}
-                loggedIn={loggedIn}
-                onClose={closeAllPopups}
-              />
-            }
-          />
-          <Route
-            path="/registro"
-            element={
-              <Register
-                onClose={closeAllPopups}
-                isOpen={isRegisterOpen}
-                handleLogin={handleLogin}
-              />
-            }
-          />
-          <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
+          <Routes>
             <Route
-              path="/pago"
+              path="/"
               element={
-                <Payment handleForm={handleAddressForm} loggedIn={loggedIn} />
-              }
-            />
-            <Route
-              path="/perfil"
-              element={
-                <Profile
-                  onClose={closeAllPopups}
-                  isOpen={isProfileOpen}
-                  onLogOut={logOut}
-                  trackId={trackId}
+                <Main
+                  onAddProductClick={handleAddProductToCart}
+                  selectedCard={selectedCard}
+                  promoProduct={promoProduct}
+                  handleFilter={filterByCategory}
+                  onCleanFilter={cleanFilter}
                 />
               }
             />
             <Route
-              path="/resumen"
+              path="/productos"
               element={
-                <OrderSummary
-                  onConfirmOrder={handleConfirmOrder}
-                  shouldBeInfoOpen={shouldBeInfoOpen}
-                  trackId={trackId}
+                <Products
+                  products={products}
+                  onClose={closeAllPopups}
+                  selectedCard={selectedCard}
+                  onCardClick={handleCardClick}
+                  onAddProductClick={handleAddProductToCart}
+                  productsFiltered={productsFiltered}
+                />
+              }
+            />
+            <Route
+              path="/carrito"
+              element={
+                <Cart
+                  onAddClick={addOneToCart}
+                  onRemoveClick={decreaseOne}
+                  onDeleteClick={deleteOne}
+                  onOpenRegister={openRegister}
+                  loggedIn={loggedIn}
                   onClose={closeAllPopups}
                 />
               }
             />
-          </Route>
-        </Routes>
-        {openConfirmationDialog && (
-          <ConfirmationDialog
-            onClose={closeConfirmationDialog}
-            onResponse={handleDeleteDialogResponse}
-          />
-        )}
-        <Footer />
+            <Route
+              path="/registro"
+              element={
+                <Register
+                  onClose={closeAllPopups}
+                  isOpen={isRegisterOpen}
+                  handleLogin={handleLogin}
+                />
+              }
+            />
+            <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
+              <Route
+                path="/pago"
+                element={
+                  <Payment handleForm={handleAddressForm} loggedIn={loggedIn} />
+                }
+              />
+              <Route
+                path="/perfil"
+                element={
+                  <Profile
+                    onClose={closeAllPopups}
+                    isOpen={isProfileOpen}
+                    onLogOut={logOut}
+                    trackId={trackId}
+                  />
+                }
+              />
+              <Route
+                path="/resumen"
+                element={
+                  <OrderSummary
+                    onConfirmOrder={handleConfirmOrder}
+                    shouldBeInfoOpen={shouldBeInfoOpen}
+                    trackId={trackId}
+                    onClose={closeAllPopups}
+                  />
+                }
+              />
+            </Route>
+          </Routes>
+          {openConfirmationDialog && (
+            <ConfirmationDialog
+              onClose={closeConfirmationDialog}
+              onResponse={handleDeleteDialogResponse}
+            />
+          )}
+          <Footer />
+        </ProductCategoryContext.Provider>
       </CartContext.Provider>
     </UserContext.Provider>
   );

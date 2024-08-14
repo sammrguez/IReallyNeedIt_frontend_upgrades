@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ProductCategoryContext } from "../contexts/ProductCategoryContext";
 
 import toteHeader from "../images/totebag_salchicha1.jpg";
 import airpodsHeader from "../images/earpods_insta.jpg";
@@ -7,33 +8,39 @@ import casesHeader from "../images/case_dino.webp";
 import thermoHeader from "../images/thermo-pretty.jpeg";
 import homedecorHeader from "../images/portavelas.png";
 import techHeader from "../images/audifonos_stand.jpg";
+
 import api from "../utils/api";
-import { useState } from "react";
 
-function Categories({ onFilterActive }) {
+function Categories({ handleFilter }) {
   const navigate = useNavigate();
+  const categoryContext = useContext(ProductCategoryContext);
 
-  async function filterByCategory(category) {
-    console.log(category);
-
-    try {
-      const allProducts = await api.getProducts();
-      if (category) {
-        console.log(allProducts);
-        const filteredProducts = allProducts.filter(
-          (product) => product.category === category
-        );
-
-        console.log(filteredProducts);
-        onFilterActive(filteredProducts);
-        navigate("/productos");
-      } else {
-        onFilterActive(false);
-      }
-    } catch (error) {
-      console.error("error al obtener productos");
-    }
+  function onHandleFilter(category) {
+    handleFilter(category);
+    navigate("/productos");
   }
+
+  // async function filterByCategory(category) {
+  //   console.log(category);
+  //   console.log(categoryContext);
+  //   try {
+  //     const allProducts = await api.getProducts();
+  //     if (category) {
+  //       console.log(allProducts);
+  //       const filteredProducts = allProducts.filter(
+  //         (product) => product.category === category
+  //       );
+
+  //       console.log(filteredProducts);
+  //       onFilterActive(filteredProducts);
+  //       navigate("/productos");
+  //     } else {
+  //       onFilterActive(false);
+  //     }
+  //   } catch (error) {
+  //     console.error("error al obtener productos");
+  //   }
+  // }
 
   return (
     <section className="categories">
@@ -43,7 +50,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("phone_cases")}
+            onClick={() => onHandleFilter("phone_cases")}
           >
             phone Cases
           </h2>
@@ -53,7 +60,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("airpods_cases")}
+            onClick={() => onHandleFilter("airpods_cases")}
           >
             earpods cases
           </h2>
@@ -63,7 +70,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("bags_textiles")}
+            onClick={() => onHandleFilter("bags_textiles")}
           >
             bags y textiles
           </h2>
@@ -73,7 +80,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("mugs_thermos")}
+            onClick={() => onHandleFilter("mugs_thermos")}
           >
             thermos y tazas
           </h2>
@@ -83,7 +90,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("home_decor")}
+            onClick={() => onHandleFilter("home_decor")}
           >
             home decor
           </h2>
@@ -93,7 +100,7 @@ function Categories({ onFilterActive }) {
           <div className="categories__overlay"></div>
           <h2
             className="categories__subtitle"
-            onClick={() => filterByCategory("tech")}
+            onClick={() => onHandleFilter("tech")}
           >
             {" "}
             Tech
