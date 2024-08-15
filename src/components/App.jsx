@@ -119,7 +119,7 @@ function App() {
     };
 
     fetchProduct();
-  }, [category]);
+  }, [category, navigate]);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
