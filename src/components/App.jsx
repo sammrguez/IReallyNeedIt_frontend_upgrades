@@ -94,12 +94,13 @@ function App() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
+        let filteredProducts;
         if (category) {
           // Obtener todos los productos
           const allProducts = await api.getProducts();
 
           // Filtrar productos por categoría
-          const filteredProducts = allProducts.filter(
+          filteredProducts = allProducts.filter(
             (product) => product.category === category
           );
 
@@ -107,7 +108,11 @@ function App() {
         } else {
           // Obtener todos los productos si no hay categoría
           const allProducts = await api.getProducts();
-          setProducts(allProducts);
+          filteredProducts = allProducts.sort((a, b) =>
+            a.category.localeCompare(b.category)
+          );
+
+          setProducts(filteredProducts);
         }
 
         // Obtener productos promocionales
@@ -119,7 +124,7 @@ function App() {
     };
 
     fetchProduct();
-  }, [category, navigate]);
+  }, [category]);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -129,8 +134,8 @@ function App() {
     setCategory(null);
   }
   /* Products section */
-  async function filterByCategory(category) {
-    setCategory(category);
+  async function filterByCategory(selectedCategory) {
+    setCategory(selectedCategory);
   }
 
   /* manejar cart */

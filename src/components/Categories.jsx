@@ -20,28 +20,6 @@ function Categories({ handleFilter }) {
     navigate("/productos");
   }
 
-  // async function filterByCategory(category) {
-  //   console.log(category);
-  //   console.log(categoryContext);
-  //   try {
-  //     const allProducts = await api.getProducts();
-  //     if (category) {
-  //       console.log(allProducts);
-  //       const filteredProducts = allProducts.filter(
-  //         (product) => product.category === category
-  //       );
-
-  //       console.log(filteredProducts);
-  //       onFilterActive(filteredProducts);
-  //       navigate("/productos");
-  //     } else {
-  //       onFilterActive(false);
-  //     }
-  //   } catch (error) {
-  //     console.error("error al obtener productos");
-  //   }
-  // }
-
   return (
     <section className="categories">
       <div className="categories__container">
