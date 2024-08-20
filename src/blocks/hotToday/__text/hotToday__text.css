@@ -24,7 +24,7 @@
 @media screen and (max-width: 600px) {
   .hotToday__text {
     width: 90%;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0px auto 20px;
   }
 }
@@ -32,7 +32,7 @@
 @media screen and (max-width: 400px) {
   .hotToday__text {
     width: 90%;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0px auto 20px;
   }
 }

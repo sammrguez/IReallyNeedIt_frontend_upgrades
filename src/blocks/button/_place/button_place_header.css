@@ -1,14 +1,36 @@
-.button_place_header{
-    text-decoration: none;
-    position: absolute;
-    top: 55%;
-    left: 35%;
-    width: 450px;
-    height: 100px;
-    background-color: #fff;
-    border: 1.2px solid black;
-    border-radius: 30px;
-    box-shadow: 10px 12px 1px rgba(0, 122, 100, 1)
+.button_place_header {
+  width: 400px;
+  height: 88px;
+  text-decoration: none;
+  position: absolute;
+  top: 70%;
+  left: 18%;
+  transform: translate(-30%, -50%);
 
+  background-color: #fff;
+  border: 1.2px solid black;
+  border-radius: 40px;
+  box-shadow: 10px 12px 1px rgba(0, 122, 100, 1);
+}
 
+@media screen and (max-width: 800px) {
+  .button_place_header {
+    width: 350px;
+    height: 77px;
+    box-shadow: 3px 4px 1px rgba(0, 122, 100, 1);
+  }
+}
+@media screen and (max-width: 580px) {
+  .button_place_header {
+    width: 200px;
+    height: 52px;
+    box-shadow: 3px 4px 1px rgba(0, 122, 100, 1);
+  }
+}
+@media screen and (max-width: 400px) {
+  .button_place_header {
+    width: 150px;
+    height: 40px;
+    box-shadow: 3px 4px 1px rgba(0, 122, 100, 1);
+  }
 }

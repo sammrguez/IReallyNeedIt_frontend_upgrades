@@ -1,0 +1,7 @@
+.hotToday__carrousel {
+  background-color: aqua;
+  width: 100%;
+  display: flex;
+
+  flex-direction: row;
+}

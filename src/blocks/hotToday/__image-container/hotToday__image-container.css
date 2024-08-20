@@ -1,10 +1,12 @@
 .hotToday__image-container {
-  width: 460px;
-  height: 600px;
+  width: 400px;
+  height: 680px;
   position: relative;
-
-  margin: 0px auto 0px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  margin: 0px auto 20px;
   overflow: hidden;
+  background-color: aliceblue;
 }
 
 @media screen and (max-width: 1000px) {
@@ -26,10 +28,10 @@
     height: 380px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .hotToday__image-container {
-    max-width: 230px;
-    height: 290px;
+    max-width: 200px;
+    height: 260px;
   }
 }
 

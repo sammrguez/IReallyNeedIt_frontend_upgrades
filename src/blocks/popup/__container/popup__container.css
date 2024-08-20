@@ -1,7 +1,7 @@
 .popup__container {
   align-content: center;
   z-index: 115;
-  border-radius: 40px;
+  border-radius: 20px;
   padding: 20px;
 
   position: relative;

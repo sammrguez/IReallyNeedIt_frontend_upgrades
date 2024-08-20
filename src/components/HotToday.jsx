@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import texture from "../images/textura_IRNI.jpg";
 import mug from "../images/overthinker.jpg";
+import Carousell from "./Carousell";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 function HotToday({ onAddProductClick, promoProduct }) {
@@ -37,21 +38,37 @@ function HotToday({ onAddProductClick, promoProduct }) {
         <h2 className="hotToday__header">Presentando el Producto del Mes</h2>
 
         <div ref={scrollRef} className="hotToday__content">
-          <div className="hotToday__images">
-            <div className="hotToday__image-container">
-              <img
-                className="hotToday__image"
-                src={promoProduct["photo-link"]}
-              />
+          <Carousell />
+          {/* <div className="hotToday__carrousel">
+            <div className="hotToday__item">
+              <div className="hotToday__image-container">
+                <img
+                  className="hotToday__image"
+                  src={promoProduct["photo-link"]}
+                />
+              </div>
+              <button
+                className="button button_type_shop"
+                onClick={handleAddToCart}
+              >
+                <h3 className="button__text"> agregar a carrito </h3>
+              </button>
             </div>
-
-            <button
-              className="button button_type_shop"
-              onClick={handleAddToCart}
-            >
-              <h3 className="button__text"> agregar a carrito </h3>
-            </button>
-          </div>
+            <div className="hotToday__item">
+              <div className="hotToday__image-container">
+                <img
+                  className="hotToday__image"
+                  src={promoProduct["photo-link"]}
+                />
+              </div>
+              <button
+                className="button button_type_shop"
+                onClick={handleAddToCart}
+              >
+                <h3 className="button__text"> agregar a carrito </h3>
+              </button>
+            </div>
+          </div> */}
           <div className="hotToday__data">
             <h3 className="hotToday__text">
               ¡Los imprescindibles de la temporada están aquí! Explora lo más

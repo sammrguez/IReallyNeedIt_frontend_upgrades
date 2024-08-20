@@ -8,3 +8,15 @@
   text-align: center;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .categories__subtitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .categories__subtitle {
+    font-size: 22px;
+  }
+}

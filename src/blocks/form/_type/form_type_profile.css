@@ -6,3 +6,9 @@
   flex-direction: column;
   background-color: #007a64;
 }
+
+@media screen and (max-width: 400px) {
+  .form_type_profile {
+    width: 100%;
+  }
+}

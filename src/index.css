@@ -41,6 +41,8 @@
 /*hot today */
 @import url("./blocks/hotToday/hotToday.css");
 @import url("./blocks/hotToday/__content/hotToday__content.css");
+@import url("./blocks/hotToday/__carrousel/hotToday__carrousel.css");
+@import url("./blocks/hotToday/__item/hotToday__item.css");
 @import url("./blocks/hotToday/__images/hotToday__images.css");
 @import url("./blocks/hotToday/__image-frame/hotToday__image-frame.css");
 @import url("./blocks/hotToday/__image-container/hotToday__image-container.css");
@@ -64,12 +66,14 @@
 
 /* footer*/
 @import url("./blocks/footer/footer.css");
+@import url("./blocks/footer/__container/footer__container.css");
 @import url("./blocks/footer/__social-media/footer__social-media.css");
 @import url("./blocks/footer/__item/footer__item.css");
 @import url("./blocks/footer/__logo/footer__logo.css");
 @import url("./blocks/footer/__link/footer__link.css");
 @import url("./blocks/footer/__media-icon/footer__media-icon.css");
 @import url("./blocks/footer/__media-text/footer__media-text.css");
+@import url("./blocks/footer/__copyrights/footer__copyrights.css");
 
 /* products */
 @import url("./blocks/products/products.css");
@@ -162,3 +166,7 @@
 
 /*Confirmation dialog*/
 @import url("./blocks/confirmationDialog/confirmationDialog.css");
+
+/* carousell*/
+@import url("./blocks/swiper/swiper.css");
+@import url("./blocks/swiper/__wrapper/swiper__wrapper.css");

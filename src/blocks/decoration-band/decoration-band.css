@@ -11,3 +11,10 @@
     height: 60px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .decoration-band {
+    margin: 10px 0px 24px;
+    height: 40px;
+  }
+}

@@ -1,9 +1,11 @@
 .footer__link {
-  display: flex;
-  flex-direction: row;
-  width: 250px;
-  color: #000000;
-
+  display: inline-block;
+  padding: 0px;
   text-decoration: none;
-  justify-content: center;
+}
+@media screen and (max-width: 400px) {
+  .footer__media-icon {
+    width: 30px;
+    height: 30px;
+  }
 }

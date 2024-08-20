@@ -1,25 +1,37 @@
 .navBar__icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+  .navBar__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
 }
 
 @media only screen and (max-width: 650px) {
   .navBar__icon {
-    width: 35px;
-    height: 35px;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
   }
 }
 
 @media only screen and (max-width: 490px) {
   .navBar__icon {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .navBar__icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
   }
 }

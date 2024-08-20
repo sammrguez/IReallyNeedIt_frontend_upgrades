@@ -1,5 +1,5 @@
 import React from "react";
-import cover from "../images/header_collage.jpg";
+import cover from "../images/header.jpg";
 import { Link } from "react-router-dom";
 
 function Header({ onCleanFilter }) {
@@ -10,7 +10,7 @@ function Header({ onCleanFilter }) {
     <section className="header">
       <div className="header__container">
         <img src={cover} className="header__image-background"></img>
-        <h1 className="header__title"> Find your style </h1>
+        {/* <h1 className="header__title"> Find your style </h1> */}
         <Link
           className="button button_place_header"
           to="/productos"

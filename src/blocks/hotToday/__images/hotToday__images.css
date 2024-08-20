@@ -1,24 +1,20 @@
 .hotToday__images {
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  display: flex;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-rows: 100px;
+  background-color: aqua;
+  gap: 10px;
 }
 
 @media screen and (max-width: 1000px) {
   .hotToday__images {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
     display: flex;
     margin: 0px auto 30px;
   }
 }
 @media screen and (max-width: 800px) {
   .hotToday__images {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
     display: flex;
     margin: 0px auto 30px;
   }
@@ -26,10 +22,6 @@
 
 @media screen and (max-width: 500px) {
   .hotToday__images {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    display: flex;
     margin: 0px auto 15px;
   }
 }

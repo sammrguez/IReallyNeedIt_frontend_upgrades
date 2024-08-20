@@ -2,7 +2,6 @@
   display: flex;
   width: 500px;
   height: 600px;
-  background-color: #007a64;
 }
 
 @media screen and (max-width: 400px) {

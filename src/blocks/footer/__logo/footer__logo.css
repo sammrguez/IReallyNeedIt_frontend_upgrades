@@ -15,7 +15,7 @@
 @media screen and (min-width: 200px) and (max-width: 490px) {
   .footer__logo {
     align-self: center;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 }
