@@ -47,4 +47,4 @@ Este es el proyecto del front-end para un sitio web de e-commerce. Permite a los
 
 ## O visita en:
 
-https://i-really-need-it-shop-frontend.vercel.app/
+https://ireallyneedit.com.mx/
