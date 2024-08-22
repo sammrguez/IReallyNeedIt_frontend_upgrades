@@ -169,4 +169,4 @@
 
 /* carousell*/
 @import url("./blocks/swiper/swiper.css");
-@import url("./blocks/swiper/__wrapper/swiper__wrapper.css");
+@import url("./blocks/swiper/__slide/swiper__slide.css");

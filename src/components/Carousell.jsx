@@ -1,47 +1,69 @@
 import React from "react";
+import promo2 from "../images/ajolote.jpg";
+import promo3 from "../images/more_amore.jpg";
+import promo4 from "../images/snoopy3.jpg";
 
 /* modulos  */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Keyboard, Navigation } from "swiper/modules";
 
 /* estilos */
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 function Carousell() {
   return (
     <Swiper
       className="swiper"
-      slidesPerView={"auto"}
+      slidesPerView={1}
+      loop={true}
       spaceBetween={30}
-      modules={[Pagination]}
+      // keyboard={{
+      //   enabled: true,
+      // }}
       pagination={{
         clickable: true,
       }}
-      scrollbar={{ draggable: true }}
-      effect="fade"
+      navigation={true}
+      modules={[Keyboard, Pagination, Navigation]}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+      <SwiperSlide>
+        <div className="swiper__slide">
+          <div className="swiper__slide-photo-container">
+            <img className="swiper__slide-photo" src={promo2} />
+          </div>
+
+          <h2 className="swiper__slide-header">
+            El animal Méxicano que dio la vuelta al mundo!
+          </h2>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="swiper__slide">
+          <div className="swiper__slide-photo-container">
+            <img className="swiper__slide-photo" src={promo3} />
+          </div>
+
+          <h2 className="swiper__slide-header">
+            {" "}
+            Lleva todo el estilo italiano en tu celular.{" "}
+          </h2>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className="swiper__slide">
+          <div className="swiper__slide-photo-container">
+            <img className="swiper__slide-photo" src={promo4} />
+          </div>
+
+          <h2 className="swiper__slide-header">
+            {" "}
+            El perrito favorito de muchos para proteger tus earpods
+          </h2>
+        </div>
+      </SwiperSlide>
     </Swiper>
-    // <div className="swiper">
-    //   <div className="swiper__wrapper">
-    //     <div className="swiper__slide">Slide 1</div>
-    //     <div className="swiper__slide">Slide 2</div>
-    //     <div className="swiper__slide">Slide 3</div>
-    //     ...
-    //   </div>
-
-    //   <div className="swiper-pagination"></div>
-
-    //   <div className="swiper-button-prev"></div>
-    //   <div className="swiper-button-next"></div>
-
-    //   <div className="swiper-scrollbar"></div>
-    // </div>
   );
 }
 

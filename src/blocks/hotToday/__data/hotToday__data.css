@@ -2,9 +2,9 @@
   display: flex;
   margin: auto;
   flex-direction: column;
-  margin-top: 80px;
-  width: 60%;
-  height: 480px;
+  margin: 60px auto;
+
+  width: 90%;
 }
 
 @media screen and (max-width: 800px) {
