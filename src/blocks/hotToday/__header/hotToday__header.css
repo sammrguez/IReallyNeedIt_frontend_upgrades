@@ -1,39 +1,29 @@
 .hotToday__header {
   max-width: 70%;
-
   color: #007a64;
   font-family: marquisette;
   text-align: center;
-  font-size: 80px;
-  margin: auto;
+  font-size: 70px;
+  margin: 30px auto;
 }
 @media screen and (max-width: 1000px) {
   .hotToday__header {
     max-width: 90%;
-    font-size: 62px;
-    margin-bottom: 26px;
+    font-size: 56px;
   }
 }
 @media screen and (max-width: 800px) {
   .hotToday__header {
     max-width: 90%;
-    font-size: 50px;
-    margin-bottom: 26px;
+    font-size: 40px;
+    margin: 20px auto;
   }
 }
 
 @media screen and (max-width: 600px) {
   .hotToday__header {
-    max-width: 90%;
     font-size: 30px;
-    margin-bottom: 26px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .hotToday__header {
     max-width: 90%;
-    font-size: 22px;
-    margin-bottom: 20px;
+    margin: 15px auto 25px;
   }
 }

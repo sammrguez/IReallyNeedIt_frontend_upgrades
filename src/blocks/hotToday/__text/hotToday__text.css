@@ -10,14 +10,14 @@
 @media screen and (max-width: 1000px) {
   .hotToday__text {
     width: 90%;
-    font-size: 32px;
+    font-size: 30px;
     margin: auto;
   }
 }
 @media screen and (max-width: 800px) {
   .hotToday__text {
     width: 90%;
-    font-size: 28px;
+    font-size: 24px;
     margin: 0px auto 20px;
   }
 }
@@ -32,7 +32,7 @@
 @media screen and (max-width: 400px) {
   .hotToday__text {
     width: 90%;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0px auto 20px;
   }
 }

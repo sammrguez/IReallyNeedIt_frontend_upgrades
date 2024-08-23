@@ -1,14 +1,14 @@
 @font-face {
   font-family: matter;
-  src: url(/src/fonts/Matter-Regular.otf) format('opentype');
+  src: url(/src/fonts/Matter-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: marquisette;
-  src: url(/src/fonts/marquisette.otf) format('opentype');
+  src: url(/src/fonts/marquisette.otf) format("opentype");
 }
 @font-face {
   font-family: bugisnia;
-  src: url(/src/fonts/BugisniaPersonal.otf) format('opentype');
+  src: url(/src/fonts/BugisniaPersonal.otf) format("opentype");
 }
 * body,
 h1,

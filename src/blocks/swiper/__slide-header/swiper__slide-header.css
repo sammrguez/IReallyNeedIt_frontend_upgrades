@@ -1,0 +1,26 @@
+.swiper__slide-header {
+  align-self: center;
+  font-size: 26px;
+  color: #333;
+  max-width: 300px;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .swiper__slide-header {
+    max-width: 170px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .swiper__slide-header {
+    max-width: 110px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .swiper__slide-header {
+    max-width: 90px;
+    font-size: 8px;
+  }
+}

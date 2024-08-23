@@ -1,14 +1,31 @@
 .swiper {
+  width: 85%;
+  height: 500px;
   display: flex;
-  margin: auto;
-  width: 80%;
-  height: auto;
-  border-radius: 30px;
-  margin-bottom: 50px;
 }
 
+@media screen and (max-width: 1000px) {
+  .swiper {
+    width: 98%;
+    height: 300px;
+  }
+}
 @media screen and (max-width: 800px) {
   .swiper {
-    height: 400px;
+    width: 98%;
+    height: 280px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .swiper {
+    width: 98%;
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .swiper {
+    width: 98%;
+    height: 120px;
   }
 }

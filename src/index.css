@@ -170,3 +170,6 @@
 /* carousell*/
 @import url("./blocks/swiper/swiper.css");
 @import url("./blocks/swiper/__slide/swiper__slide.css");
+@import url("./blocks/swiper/__slide-photo-container/swiper__slide-photo-container.css");
+@import url("./blocks/swiper/__slide-photo/swiper__slide-photo.css");
+@import url("./blocks/swiper/__slide-header/swiper__slide-header.css");

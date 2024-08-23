@@ -19,12 +19,6 @@ function Carousell() {
       slidesPerView={1}
       loop={true}
       spaceBetween={30}
-      // keyboard={{
-      //   enabled: true,
-      // }}
-      pagination={{
-        clickable: true,
-      }}
       navigation={true}
       modules={[Keyboard, Pagination, Navigation]}
     >
@@ -47,7 +41,7 @@ function Carousell() {
 
           <h2 className="swiper__slide-header">
             {" "}
-            Lleva todo el estilo italiano en tu celular.{" "}
+            Lleva todo el estilo italiano en tu celular hcwecwcw.{" "}
           </h2>
         </div>
       </SwiperSlide>
@@ -59,7 +53,7 @@ function Carousell() {
 
           <h2 className="swiper__slide-header">
             {" "}
-            El perrito favorito de muchos para proteger tus earpods
+            El perrito favorito de muchos para proteger sus earpods
           </h2>
         </div>
       </SwiperSlide>
