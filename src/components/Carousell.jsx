@@ -41,7 +41,7 @@ function Carousell() {
 
           <h2 className="swiper__slide-header">
             {" "}
-            Lleva todo el estilo italiano en tu celular hcwecwcw.{" "}
+            Lleva todo el estilo italiano en tu celular.{" "}
           </h2>
         </div>
       </SwiperSlide>

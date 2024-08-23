@@ -40,9 +40,9 @@
 
 /* Modifica los estilos de SwiperSlide */
 .swiper-slide {
-  width: 100% !important; /* Permite que el slide ajuste su ancho en función del contenido */
+  width: 100% !important; 
   height: 100%;
-  display: flex !important; /* Asegura que los elementos dentro del slide se alineen en fila */
-  justify-content: center; /* Centra las cards horizontalmente */
-  align-items: center; /* Centra las cards verticalmente */
+  display: flex !important; 
+  justify-content: center; 
+  align-items: center; /
 }
