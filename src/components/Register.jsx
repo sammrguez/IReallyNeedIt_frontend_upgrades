@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PopupForm from './PopupForm';
-import gmail from '../images/gmail.png';
-import { Link, useNavigate } from 'react-router-dom';
-import GoogleLoginComponent from './GoogleLogin';
-import * as auth from '../utils/auth';
-import IRNIstickerPurple from '../images/stickers_IRNI_purple.png';
+import React, { useState } from "react";
+import PopupForm from "./PopupForm";
+import gmail from "../images/gmail.png";
+import { Link, useNavigate } from "react-router-dom";
+import GoogleLoginComponent from "./GoogleLogin";
+import * as auth from "../utils/auth";
+import IRNIstickerPurple from "../images/stickers_IRNI_purple.png";
 
 function Register({ onClose, isOpen, handleLogin }) {
   const navigate = useNavigate();
@@ -15,26 +15,26 @@ function Register({ onClose, isOpen, handleLogin }) {
       auth.registerAndLogin(user).then((data) => {
         if (data && data.token) {
           handleLogin();
-          navigate('/pago');
+          navigate("/pago");
         }
       });
     } catch (error) {
-      console.error('error al iniciar sesion');
+      console.error("error al iniciar sesion");
     }
   }
 
   function handleFailure(res) {
-    console.log('algo salio mal');
+    console.log("algo salio mal");
   }
 
   return (
-    <section className='register'>
+    <section className="register">
       <PopupForm
         onClose={onClose}
         isOpen={isOpen}
-        header={'¿listo para adquirir increíbles productos?'}
+        header={"¿listo para adquirir increíbles productos?"}
         logo={IRNIstickerPurple}
-        type={'sign'}
+        type={"sign"}
       >
         <GoogleLoginComponent
           onSuccess={handleSuccess}

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 /* adicionales */
 import { motion } from "framer-motion";
 
@@ -20,6 +21,7 @@ import Register from "./Register";
 import Profile from "./Profile";
 import OrderSummary from "./OrderSummary";
 import ConfirmationDialog from "./ConfirmationDialog";
+import Product from "./Product";
 import InfoTooltip from "./InfoTooltip";
 
 import Payment from "./Payment";
@@ -240,6 +242,8 @@ function App() {
 
   function handleCardClick(card) {
     setSelectedCard(card);
+    console.log(card._id);
+    navigate(`/productos/${card._id}`);
   }
   /* funciones para abrir y cerrar popups */
 
@@ -317,6 +321,7 @@ function App() {
                 />
               }
             />
+            <Route path="/productos/:productId" element={<Product />} />
             <Route
               path="/carrito"
               element={

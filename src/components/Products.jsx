@@ -1,7 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import texture from "../images/textura_IRNI.jpg";
-import PopupProduct from "./PopupProduct";
 
 function Products({
   products,
@@ -32,12 +32,12 @@ function Products({
           );
         })} */}
       </div>
-      <PopupProduct
+      {/* <PopupProduct
         name={"product"}
         selectedCard={selectedCard}
         onClose={onClose}
         onAddProductClick={onAddProductClick}
-      />
+      /> */}
     </section>
   );
 }

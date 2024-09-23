@@ -173,3 +173,6 @@
 @import url("./blocks/swiper/__slide-photo-container/swiper__slide-photo-container.css");
 @import url("./blocks/swiper/__slide-photo/swiper__slide-photo.css");
 @import url("./blocks/swiper/__slide-header/swiper__slide-header.css");
+
+/* product */
+@import url("./blocks//product/product.css");
