@@ -9,8 +9,8 @@
 }
 @media screen and (max-width: 1000px) {
   .popup__sizes {
-    grid-template-columns: repeat(auto-fit, 70px);
-    grid-auto-rows: 46px;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-auto-rows: 36px;
     height: auto;
     margin: 8px 0px 8px;
   }

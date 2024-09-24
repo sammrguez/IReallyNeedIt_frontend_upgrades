@@ -15,8 +15,9 @@
 
 @media screen and (max-width: 750px) {
   .product__data {
-    width: 48%;
+    width: 60%;
     padding: 0px;
+    height: 100%;
   }
 }
 @media screen and (max-width: 600px) {
