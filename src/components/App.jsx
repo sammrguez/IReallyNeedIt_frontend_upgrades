@@ -242,7 +242,7 @@ function App() {
 
   function handleCardClick(card) {
     setSelectedCard(card);
-    console.log(card._id);
+
     navigate(`/productos/${card._id}`);
   }
   /* funciones para abrir y cerrar popups */
@@ -321,7 +321,10 @@ function App() {
                 />
               }
             />
-            <Route path="/productos/:productId" element={<Product />} />
+            <Route
+              path="/productos/:productId"
+              element={<Product onAddProductClick={handleAddProductToCart} />}
+            />
             <Route
               path="/carrito"
               element={

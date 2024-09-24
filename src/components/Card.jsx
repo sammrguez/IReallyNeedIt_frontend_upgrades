@@ -3,8 +3,6 @@ import { motion, useInView, useAnimation } from "framer-motion";
 
 function Card({ onClick, card }) {
   const handleClick = () => {
-    console.log("desde card");
-    console.log(card._id);
     onClick(card);
   };
   const scrollRef = useRef(null);

@@ -30,8 +30,6 @@ class Api {
     return this._makeRequest("/productos");
   }
   getProductById(productId) {
-    console.log("desdeapi");
-    console.log(productId);
     return this._makeRequest(`/productos/${productId}`);
   }
   getPromoProduct() {
