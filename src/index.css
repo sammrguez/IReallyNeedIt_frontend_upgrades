@@ -176,3 +176,10 @@
 
 /* product */
 @import url("./blocks//product/product.css");
+@import url("./blocks/product/__swiper/product__swiper.css");
+@import url("./blocks/product/__container/product__container.css");
+@import url("./blocks/product/__data/product__data.css");
+@import url("./blocks/product/__image/product__image.css");
+@import url("./blocks/product/__header/product__header.css");
+@import url("./blocks/product/__description/product__description.css");
+@import url("./blocks/product/price/product__price.css");

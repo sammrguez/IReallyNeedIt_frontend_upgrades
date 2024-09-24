@@ -1,6 +1,6 @@
 .button__text {
   text-decoration: none;
-  font-size: 26px;
+  font-size: 22px;
   color: #000;
   margin-right: 20px;
 
@@ -13,24 +13,24 @@
 
 @media screen and (max-width: 1000px) {
   .button__text {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .button__text {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .button__text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .button__text {
-    font-size: 12px;
+    font-size: 10px;
   }
 }

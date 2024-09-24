@@ -1,0 +1,23 @@
+.product__header {
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1000px) {
+  .product__header {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .product__header {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product__header {
+    font-size: 18px;
+  }
+}

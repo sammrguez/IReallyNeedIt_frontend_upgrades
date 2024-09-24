@@ -1,0 +1,20 @@
+.product__swiper {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-color: #f4efea;
+}
+
+@media screen and (max-width: 600px) {
+  .product__swiper {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product__swiper {
+    width: 100%;
+    height: 260px;
+  }
+}

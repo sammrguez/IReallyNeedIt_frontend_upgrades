@@ -1,0 +1,36 @@
+.product__data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+  gap: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+  .product__data {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .product__data {
+    width: 48%;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .product__data {
+    width: 76%;
+    padding: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product__data {
+    margin-top: 7px;
+    width: 80%;
+    padding: 0px;
+    gap: 8px;
+  }
+}

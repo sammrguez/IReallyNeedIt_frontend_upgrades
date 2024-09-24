@@ -1,9 +1,10 @@
 .button_type_shop {
-  width: 70%;
+  width: 75%;
   margin-top: 0px;
   margin-bottom: 20px;
   background-color: #b7b5e7;
   box-shadow: 4px 4px 4px #585b56;
+  height: 45px;
 }
 
 .button_type_submit {
