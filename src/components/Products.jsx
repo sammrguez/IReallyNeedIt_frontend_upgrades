@@ -26,18 +26,7 @@ function Products({
                 <Card onClick={onCardClick} card={product} key={product._id} />
               );
             })}
-        {/* {products.map((product) => {
-          return (
-            <Card onClick={onCardClick} card={product} key={product._id} />
-          );
-        })} */}
       </div>
-      {/* <PopupProduct
-        name={"product"}
-        selectedCard={selectedCard}
-        onClose={onClose}
-        onAddProductClick={onAddProductClick}
-      /> */}
     </section>
   );
 }

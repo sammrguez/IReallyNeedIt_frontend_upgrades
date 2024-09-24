@@ -16,6 +16,8 @@
   .product__image {
     height: 210px;
     width: 210px;
+    min-height: 195px;
+    max-height: 80%;
   }
 }
 
