@@ -1,8 +1,9 @@
 .product__image {
   display: flex;
   margin: auto;
-  height: 380px;
-  width: 380px;
+  height: auto;
+  width: 95%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1000px) {
