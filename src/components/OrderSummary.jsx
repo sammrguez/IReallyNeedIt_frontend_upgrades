@@ -7,7 +7,7 @@ import InfoTooltip from "./InfoTooltip";
 
 import CartItem from "./CartItem";
 
-function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose }) {
+function OrderSummary({ onConfirmOrder }) {
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
   const navigate = useNavigate();
