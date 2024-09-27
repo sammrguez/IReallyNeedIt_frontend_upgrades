@@ -15,7 +15,7 @@ function Register({ onClose, isOpen, handleLogin }) {
       auth.registerAndLogin(user).then((data) => {
         if (data && data.token) {
           handleLogin();
-          navigate("/pago");
+          navigate("/direccion");
         }
       });
     } catch (error) {

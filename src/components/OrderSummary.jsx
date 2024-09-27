@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import texture from "../images/textura_IRNI.jpg";
 import { UserContext } from "../contexts/UserContext";
 import { CartContext } from "../contexts/CartContext";
@@ -6,9 +7,10 @@ import InfoTooltip from "./InfoTooltip";
 
 import CartItem from "./CartItem";
 
-function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose, trackId }) {
+function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose }) {
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
+  const navigate = useNavigate();
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -59,13 +61,6 @@ function OrderSummary({ onConfirmOrder, shouldBeInfoOpen, onClose, trackId }) {
           </button>
         </div>
       </section>
-      <InfoTooltip
-        header={"Gracias por tu compra!"}
-        messagge={`
-      Orden de compra: ${trackId}`}
-        shouldBeInfoOpen={shouldBeInfoOpen}
-        onClose={onClose}
-      />
     </>
   );
 }

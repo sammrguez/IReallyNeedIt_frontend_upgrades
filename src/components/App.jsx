@@ -23,8 +23,9 @@ import OrderSummary from "./OrderSummary";
 import ConfirmationDialog from "./ConfirmationDialog";
 import Product from "./Product";
 import InfoTooltip from "./InfoTooltip";
-
+import Address from "./Address";
 import Payment from "./Payment";
+
 import ProtectedRoute from "./ProtectedRoute";
 import * as auth from "../utils/auth";
 
@@ -279,9 +280,11 @@ function App() {
     try {
       const confirmation = await api.makeOrder(token, order);
       if (confirmation) {
-        setTrackId(confirmation.trackId);
-        setShouldBeInfoOpen(true);
-        setCart([]);
+        console.log(confirmation);
+        const { trackId, preferenceId } = confirmation; // Obtén trackId y preferenceId
+        setTrackId(trackId); // Guarda el trackId si lo necesitas
+
+        navigate(`/pago?preferenceId=${preferenceId}`);
       }
     } catch (error) {}
   }
@@ -350,9 +353,9 @@ function App() {
             />
             <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
               <Route
-                path="/pago"
+                path="/direccion"
                 element={
-                  <Payment handleForm={handleAddressForm} loggedIn={loggedIn} />
+                  <Address handleForm={handleAddressForm} loggedIn={loggedIn} />
                 }
               />
               <Route
@@ -372,12 +375,12 @@ function App() {
                   <OrderSummary
                     onConfirmOrder={handleConfirmOrder}
                     shouldBeInfoOpen={shouldBeInfoOpen}
-                    trackId={trackId}
                     onClose={closeAllPopups}
                   />
                 }
               />
             </Route>
+            <Route path="/pago" element={<Payment trackId={trackId} />} />
           </Routes>
           {openConfirmationDialog && (
             <ConfirmationDialog

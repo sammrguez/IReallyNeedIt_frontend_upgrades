@@ -17,7 +17,7 @@ function Profile({ isOpen, onClose, onLogOut, trackId }) {
   }
   function handleAddress(evt) {
     evt.preventDefault();
-    navigate("/pago");
+    navigate("/direccion");
   }
 
   return (

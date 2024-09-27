@@ -26,7 +26,7 @@ function Cart({
       if (cart.length === 0) {
         setShouldBeInfoOpen(true);
       } else {
-        navigate("/pago");
+        navigate("/direccion");
       }
     } else {
       if (cart.length === 0) {
