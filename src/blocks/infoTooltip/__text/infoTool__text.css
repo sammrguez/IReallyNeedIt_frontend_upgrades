@@ -1,12 +1,25 @@
 .infoTool__text {
-  font-size: 26px;
-  color: #595b56;
+  font-size: 32px;
+  color: #000000;
   text-align: center;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 900px) {
+  .infoTool__text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .infoTool__text {
     font-size: 18px;
-    color: #595b56;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .infoTool__text {
+    font-size: 12px;
     margin-bottom: 20px;
   }
 }
