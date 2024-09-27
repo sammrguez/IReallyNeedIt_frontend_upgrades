@@ -1,4 +1,17 @@
 .button_type_continue {
   width: 60%;
   background-color: #b7b5e7;
+  height: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .button_type_continue {
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button_type_continue {
+    height: 40px;
+  }
 }

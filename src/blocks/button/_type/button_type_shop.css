@@ -3,13 +3,9 @@
   margin-top: 0px;
   margin-bottom: 20px;
   background-color: #b7b5e7;
-  box-shadow: 4px 4px 4px #585b56;
-  height: 55px;
+  height: 60px;
 }
 
-.button_type_submit {
-  margin-bottom: 20px;
-}
 @media screen and (max-width: 800px) {
   .button_type_shop {
     width: 86%;

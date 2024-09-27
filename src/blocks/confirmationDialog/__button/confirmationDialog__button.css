@@ -1,0 +1,20 @@
+.confirmationDialog__button {
+  width: 40%;
+  height: 60px;
+  background-color: #b7b5e7;
+}
+
+@media screen and (max-width: 600px) {
+  .confirmationDialog__button {
+    width: 70%;
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .confirmationDialog__button {
+    width: 70%;
+    height: 40px;
+    font-size: 14px;
+  }
+}

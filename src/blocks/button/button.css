@@ -1,43 +1,13 @@
 .button {
-  width: 300px;
-  height: 75px;
   display: flex;
-
   cursor: pointer;
   border: none;
-  padding: 22px 44;
-  border-radius: 30px;
+  border-radius: 10px;
   align-self: center;
-  box-shadow: 4px 8px 1px rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1000px) {
-  .button {
-    height: 65px;
-    padding: 10px;
-    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
-  }
-}
-@media screen and (max-width: 800px) {
-  .button {
-    height: 60px;
-    padding: 10px;
-    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .button {
-    height: 45px;
-    padding: 10px;
-    box-shadow: 2px 4px 1px rgba(0, 0, 0, 1);
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .button {
-    width: 80%;
-    height: 30px;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 1);
-  }
+button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra un poco más fuerte al hacer hover */
 }

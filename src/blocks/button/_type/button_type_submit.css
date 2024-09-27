@@ -1,0 +1,12 @@
+.button_type_submit {
+  width: 40%;
+  height: 60px;
+  background-color: #b7b5e7;
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 600px) {
+  .button_type_submit {
+    width: 70%;
+    height: 44px;
+  }
+}

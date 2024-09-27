@@ -15,15 +15,15 @@
 }
 
 @media screen and (max-width: 400px) {
-  .form__input_type_text.short {
-    height: 30px;
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 400px) {
   .form__input {
     height: 30px;
-    font-size: 12px;
+    font-size: 10px;
+  }
+  form__input::placeholder {
+    font-size: 10px;
+  }
+  .form__input_type_text.short {
+    height: 30px;
+    font-size: 10px;
   }
 }

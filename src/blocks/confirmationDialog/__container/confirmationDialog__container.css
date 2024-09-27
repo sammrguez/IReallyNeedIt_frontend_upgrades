@@ -1,14 +1,13 @@
 .confirmationDialog__container {
   background-color: rgb(255, 255, 255);
-  width: 80%;
-  height: 400px;
+  width: 70%;
+  height: auto;
   display: flex;
-  border-radius: 30px;
+  border-radius: 20px;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 5%;
   position: absolute;
-
   top: 50%;
   left: 50%;
   right: 50%;
