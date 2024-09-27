@@ -1,11 +1,12 @@
-const BASE_URL = 'https://i-really-need-it-shop-backend.vercel.app';
+// const BASE_URL = 'https://i-really-need-it-shop-backend.vercel.app';
+const BASE_URL = "http://localhost:3000";
 
 export const registerAndLogin = (user) => {
   return fetch(`${BASE_URL}/registro`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       name: user.name,
@@ -21,7 +22,7 @@ export const registerAndLogin = (user) => {
     })
     .then((data) => {
       if (data && data.token) {
-        localStorage.setItem('jwt', data.token);
+        localStorage.setItem("jwt", data.token);
 
         return data;
       }
@@ -33,10 +34,10 @@ export const registerAndLogin = (user) => {
 
 export const checkToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   }).then((res) => {

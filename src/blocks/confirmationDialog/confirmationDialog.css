@@ -5,34 +5,5 @@
   position: fixed;
   top: 0px;
   left: 0;
-
   z-index: 100;
-}
-
-.confirmationDialog__container {
-  background-color: rgb(230, 214, 203);
-  width: 800px;
-  height: 400px;
-  display: flex;
-  border-radius: 30px;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  padding: 40px 80px ;
-  top: 50%;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-}
-.confirmationDialog__title {
-  font-size: 35px;
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.confirmationDialog__buttonsBox{
-display: flex;
-width: 100%;
-flex-direction: row;
-justify-content: space-between;
 }

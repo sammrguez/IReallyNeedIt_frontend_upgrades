@@ -1,19 +1,29 @@
 .button_type_shop {
-  width: 75%;
+  width: 88%;
   margin-top: 0px;
   margin-bottom: 20px;
   background-color: #b7b5e7;
   box-shadow: 4px 4px 4px #585b56;
-  height: 50px;
+  height: 55px;
 }
 
 .button_type_submit {
   margin-bottom: 20px;
 }
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .button_type_shop {
-    margin-bottom: 20px;
-    width: 90%;
+    width: 86%;
+    height: 50px;
+
+    padding: 14px 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .button_type_shop {
+    width: 80%; /* Ancho basado en el contenido */
+    height: 44px; /* Altura mínima para accesibilidad */
+
+    padding: 12px;
   }
 }

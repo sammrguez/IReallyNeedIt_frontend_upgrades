@@ -44,13 +44,13 @@ class Api {
   }
 
   makeOrder(token, order) {
-    return this._makeRequest("/orders/confirm", token, "POST", order);
+    return this._makeRequest("/resumen", token, "POST", order);
   }
 }
 
 const api = new Api({
-  BASE_URL: "https://i-really-need-it-shop-backend.vercel.app",
-  // BASE_URL: "http://localhost:3000",
+  // BASE_URL: "https://i-really-need-it-shop-backend.vercel.app",
+  BASE_URL: "http://localhost:3000",
 });
 
 export default api;
