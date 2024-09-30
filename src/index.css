@@ -149,7 +149,7 @@
 @import url("./blocks/cartItem/__quantitybox-item/cartItem__quantitybox-item.css");
 
 /* address*/
-@import url();
+
 @import url("./blocks/address/address.css");
 @import url("./blocks/address/__container/address__container.css");
 
@@ -166,6 +166,9 @@
 
 /* payment */
 @import url("./blocks/payment/payment.css");
+@import url("./blocks/payment/__container/payment__container.css");
+@import url("./blocks/payment/__wallet-container/payment__wallet-container.css");
+@import url("./blocks/payment/__header/payment__header.css");
 
 /* infoTol*/
 @import url("./blocks/infoTooltip/infoTooltip.css");

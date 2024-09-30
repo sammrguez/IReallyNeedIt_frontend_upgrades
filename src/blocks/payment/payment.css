@@ -1,19 +1,4 @@
 .payment {
   width: 100%;
-  height: 500px;
-}
-
-.payment__container {
-  height: 400px;
-  width: 80%;
-
-  display: flex;
-  flex-direction: column;
-  margin: 80px auto;
-  justify-content: center;
-  align-items: center;
-}
-
-.payment__wallet-container {
-  width: 50%;
+  height: auto;
 }

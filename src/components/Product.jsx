@@ -22,7 +22,6 @@ function Product({ onAddProductClick, onClose }) {
         try {
           const fetchedProduct = await api.getProductById(productId);
           setProduct(fetchedProduct);
-          console.log("Fetched Product:", fetchedProduct);
         } catch (error) {
           console.error("Error al obtener el producto:", error);
         }
