@@ -2,7 +2,7 @@
   display: flex;
   margin: auto;
   height: auto;
-  width: 95%;
+  max-width: 95%;
   object-fit: cover;
 }
 

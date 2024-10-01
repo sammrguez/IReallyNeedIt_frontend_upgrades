@@ -282,7 +282,7 @@ function App() {
       if (confirmation) {
         console.log(confirmation);
         const { trackId, preferenceId } = confirmation; // Obtén trackId y preferenceId
-        setTrackId(trackId); // Guarda el trackId si lo necesitas
+        setTrackId(trackId); // Guarda el trackId
 
         navigate(`/pago?preferenceId=${preferenceId}`);
       }

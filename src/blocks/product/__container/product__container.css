@@ -3,7 +3,7 @@
   flex-direction: row;
 
   margin: 120px auto;
-  height: 75vh;
+  height: auto;
   width: 95%;
   justify-content: center;
   align-items: center;
@@ -13,10 +13,10 @@
 }
 @media screen and (max-width: 900px) {
   .product__container {
-    margin: 90px auto;
+    margin: 80px auto;
     width: 90%;
-    height: 70vh;
-    padding: 50px;
+    height: auto;
+    padding: 40px;
   }
 }
 

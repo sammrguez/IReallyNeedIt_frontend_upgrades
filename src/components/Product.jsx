@@ -55,7 +55,7 @@ function Product({ onAddProductClick, onClose }) {
       {" "}
       <section id="product" className="product">
         <div className="product__container">
-          <div className="product__swiper">
+          <div className="product__image-container">
             <img className="product__image " src={product["photo-link"]} />
           </div>
           <div className="product__data">

@@ -19,7 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@leecheuk/react-google-login": "^5.4.1",
-    "@mercadopago/sdk-react": "^0.0.19",
+    "@mercadopago/sdk-react": "^0.0.3",
     "@react-oauth/google": "^0.12.1",
     "framer-motion": "^11.3.7",
     "gapi-script": "^1.2.0",
