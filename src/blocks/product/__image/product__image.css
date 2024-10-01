@@ -1,4 +1,4 @@
-.product__image {
+/* .product__image {
   display: flex;
   margin: auto;
   height: auto;
@@ -33,5 +33,43 @@
   .product__image {
     height: 180px;
     width: 180px;
+  }
+} */
+
+.product__image {
+  display: flex;
+  margin: auto;
+  width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
+  max-height: 100%; /* Limita la altura máxima para evitar que sobrepase el contenedor */
+  object-fit: contain; /* Cambia a contain para que la imagen se ajuste dentro del contenedor sin recortes */
+}
+
+@media screen and (max-width: 1000px) {
+  .product__image {
+    height: auto; /* Deja que la imagen ajuste su altura automáticamente */
+    max-width: 100%; /* Evita que la imagen sobrepase el contenedor */
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .product__image {
+    max-width: 100%; /* Evitar que la imagen sobrepase los límites del contenedor */
+    max-height: 80%; /* Controlar la altura máxima en resoluciones pequeñas */
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .product__image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product__image {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
