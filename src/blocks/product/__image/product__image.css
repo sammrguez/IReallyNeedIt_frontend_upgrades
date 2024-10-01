@@ -43,7 +43,7 @@
   height: auto; /* Mantiene la proporción de la imagen */
   max-width: 100%; /* Limita el ancho máximo al 100% del contenedor */
   max-height: 100%; /* Limita la altura máxima para evitar que sobrepase el contenedor */
-  object-fit: contain; /* Cambia a contain para que la imagen se ajuste dentro del contenedor sin recortes */
+  object-fit: cover; /* Cambia a contain para que la imagen se ajuste dentro del contenedor sin recortes */
 }
 
 @media screen and (max-width: 1000px) {
