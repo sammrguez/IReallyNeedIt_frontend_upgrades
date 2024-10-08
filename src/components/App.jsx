@@ -25,6 +25,7 @@ import Product from "./Product";
 import InfoTooltip from "./InfoTooltip";
 import Address from "./Address";
 import Payment from "./Payment";
+import FireBaseLogin from "./FireBaseLogin";
 
 import ProtectedRoute from "./ProtectedRoute";
 import * as auth from "../utils/auth";
@@ -279,9 +280,9 @@ function App() {
   }
 
   /* funciones para confirmar el pedido*/
-  async function handleConfirmOrder(order) {
+  async function handleConfirmOrder(orderWithShipping) {
     try {
-      const confirmation = await api.makeOrder(token, order);
+      const confirmation = await api.makeOrder(token, orderWithShipping);
       if (confirmation) {
         console.log(confirmation);
         const { trackId, preferenceId } = confirmation; // Obtén trackId y preferenceId
@@ -348,6 +349,16 @@ function App() {
               path="/registro"
               element={
                 <Register
+                  onClose={closeAllPopups}
+                  isOpen={isRegisterOpen}
+                  handleLogin={handleLogin}
+                />
+              }
+            />
+            <Route
+              path="registro/invitado"
+              element={
+                <FireBaseLogin
                   onClose={closeAllPopups}
                   isOpen={isRegisterOpen}
                   handleLogin={handleLogin}

@@ -39,11 +39,20 @@ class Api {
   getUserData(token) {
     return this._makeRequest("/users/me", token);
   }
+
+  registerGuestUser(email, name, userId) {
+    return this._makeRequest("/api/users", null, "POST", {
+      userId,
+      name,
+      email,
+    });
+  }
   setDirection(token, address) {
     return this._makeRequest("/users/me/address", token, "PATCH", address);
   }
 
   makeOrder(token, order) {
+    console.log(order);
     return this._makeRequest("/resumen", token, "POST", order);
   }
 }

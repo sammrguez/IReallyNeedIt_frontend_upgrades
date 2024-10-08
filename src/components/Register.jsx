@@ -22,6 +22,10 @@ function Register({ onClose, isOpen, handleLogin }) {
       console.error("error al iniciar sesion");
     }
   }
+  function handleBuyasGuest(evt) {
+    evt.preventDefault();
+    navigate("/registro/invitado");
+  }
 
   function handleFailure(res) {
     console.log("algo salio mal");
@@ -40,6 +44,11 @@ function Register({ onClose, isOpen, handleLogin }) {
           onSuccess={handleSuccess}
           onFailure={handleFailure}
         />
+        <button className="button button_type_sign">
+          <h3 className="button__text" onClick={handleBuyasGuest}>
+            comprar como invitado
+          </h3>
+        </button>
       </PopupForm>
     </section>
   );

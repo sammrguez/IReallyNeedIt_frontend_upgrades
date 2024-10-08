@@ -91,7 +91,7 @@
 
 /* register*/
 @import url("./blocks/register/register.css");
-
+@import url("./blocks/fireBase/fireBase.css");
 /* profile*/
 @import url("./blocks/profile/profile.css");
 

@@ -21,7 +21,18 @@ function OrderSummary({ onConfirmOrder, shippingCost }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onConfirmOrder(cart);
+    console.log(cart);
+    try {
+      const orderWithShipping = [
+        ...cart,
+        { name: "gastos de envío", quantity: 1, price: finalShippingCost },
+      ];
+      console.log(orderWithShipping);
+
+      onConfirmOrder(orderWithShipping);
+    } catch (error) {
+      console.error("Error al confirmar la orden:", error);
+    }
   }
   return (
     <>
