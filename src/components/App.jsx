@@ -63,6 +63,8 @@ function App() {
 
   const [itemToDelete, setItemToDelete] = useState(null);
 
+  const [shippingCost, setShippingCost] = useState(null);
+
   /*funcion check token*/
 
   useEffect(() => {
@@ -272,6 +274,7 @@ function App() {
     try {
       const userWithAdress = await api.setDirection(token, address);
       setUser(userWithAdress);
+      setShippingCost(userWithAdress.shippingCost);
     } catch (error) {}
   }
 
@@ -376,6 +379,7 @@ function App() {
                     onConfirmOrder={handleConfirmOrder}
                     shouldBeInfoOpen={shouldBeInfoOpen}
                     onClose={closeAllPopups}
+                    shippingCost={shippingCost}
                   />
                 }
               />

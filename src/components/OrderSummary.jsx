@@ -1,16 +1,23 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import texture from "../images/textura_IRNI.jpg";
 import { UserContext } from "../contexts/UserContext";
 import { CartContext } from "../contexts/CartContext";
 import InfoTooltip from "./InfoTooltip";
+import api from "../utils/api";
 
 import CartItem from "./CartItem";
 
-function OrderSummary({ onConfirmOrder }) {
+function OrderSummary({ onConfirmOrder, shippingCost }) {
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
   const navigate = useNavigate();
+
+  const productTotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+  const finalShippingCost = productTotal >= 499 ? 0 : shippingCost;
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -36,12 +43,17 @@ function OrderSummary({ onConfirmOrder }) {
             })}
           </ul>{" "}
           <div className="orderSummary__total">
-            <h3 className="orderSummary__total-header">Total</h3>
+            <h3 className="orderSummary__total-header">total parcial</h3>
+            <p className="orderSummary__amount">{`$ ${productTotal}`}</p>
+          </div>
+          <div className="orderSummary__total">
+            <h3 className="orderSummary__total-header"> gastos de envío </h3>
+            <p className="orderSummary__amount">{`$ ${finalShippingCost}`}</p>
+          </div>
+          <div className="orderSummary__total">
+            <h3 className="orderSummary__total-header"> por pagar </h3>
             <p className="orderSummary__amount">
-              {`$ ${cart.reduce(
-                (total, item) => total + item.price * item.quantity,
-                0
-              )}`}
+              {`$ ${productTotal + finalShippingCost}`}
             </p>
           </div>
           <div className="orderSummary__address-container">
