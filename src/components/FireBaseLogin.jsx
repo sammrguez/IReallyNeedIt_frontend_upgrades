@@ -1,26 +1,13 @@
 import React from "react";
-import { auth } from "./firebase";
 import api from "../utils/api";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 function FireBaseLogin() {
-  cons[(GuestUser, setGuesUser)] = {
+  const [GuestUser, setGuesUser] = {
     name: " ",
     user: " ",
     userId: " ",
   };
-  // async function handleSuccess(res) {
-  //     try {
-  //       const user = await res.profileObj;
-  //       auth.registerAndLogin(user).then((data) => {
-  //         if (data && data.token) {
-  //           handleLogin();
-  //           navigate("/direccion");
-  //         }
-  //       });
-  //     } catch (error) {
-  //       console.error("error al iniciar sesion");
-  //     }
-  //   }
 
   function handleChange(evt) {
     const { name, value } = evt.target;
@@ -28,19 +15,6 @@ function FireBaseLogin() {
       ...prevGuestUser,
       [name]: value,
     }));
-  }
-  async function registerGuestUser() {
-    try {
-      const data = await auth.createUserWithEmailAndPassword(
-        email,
-        "passwordTemporal"
-      );
-      const userId = data.user.uid;
-      return api.registerGuestUser(email);
-    } catch (error) {
-      console.error("error al registrar al usuario");
-      throw error;
-    }
   }
 
   return (
