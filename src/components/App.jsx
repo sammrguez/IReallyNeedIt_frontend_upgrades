@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 /* adicionales */
 import { motion } from "framer-motion";
 
@@ -25,7 +26,6 @@ import Product from "./Product";
 import InfoTooltip from "./InfoTooltip";
 import Address from "./Address";
 import Payment from "./Payment";
-import FireBaseLogin from "./FireBaseLogin";
 
 import ProtectedRoute from "./ProtectedRoute";
 import * as auth from "../utils/auth";
@@ -355,16 +355,7 @@ function App() {
                 />
               }
             />
-            <Route
-              path="registro/invitado"
-              element={
-                <FireBaseLogin
-                  onClose={closeAllPopups}
-                  isOpen={isRegisterOpen}
-                  handleLogin={handleLogin}
-                />
-              }
-            />
+
             <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
               <Route
                 path="/direccion"

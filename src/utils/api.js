@@ -40,13 +40,6 @@ class Api {
     return this._makeRequest("/users/me", token);
   }
 
-  registerGuestUser(email, name, userId) {
-    return this._makeRequest("/api/users", null, "POST", {
-      userId,
-      name,
-      email,
-    });
-  }
   setDirection(token, address) {
     return this._makeRequest("/users/me/address", token, "PATCH", address);
   }
@@ -58,8 +51,8 @@ class Api {
 }
 
 const api = new Api({
-  // BASE_URL: "https://i-really-need-it-shop-backend.vercel.app",
-  BASE_URL: "http://localhost:3000",
+  BASE_URL: "https://i-really-need-it-shop-backend.vercel.app",
+  //BASE_URL: "http://localhost:3000",
 });
 
 export default api;
